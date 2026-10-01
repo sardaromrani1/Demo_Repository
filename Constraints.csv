@@ -1,0 +1,6 @@
+﻿dbo,Instruments,CK_Instruments_MeasurementRange,0,0
+dbo,Instruments,CK_Instruments_OutputRange,0,0
+event,CalibrationTestPoints,CK_CalibrationTestPoints_TestSequence,0,0
+event,SparePartUsage,CK_SparePartUsage_QuantityUsed,0,0
+rel,InstrumentRedundancy,CK_InstrumentRedundancy_DifferentInstruments,0,0
+rel,SparePartInterchangeability,CK_SparePartInterchangeability_DifferentParts,0,0
