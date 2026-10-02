@@ -1,0 +1,287 @@
+﻿dbo,Instruments,1,InstrumentId,int,NULL,int,NOT NULL,YES,1,1,NULL,NULL,NO,NULL
+dbo,Instruments,2,TagNumber,varchar,100,varchar(100),NOT NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+dbo,Instruments,3,AlternateTag,varchar,100,varchar(100),NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+dbo,Instruments,4,SerialNumber,varchar,100,varchar(100),NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+dbo,Instruments,5,AssetNumber,varchar,100,varchar(100),NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+dbo,Instruments,6,UnitId,int,NULL,int,NOT NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+dbo,Instruments,7,SubSystemId,int,NULL,int,NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+dbo,Instruments,8,InstrumentTypeId,int,NULL,int,NOT NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+dbo,Instruments,9,ManufacturerId,int,NULL,int,NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+dbo,Instruments,10,Model,nvarchar,150,nvarchar(150),NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+dbo,Instruments,11,Description,nvarchar,500,nvarchar(500),NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+dbo,Instruments,12,FunctionalDescription,nvarchar,MAX,nvarchar(MAX),NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+dbo,Instruments,13,ProcessVariable,nvarchar,100,nvarchar(100),NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+dbo,Instruments,14,ServiceDescription,nvarchar,500,nvarchar(500),NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+dbo,Instruments,15,FluidType,nvarchar,100,nvarchar(100),NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+dbo,Instruments,16,FluidComposition,nvarchar,500,nvarchar(500),NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+dbo,Instruments,17,MeasurementRangeMin,decimal,"20,8","decimal(20,8)",NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+dbo,Instruments,18,MeasurementRangeMax,decimal,"20,8","decimal(20,8)",NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+dbo,Instruments,19,MeasurementUnitId,int,NULL,int,NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+dbo,Instruments,20,OutputRangeMin,decimal,"20,8","decimal(20,8)",NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+dbo,Instruments,21,OutputRangeMax,decimal,"20,8","decimal(20,8)",NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+dbo,Instruments,22,OutputUnitId,int,NULL,int,NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+dbo,Instruments,23,SILLevel,varchar,20,varchar(20),NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+dbo,Instruments,24,ATEXClassification,varchar,100,varchar(100),NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+dbo,Instruments,25,IPRating,varchar,20,varchar(20),NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+dbo,Instruments,26,CommunicationProtocolCode,varchar,50,varchar(50),NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+dbo,Instruments,27,DcsSystemReference,varchar,100,varchar(100),NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+dbo,Instruments,28,ModbusAddress,varchar,100,varchar(100),NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+dbo,Instruments,29,InstallationDate,date,NULL,date,NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+dbo,Instruments,30,CommissioningDate,date,NULL,date,NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+dbo,Instruments,31,IsActive,bit,NULL,bit,NOT NULL,NO,NULL,NULL,DF_Instruments_IsActive,((1)),NO,NULL
+dbo,Instruments,32,Notes,nvarchar,MAX,nvarchar(MAX),NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+dbo,Instruments,33,CreatedDateTime,datetime2,0,datetime2(0),NOT NULL,NO,NULL,NULL,DF_Instruments_CreatedDateTime,(sysutcdatetime()),NO,NULL
+dbo,Instruments,34,UpdatedDateTime,datetime2,0,datetime2(0),NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+dbo,InstrumentTypes,1,InstrumentTypeId,int,NULL,int,NOT NULL,YES,1,1,NULL,NULL,NO,NULL
+dbo,InstrumentTypes,2,InstrumentTypeCode,varchar,50,varchar(50),NOT NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+dbo,InstrumentTypes,3,InstrumentTypeName,nvarchar,200,nvarchar(200),NOT NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+dbo,InstrumentTypes,4,InstrumentCategoryCode,varchar,50,varchar(50),NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+dbo,InstrumentTypes,5,Description,nvarchar,500,nvarchar(500),NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+dbo,InstrumentTypes,6,MeasurementClassCode,varchar,50,varchar(50),NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+dbo,InstrumentTypes,7,IsActive,bit,NULL,bit,NOT NULL,NO,NULL,NULL,DF_InstrumentTypes_IsActive,((1)),NO,NULL
+dbo,InstrumentTypes,8,CreatedDateTime,datetime2,0,datetime2(0),NOT NULL,NO,NULL,NULL,DF_InstrumentTypes_CreatedDateTime,(sysutcdatetime()),NO,NULL
+dbo,InstrumentTypes,9,UpdatedDateTime,datetime2,0,datetime2(0),NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+dbo,Manufacturers,1,ManufacturerId,int,NULL,int,NOT NULL,YES,1,1,NULL,NULL,NO,NULL
+dbo,Manufacturers,2,ManufacturerCode,varchar,50,varchar(50),NOT NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+dbo,Manufacturers,3,ManufacturerName,nvarchar,200,nvarchar(200),NOT NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+dbo,Manufacturers,4,CountryCode,char,2,char(2),NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+dbo,Manufacturers,5,Website,varchar,500,varchar(500),NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+dbo,Manufacturers,6,ContactInformation,nvarchar,500,nvarchar(500),NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+dbo,Manufacturers,7,LocalRepresentative,nvarchar,200,nvarchar(200),NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+dbo,Manufacturers,8,HasServiceCenter,bit,NULL,bit,NOT NULL,NO,NULL,NULL,DF_Manufacturers_HasServiceCenter,((0)),NO,NULL
+dbo,Manufacturers,9,IsApproved,bit,NULL,bit,NOT NULL,NO,NULL,NULL,DF_Manufacturers_IsApproved,((0)),NO,NULL
+dbo,Manufacturers,10,IsActive,bit,NULL,bit,NOT NULL,NO,NULL,NULL,DF_Manufacturers_IsActive,((1)),NO,NULL
+dbo,Manufacturers,11,Notes,nvarchar,MAX,nvarchar(MAX),NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+dbo,Manufacturers,12,CreatedDateTime,datetime2,0,datetime2(0),NOT NULL,NO,NULL,NULL,DF_Manufacturers_CreatedDateTime,(sysutcdatetime()),NO,NULL
+dbo,Manufacturers,13,UpdatedDateTime,datetime2,0,datetime2(0),NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+dbo,Personnel,1,PersonnelId,int,NULL,int,NOT NULL,YES,1,1,NULL,NULL,NO,NULL
+dbo,Personnel,2,PersonnelCode,varchar,50,varchar(50),NOT NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+dbo,Personnel,3,FirstName,nvarchar,100,nvarchar(100),NOT NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+dbo,Personnel,4,LastName,nvarchar,100,nvarchar(100),NOT NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+dbo,Personnel,5,EmployeeNumber,varchar,50,varchar(50),NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+dbo,Personnel,6,EmployerName,nvarchar,200,nvarchar(200),NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+dbo,Personnel,7,DepartmentName,nvarchar,200,nvarchar(200),NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+dbo,Personnel,8,JobTitle,nvarchar,200,nvarchar(200),NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+dbo,Personnel,9,Email,varchar,320,varchar(320),NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+dbo,Personnel,10,Phone,varchar,50,varchar(50),NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+dbo,Personnel,11,IsActive,bit,NULL,bit,NOT NULL,NO,NULL,NULL,DF_Personnel_IsActive,((1)),NO,NULL
+dbo,Personnel,12,CreatedDateTime,datetime2,0,datetime2(0),NOT NULL,NO,NULL,NULL,DF_Personnel_CreatedDateTime,(sysutcdatetime()),NO,NULL
+dbo,Personnel,13,UpdatedDateTime,datetime2,0,datetime2(0),NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+dbo,ProcessUnits,1,UnitId,int,NULL,int,NOT NULL,YES,1,1,NULL,NULL,NO,NULL
+dbo,ProcessUnits,2,SiteId,int,NULL,int,NOT NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+dbo,ProcessUnits,3,UnitCode,varchar,50,varchar(50),NOT NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+dbo,ProcessUnits,4,UnitName,nvarchar,200,nvarchar(200),NOT NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+dbo,ProcessUnits,5,Description,nvarchar,500,nvarchar(500),NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+dbo,ProcessUnits,6,ProcessDescription,nvarchar,MAX,nvarchar(MAX),NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+dbo,ProcessUnits,7,IsActive,bit,NULL,bit,NOT NULL,NO,NULL,NULL,DF_ProcessUnits_IsActive,((1)),NO,NULL
+dbo,ProcessUnits,8,CreatedDateTime,datetime2,0,datetime2(0),NOT NULL,NO,NULL,NULL,DF_ProcessUnits_CreatedDateTime,(sysutcdatetime()),NO,NULL
+dbo,ProcessUnits,9,UpdatedDateTime,datetime2,0,datetime2(0),NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+dbo,SpareParts,1,SparePartId,int,NULL,int,NOT NULL,YES,1,1,NULL,NULL,NO,NULL
+dbo,SpareParts,2,PartNumber,varchar,100,varchar(100),NOT NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+dbo,SpareParts,3,PartName,nvarchar,200,nvarchar(200),NOT NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+dbo,SpareParts,4,ManufacturerPartNumber,varchar,100,varchar(100),NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+dbo,SpareParts,5,ManufacturerId,int,NULL,int,NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+dbo,SpareParts,6,PartCategoryCode,varchar,50,varchar(50),NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+dbo,SpareParts,7,PartTypeCode,varchar,50,varchar(50),NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+dbo,SpareParts,8,Description,nvarchar,500,nvarchar(500),NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+dbo,SpareParts,9,Specification,nvarchar,MAX,nvarchar(MAX),NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+dbo,SpareParts,10,Material,nvarchar,200,nvarchar(200),NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+dbo,SpareParts,11,StockUnitOfMeasureId,int,NULL,int,NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+dbo,SpareParts,12,IsCritical,bit,NULL,bit,NOT NULL,NO,NULL,NULL,DF_SpareParts_IsCritical,((0)),NO,NULL
+dbo,SpareParts,13,IsRepairable,bit,NULL,bit,NOT NULL,NO,NULL,NULL,DF_SpareParts_IsRepairable,((0)),NO,NULL
+dbo,SpareParts,14,IsActive,bit,NULL,bit,NOT NULL,NO,NULL,NULL,DF_SpareParts_IsActive,((1)),NO,NULL
+dbo,SpareParts,15,Notes,nvarchar,MAX,nvarchar(MAX),NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+dbo,SpareParts,16,CreatedDateTime,datetime2,0,datetime2(0),NOT NULL,NO,NULL,NULL,DF_SpareParts_CreatedDateTime,(sysutcdatetime()),NO,NULL
+dbo,SpareParts,17,UpdatedDateTime,datetime2,0,datetime2(0),NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+dbo,SubSystems,1,SubSystemId,int,NULL,int,NOT NULL,YES,1,1,NULL,NULL,NO,NULL
+dbo,SubSystems,2,UnitId,int,NULL,int,NOT NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+dbo,SubSystems,3,SubSystemCode,varchar,50,varchar(50),NOT NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+dbo,SubSystems,4,SubSystemName,nvarchar,200,nvarchar(200),NOT NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+dbo,SubSystems,5,Description,nvarchar,500,nvarchar(500),NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+dbo,SubSystems,6,IsActive,bit,NULL,bit,NOT NULL,NO,NULL,NULL,DF_SubSystems_IsActive,((1)),NO,NULL
+dbo,SubSystems,7,CreatedDateTime,datetime2,0,datetime2(0),NOT NULL,NO,NULL,NULL,DF_SubSystems_CreatedDateTime,(sysutcdatetime()),NO,NULL
+dbo,SubSystems,8,UpdatedDateTime,datetime2,0,datetime2(0),NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+dbo,TripsInterlocks,1,TripId,int,NULL,int,NOT NULL,YES,1,1,NULL,NULL,NO,NULL
+dbo,TripsInterlocks,2,TripCode,varchar,100,varchar(100),NOT NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+dbo,TripsInterlocks,3,TripName,nvarchar,200,nvarchar(200),NOT NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+dbo,TripsInterlocks,4,TripTypeCode,varchar,50,varchar(50),NOT NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+dbo,TripsInterlocks,5,TripCategoryCode,varchar,50,varchar(50),NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+dbo,TripsInterlocks,6,ProcessUnitId,int,NULL,int,NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+dbo,TripsInterlocks,7,Description,nvarchar,1000,nvarchar(1000),NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+dbo,TripsInterlocks,8,CauseDescription,nvarchar,2000,nvarchar(2000),NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+dbo,TripsInterlocks,9,ActionDescription,nvarchar,2000,nvarchar(2000),NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+dbo,TripsInterlocks,10,LogicDescription,nvarchar,2000,nvarchar(2000),NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+dbo,TripsInterlocks,11,ResetTypeCode,varchar,50,varchar(50),NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+dbo,TripsInterlocks,12,IsActive,bit,NULL,bit,NOT NULL,NO,NULL,NULL,DF_TripsInterlocks_IsActive,((1)),NO,NULL
+dbo,TripsInterlocks,13,Notes,nvarchar,2000,nvarchar(2000),NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+dbo,TripsInterlocks,14,CreatedDateTime,datetime2,0,datetime2(0),NOT NULL,NO,NULL,NULL,DF_TripsInterlocks_CreatedDateTime,(sysutcdatetime()),NO,NULL
+dbo,TripsInterlocks,15,CreatedBy,int,NULL,int,NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+dbo,TripsInterlocks,16,UpdatedDateTime,datetime2,0,datetime2(0),NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+dbo,TripsInterlocks,17,UpdatedBy,int,NULL,int,NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+event,CalibrationRecords,1,CalibrationId,int,NULL,int,NOT NULL,YES,1,1,NULL,NULL,NO,NULL
+event,CalibrationRecords,2,InstrumentId,int,NULL,int,NOT NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+event,CalibrationRecords,3,CalibrationDate,datetime2,0,datetime2(0),NOT NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+event,CalibrationRecords,4,CalibrationTypeCode,varchar,50,varchar(50),NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+event,CalibrationRecords,5,CalibrationStatusCode,varchar,50,varchar(50),NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+event,CalibrationRecords,6,WorkOrderNumber,varchar,100,varchar(100),NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+event,CalibrationRecords,7,PerformedByPersonnelId,int,NULL,int,NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+event,CalibrationRecords,8,ApprovedByPersonnelId,int,NULL,int,NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+event,CalibrationRecords,9,ReferenceEquipmentId,int,NULL,int,NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+event,CalibrationRecords,10,AsFoundConditionCode,varchar,50,varchar(50),NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+event,CalibrationRecords,11,AsLeftConditionCode,varchar,50,varchar(50),NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+event,CalibrationRecords,12,ResultCode,varchar,50,varchar(50),NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+event,CalibrationRecords,13,Remarks,nvarchar,MAX,nvarchar(MAX),NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+event,CalibrationRecords,14,NextCalibrationDate,date,NULL,date,NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+event,CalibrationRecords,15,CreatedDateTime,datetime2,0,datetime2(0),NOT NULL,NO,NULL,NULL,DF_CalibrationRecords_CreatedDateTime,(sysutcdatetime()),NO,NULL
+event,CalibrationRecords,16,UpdatedDateTime,datetime2,0,datetime2(0),NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+event,CalibrationTestPoints,1,CalibrationTestPointId,int,NULL,int,NOT NULL,YES,1,1,NULL,NULL,NO,NULL
+event,CalibrationTestPoints,2,CalibrationId,int,NULL,int,NOT NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+event,CalibrationTestPoints,3,TestSequence,int,NULL,int,NOT NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+event,CalibrationTestPoints,4,AppliedValue,decimal,"20,8","decimal(20,8)",NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+event,CalibrationTestPoints,5,AppliedUnitOfMeasureId,int,NULL,int,NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+event,CalibrationTestPoints,6,AsFoundValue,decimal,"20,8","decimal(20,8)",NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+event,CalibrationTestPoints,7,AsFoundUnitOfMeasureId,int,NULL,int,NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+event,CalibrationTestPoints,8,AsLeftValue,decimal,"20,8","decimal(20,8)",NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+event,CalibrationTestPoints,9,AsLeftUnitOfMeasureId,int,NULL,int,NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+event,CalibrationTestPoints,10,ErrorValue,decimal,"20,8","decimal(20,8)",NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+event,CalibrationTestPoints,11,ErrorPercentage,decimal,"12,6","decimal(12,6)",NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+event,CalibrationTestPoints,12,AcceptanceLimit,decimal,"20,8","decimal(20,8)",NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+event,CalibrationTestPoints,13,AcceptanceUnitOfMeasureId,int,NULL,int,NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+event,CalibrationTestPoints,14,ResultCode,varchar,50,varchar(50),NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+event,CalibrationTestPoints,15,Remarks,nvarchar,1000,nvarchar(1000),NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+event,CalibrationTestPoints,16,CreatedDateTime,datetime2,0,datetime2(0),NOT NULL,NO,NULL,NULL,DF_CalibrationTestPoints_CreatedDateTime,(sysutcdatetime()),NO,NULL
+event,FailureRecords,1,FailureId,int,NULL,int,NOT NULL,YES,1,1,NULL,NULL,NO,NULL
+event,FailureRecords,2,InstrumentId,int,NULL,int,NOT NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+event,FailureRecords,3,FailureDate,datetime2,0,datetime2(0),NOT NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+event,FailureRecords,4,FailureTypeCode,varchar,50,varchar(50),NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+event,FailureRecords,5,FailureModeCode,varchar,50,varchar(50),NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+event,FailureRecords,6,FailureCauseCode,varchar,50,varchar(50),NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+event,FailureRecords,7,FailureSeverityCode,varchar,50,varchar(50),NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+event,FailureRecords,8,DetectionMethodCode,varchar,50,varchar(50),NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+event,FailureRecords,9,WorkOrderNumber,varchar,100,varchar(100),NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+event,FailureRecords,10,PreviousFailureId,int,NULL,int,NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+event,FailureRecords,11,FailureDescription,nvarchar,MAX,nvarchar(MAX),NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+event,FailureRecords,12,CorrectiveAction,nvarchar,MAX,nvarchar(MAX),NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+event,FailureRecords,13,FailureStartDateTime,datetime2,0,datetime2(0),NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+event,FailureRecords,14,FailureEndDateTime,datetime2,0,datetime2(0),NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+event,FailureRecords,15,DowntimeHours,decimal,"12,2","decimal(12,2)",NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+event,FailureRecords,16,RepairCost,decimal,"18,2","decimal(18,2)",NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+event,FailureRecords,17,CurrencyId,int,NULL,int,NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+event,FailureRecords,18,IsRepeatFailure,bit,NULL,bit,NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+event,FailureRecords,19,Remarks,nvarchar,MAX,nvarchar(MAX),NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+event,FailureRecords,20,CreatedDateTime,datetime2,0,datetime2(0),NOT NULL,NO,NULL,NULL,DF_FailureRecords_CreatedDateTime,(sysutcdatetime()),NO,NULL
+event,FailureRecords,21,UpdatedDateTime,datetime2,0,datetime2(0),NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+event,InstrumentBypassHistory,1,InstrumentBypassHistoryId,int,NULL,int,NOT NULL,YES,1,1,NULL,NULL,NO,NULL
+event,InstrumentBypassHistory,2,InstrumentId,int,NULL,int,NOT NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+event,InstrumentBypassHistory,3,BypassStartDateTime,datetime2,0,datetime2(0),NOT NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+event,InstrumentBypassHistory,4,BypassEndDateTime,datetime2,0,datetime2(0),NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+event,InstrumentBypassHistory,5,BypassReasonCode,varchar,50,varchar(50),NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+event,InstrumentBypassHistory,6,AuthorizedByPersonnelId,int,NULL,int,NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+event,InstrumentBypassHistory,7,WorkOrderNumber,varchar,100,varchar(100),NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+event,InstrumentBypassHistory,8,Remarks,nvarchar,MAX,nvarchar(MAX),NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+event,InstrumentBypassHistory,9,CreatedDateTime,datetime2,0,datetime2(0),NOT NULL,NO,NULL,NULL,DF_InstrumentBypassHistory_CreatedDateTime,(sysutcdatetime()),NO,NULL
+event,InstrumentBypassHistory,10,CreatedBy,int,NULL,int,NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+event,InstrumentLifecycle,1,InstrumentLifecycleId,int,NULL,int,NOT NULL,YES,1,1,NULL,NULL,NO,NULL
+event,InstrumentLifecycle,2,InstrumentId,int,NULL,int,NOT NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+event,InstrumentLifecycle,3,LifecycleStatusCode,varchar,30,varchar(30),NOT NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+event,InstrumentLifecycle,4,EffectiveFrom,datetime2,0,datetime2(0),NOT NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+event,InstrumentLifecycle,5,EffectiveTo,datetime2,0,datetime2(0),NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+event,InstrumentLifecycle,6,ReasonCode,varchar,50,varchar(50),NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+event,InstrumentLifecycle,7,WorkOrderNumber,varchar,100,varchar(100),NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+event,InstrumentLifecycle,8,Remarks,nvarchar,MAX,nvarchar(MAX),NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+event,InstrumentLifecycle,9,CreatedDateTime,datetime2,0,datetime2(0),NOT NULL,NO,NULL,NULL,DF_InstrumentLifecycle_CreatedDateTime,(sysutcdatetime()),NO,NULL
+event,InstrumentLifecycle,10,CreatedBy,int,NULL,int,NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+event,InstrumentOperationalStatusHistory,1,InstrumentOperationalStatusHistoryId,int,NULL,int,NOT NULL,YES,1,1,NULL,NULL,NO,NULL
+event,InstrumentOperationalStatusHistory,2,InstrumentId,int,NULL,int,NOT NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+event,InstrumentOperationalStatusHistory,3,StatusCode,varchar,30,varchar(30),NOT NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+event,InstrumentOperationalStatusHistory,4,EffectiveFrom,datetime2,0,datetime2(0),NOT NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+event,InstrumentOperationalStatusHistory,5,EffectiveTo,datetime2,0,datetime2(0),NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+event,InstrumentOperationalStatusHistory,6,ReasonCode,varchar,50,varchar(50),NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+event,InstrumentOperationalStatusHistory,7,FailureId,int,NULL,int,NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+event,InstrumentOperationalStatusHistory,8,MaintenanceId,int,NULL,int,NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+event,InstrumentOperationalStatusHistory,9,Remarks,nvarchar,MAX,nvarchar(MAX),NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+event,InstrumentOperationalStatusHistory,10,CreatedDateTime,datetime2,0,datetime2(0),NOT NULL,NO,NULL,NULL,DF_InstrumentOperationalStatusHistory_CreatedDateTime,(sysutcdatetime()),NO,NULL
+event,InstrumentOperationalStatusHistory,11,CreatedBy,int,NULL,int,NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+event,MaintenanceRecords,1,MaintenanceId,int,NULL,int,NOT NULL,YES,1,1,NULL,NULL,NO,NULL
+event,MaintenanceRecords,2,InstrumentId,int,NULL,int,NOT NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+event,MaintenanceRecords,3,MaintenanceDate,datetime2,0,datetime2(0),NOT NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+event,MaintenanceRecords,4,MaintenanceTypeCode,varchar,50,varchar(50),NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+event,MaintenanceRecords,5,MaintenanceCategoryCode,varchar,50,varchar(50),NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+event,MaintenanceRecords,6,MaintenanceStatusCode,varchar,50,varchar(50),NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+event,MaintenanceRecords,7,WorkOrderNumber,varchar,100,varchar(100),NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+event,MaintenanceRecords,8,PriorityCode,varchar,30,varchar(30),NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+event,MaintenanceRecords,9,FailureRelated,bit,NULL,bit,NOT NULL,NO,NULL,NULL,DF_MaintenanceRecords_FailureRelated,((0)),NO,NULL
+event,MaintenanceRecords,10,Description,nvarchar,MAX,nvarchar(MAX),NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+event,MaintenanceRecords,11,WorkPerformed,nvarchar,MAX,nvarchar(MAX),NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+event,MaintenanceRecords,12,Findings,nvarchar,MAX,nvarchar(MAX),NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+event,MaintenanceRecords,13,CompletionDate,datetime2,0,datetime2(0),NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+event,MaintenanceRecords,14,DowntimeHours,decimal,"12,2","decimal(12,2)",NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+event,MaintenanceRecords,15,LaborCost,decimal,"18,2","decimal(18,2)",NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+event,MaintenanceRecords,16,MaterialCost,decimal,"18,2","decimal(18,2)",NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+event,MaintenanceRecords,17,OtherCost,decimal,"18,2","decimal(18,2)",NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+event,MaintenanceRecords,18,CurrencyId,int,NULL,int,NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+event,MaintenanceRecords,19,Remarks,nvarchar,MAX,nvarchar(MAX),NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+event,MaintenanceRecords,20,CreatedDateTime,datetime2,0,datetime2(0),NOT NULL,NO,NULL,NULL,DF_MaintenanceRecords_CreatedDateTime,(sysutcdatetime()),NO,NULL
+event,MaintenanceRecords,21,UpdatedDateTime,datetime2,0,datetime2(0),NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+event,SparePartUsage,1,SparePartUsageId,bigint,NULL,bigint,NOT NULL,YES,1,1,NULL,NULL,NO,NULL
+event,SparePartUsage,2,InventoryTransactionId,bigint,NULL,bigint,NOT NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+event,SparePartUsage,3,SparePartId,int,NULL,int,NOT NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+event,SparePartUsage,4,InstrumentId,int,NULL,int,NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+event,SparePartUsage,5,MaintenanceId,int,NULL,int,NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+event,SparePartUsage,6,FailureId,int,NULL,int,NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+event,SparePartUsage,7,QuantityUsed,decimal,"18,4","decimal(18,4)",NOT NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+event,SparePartUsage,8,UnitOfMeasureId,int,NULL,int,NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+event,SparePartUsage,9,UnitCost,decimal,"18,2","decimal(18,2)",NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+event,SparePartUsage,10,CurrencyId,int,NULL,int,NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+event,SparePartUsage,11,UsageDateTime,datetime2,0,datetime2(0),NOT NULL,NO,NULL,NULL,DF_SparePartUsage_UsageDateTime,(sysutcdatetime()),NO,NULL
+event,SparePartUsage,12,PersonnelId,int,NULL,int,NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+event,SparePartUsage,13,UsageReasonCode,varchar,50,varchar(50),NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+event,SparePartUsage,14,Remarks,nvarchar,1000,nvarchar(1000),NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+event,SparePartUsage,15,CreatedDateTime,datetime2,0,datetime2(0),NOT NULL,NO,NULL,NULL,DF_SparePartUsage_CreatedDateTime,(sysutcdatetime()),NO,NULL
+event,SparePartUsage,16,UpdatedDateTime,datetime2,0,datetime2(0),NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+event,SparePartUsage,17,CreatedBy,int,NULL,int,NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+inv,InventoryTransactions,1,InventoryTransactionId,bigint,NULL,bigint,NOT NULL,YES,1,1,NULL,NULL,NO,NULL
+inv,InventoryTransactions,2,SparePartId,int,NULL,int,NOT NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+inv,InventoryTransactions,3,InventoryLocationId,int,NULL,int,NOT NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+inv,InventoryTransactions,4,TransactionTypeCode,varchar,50,varchar(50),NOT NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+inv,InventoryTransactions,5,TransactionDateTime,datetime2,0,datetime2(0),NOT NULL,NO,NULL,NULL,DF_InventoryTransactions_TransactionDateTime,(sysutcdatetime()),NO,NULL
+inv,InventoryTransactions,6,Quantity,decimal,"18,4","decimal(18,4)",NOT NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+inv,InventoryTransactions,7,UnitOfMeasureId,int,NULL,int,NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+inv,InventoryTransactions,8,UnitCost,decimal,"18,2","decimal(18,2)",NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+inv,InventoryTransactions,9,CurrencyId,int,NULL,int,NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+inv,InventoryTransactions,10,ReferenceDocumentNumber,varchar,100,varchar(100),NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+inv,InventoryTransactions,11,WorkOrderNumber,varchar,100,varchar(100),NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+inv,InventoryTransactions,12,MaintenanceId,int,NULL,int,NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+inv,InventoryTransactions,13,FailureId,int,NULL,int,NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+inv,InventoryTransactions,14,FromInventoryLocationId,int,NULL,int,NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+inv,InventoryTransactions,15,ToInventoryLocationId,int,NULL,int,NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+inv,InventoryTransactions,16,PersonnelId,int,NULL,int,NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+inv,InventoryTransactions,17,SupplierId,int,NULL,int,NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+inv,InventoryTransactions,18,BatchNumber,varchar,100,varchar(100),NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+inv,InventoryTransactions,19,SerialNumber,varchar,100,varchar(100),NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+inv,InventoryTransactions,20,ExpiryDate,date,NULL,date,NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+inv,InventoryTransactions,21,Remarks,nvarchar,1000,nvarchar(1000),NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+inv,InventoryTransactions,22,CreatedDateTime,datetime2,0,datetime2(0),NOT NULL,NO,NULL,NULL,DF_InventoryTransactions_CreatedDateTime,(sysutcdatetime()),NO,NULL
+inv,InventoryTransactions,23,CreatedBy,int,NULL,int,NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+rel,InstrumentRedundancy,1,InstrumentId1,int,NULL,int,NOT NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+rel,InstrumentRedundancy,2,InstrumentId2,int,NULL,int,NOT NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+rel,InstrumentRedundancy,3,RedundancyTypeCode,varchar,50,varchar(50),NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+rel,InstrumentRedundancy,4,RedundancyGroupCode,varchar,50,varchar(50),NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+rel,InstrumentRedundancy,5,IsActive,bit,NULL,bit,NOT NULL,NO,NULL,NULL,DF_InstrumentRedundancy_IsActive,((1)),NO,NULL
+rel,InstrumentRedundancy,6,CreatedDateTime,datetime2,0,datetime2(0),NOT NULL,NO,NULL,NULL,DF_InstrumentRedundancy_CreatedDateTime,(sysutcdatetime()),NO,NULL
+rel,InstrumentRedundancy,7,CreatedBy,int,NULL,int,NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+rel,SparePartInterchangeability,1,SparePartId1,int,NULL,int,NOT NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+rel,SparePartInterchangeability,2,SparePartId2,int,NULL,int,NOT NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+rel,SparePartInterchangeability,3,InterchangeabilityTypeCode,varchar,50,varchar(50),NOT NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+rel,SparePartInterchangeability,4,IsPreferred,bit,NULL,bit,NOT NULL,NO,NULL,NULL,DF_SparePartInterchangeability_IsPreferred,((0)),NO,NULL
+rel,SparePartInterchangeability,5,IsActive,bit,NULL,bit,NOT NULL,NO,NULL,NULL,DF_SparePartInterchangeability_IsActive,((1)),NO,NULL
+rel,SparePartInterchangeability,6,CreatedDateTime,datetime2,0,datetime2(0),NOT NULL,NO,NULL,NULL,DF_SparePartInterchangeability_CreatedDateTime,(sysutcdatetime()),NO,NULL
+rel,SparePartInterchangeability,7,CreatedBy,int,NULL,int,NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+rel,TripInstruments,1,TripId,int,NULL,int,NOT NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+rel,TripInstruments,2,InstrumentId,int,NULL,int,NOT NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+rel,TripInstruments,3,TripRoleCode,varchar,50,varchar(50),NOT NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+rel,TripInstruments,4,SequenceNumber,int,NULL,int,NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
+rel,TripInstruments,5,IsPrimary,bit,NULL,bit,NOT NULL,NO,NULL,NULL,DF_TripInstruments_IsPrimary,((0)),NO,NULL
+rel,TripInstruments,6,IsActive,bit,NULL,bit,NOT NULL,NO,NULL,NULL,DF_TripInstruments_IsActive,((1)),NO,NULL
+rel,TripInstruments,7,CreatedDateTime,datetime2,0,datetime2(0),NOT NULL,NO,NULL,NULL,DF_TripInstruments_CreatedDateTime,(sysutcdatetime()),NO,NULL
+rel,TripInstruments,8,CreatedBy,int,NULL,int,NULL,NO,NULL,NULL,NULL,NULL,NO,NULL
