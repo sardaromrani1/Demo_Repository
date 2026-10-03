@@ -1,0 +1,557 @@
+﻿FK_ControlSystems_Manufacturer,dbo,ControlSystems,dbo,Manufacturers,1,[VendorManufacturerId],PK_ControlSystems,1,CLUSTERED,1,1,0,0,1,[ControlSystemId],NOT_SUPPORTED
+FK_ControlSystems_Manufacturer,dbo,ControlSystems,dbo,Manufacturers,1,[VendorManufacturerId],UQ_ControlSystems_Name,2,NONCLUSTERED,1,0,1,0,1,[ControlSystemName],NOT_SUPPORTED
+FK_ControlSystems_Manufacturer,dbo,ControlSystems,dbo,Manufacturers,1,[VendorManufacturerId],UQ_ControlSystems_Code,3,NONCLUSTERED,1,0,1,0,1,[ControlSystemCode],NOT_SUPPORTED
+FK_Instruments_InstrumentType,dbo,Instruments,dbo,InstrumentTypes,1,[InstrumentTypeId],PK_Instruments,1,CLUSTERED,1,1,0,0,1,[InstrumentId],NOT_SUPPORTED
+FK_Instruments_InstrumentType,dbo,Instruments,dbo,InstrumentTypes,1,[InstrumentTypeId],UQ_Instruments_TagNumber,2,NONCLUSTERED,1,0,1,0,1,[TagNumber],NOT_SUPPORTED
+FK_Instruments_InstrumentType,dbo,Instruments,dbo,InstrumentTypes,1,[InstrumentTypeId],IX_FK_Instruments_SubSystemId_UnitId,3,NONCLUSTERED,0,0,0,0,2,"[SubSystemId], [UnitId]",NOT_SUPPORTED
+FK_Instruments_InstrumentType,dbo,Instruments,dbo,InstrumentTypes,1,[InstrumentTypeId],IX_FK_Instruments_InstrumentTypeId,4,NONCLUSTERED,0,0,0,0,1,[InstrumentTypeId],SUPPORTED
+FK_Instruments_InstrumentType,dbo,Instruments,dbo,InstrumentTypes,1,[InstrumentTypeId],IX_FK_Instruments_ManufacturerId,5,NONCLUSTERED,0,0,0,0,1,[ManufacturerId],NOT_SUPPORTED
+FK_Instruments_InstrumentType,dbo,Instruments,dbo,InstrumentTypes,1,[InstrumentTypeId],IX_FK_Instruments_MeasurementUnitId,6,NONCLUSTERED,0,0,0,0,1,[MeasurementUnitId],NOT_SUPPORTED
+FK_Instruments_InstrumentType,dbo,Instruments,dbo,InstrumentTypes,1,[InstrumentTypeId],IX_FK_Instruments_OutputUnitId,7,NONCLUSTERED,0,0,0,0,1,[OutputUnitId],NOT_SUPPORTED
+FK_Instruments_InstrumentType,dbo,Instruments,dbo,InstrumentTypes,1,[InstrumentTypeId],IX_FK_Instruments_UnitId,8,NONCLUSTERED,0,0,0,0,1,[UnitId],NOT_SUPPORTED
+FK_Instruments_Manufacturer,dbo,Instruments,dbo,Manufacturers,1,[ManufacturerId],PK_Instruments,1,CLUSTERED,1,1,0,0,1,[InstrumentId],NOT_SUPPORTED
+FK_Instruments_Manufacturer,dbo,Instruments,dbo,Manufacturers,1,[ManufacturerId],UQ_Instruments_TagNumber,2,NONCLUSTERED,1,0,1,0,1,[TagNumber],NOT_SUPPORTED
+FK_Instruments_Manufacturer,dbo,Instruments,dbo,Manufacturers,1,[ManufacturerId],IX_FK_Instruments_SubSystemId_UnitId,3,NONCLUSTERED,0,0,0,0,2,"[SubSystemId], [UnitId]",NOT_SUPPORTED
+FK_Instruments_Manufacturer,dbo,Instruments,dbo,Manufacturers,1,[ManufacturerId],IX_FK_Instruments_InstrumentTypeId,4,NONCLUSTERED,0,0,0,0,1,[InstrumentTypeId],NOT_SUPPORTED
+FK_Instruments_Manufacturer,dbo,Instruments,dbo,Manufacturers,1,[ManufacturerId],IX_FK_Instruments_ManufacturerId,5,NONCLUSTERED,0,0,0,0,1,[ManufacturerId],SUPPORTED
+FK_Instruments_Manufacturer,dbo,Instruments,dbo,Manufacturers,1,[ManufacturerId],IX_FK_Instruments_MeasurementUnitId,6,NONCLUSTERED,0,0,0,0,1,[MeasurementUnitId],NOT_SUPPORTED
+FK_Instruments_Manufacturer,dbo,Instruments,dbo,Manufacturers,1,[ManufacturerId],IX_FK_Instruments_OutputUnitId,7,NONCLUSTERED,0,0,0,0,1,[OutputUnitId],NOT_SUPPORTED
+FK_Instruments_Manufacturer,dbo,Instruments,dbo,Manufacturers,1,[ManufacturerId],IX_FK_Instruments_UnitId,8,NONCLUSTERED,0,0,0,0,1,[UnitId],NOT_SUPPORTED
+FK_Instruments_MeasurementUOM,dbo,Instruments,ref,UnitOfMeasure,1,[MeasurementUnitId],PK_Instruments,1,CLUSTERED,1,1,0,0,1,[InstrumentId],NOT_SUPPORTED
+FK_Instruments_MeasurementUOM,dbo,Instruments,ref,UnitOfMeasure,1,[MeasurementUnitId],UQ_Instruments_TagNumber,2,NONCLUSTERED,1,0,1,0,1,[TagNumber],NOT_SUPPORTED
+FK_Instruments_MeasurementUOM,dbo,Instruments,ref,UnitOfMeasure,1,[MeasurementUnitId],IX_FK_Instruments_SubSystemId_UnitId,3,NONCLUSTERED,0,0,0,0,2,"[SubSystemId], [UnitId]",NOT_SUPPORTED
+FK_Instruments_MeasurementUOM,dbo,Instruments,ref,UnitOfMeasure,1,[MeasurementUnitId],IX_FK_Instruments_InstrumentTypeId,4,NONCLUSTERED,0,0,0,0,1,[InstrumentTypeId],NOT_SUPPORTED
+FK_Instruments_MeasurementUOM,dbo,Instruments,ref,UnitOfMeasure,1,[MeasurementUnitId],IX_FK_Instruments_ManufacturerId,5,NONCLUSTERED,0,0,0,0,1,[ManufacturerId],NOT_SUPPORTED
+FK_Instruments_MeasurementUOM,dbo,Instruments,ref,UnitOfMeasure,1,[MeasurementUnitId],IX_FK_Instruments_MeasurementUnitId,6,NONCLUSTERED,0,0,0,0,1,[MeasurementUnitId],SUPPORTED
+FK_Instruments_MeasurementUOM,dbo,Instruments,ref,UnitOfMeasure,1,[MeasurementUnitId],IX_FK_Instruments_OutputUnitId,7,NONCLUSTERED,0,0,0,0,1,[OutputUnitId],NOT_SUPPORTED
+FK_Instruments_MeasurementUOM,dbo,Instruments,ref,UnitOfMeasure,1,[MeasurementUnitId],IX_FK_Instruments_UnitId,8,NONCLUSTERED,0,0,0,0,1,[UnitId],NOT_SUPPORTED
+FK_Instruments_OutputUOM,dbo,Instruments,ref,UnitOfMeasure,1,[OutputUnitId],PK_Instruments,1,CLUSTERED,1,1,0,0,1,[InstrumentId],NOT_SUPPORTED
+FK_Instruments_OutputUOM,dbo,Instruments,ref,UnitOfMeasure,1,[OutputUnitId],UQ_Instruments_TagNumber,2,NONCLUSTERED,1,0,1,0,1,[TagNumber],NOT_SUPPORTED
+FK_Instruments_OutputUOM,dbo,Instruments,ref,UnitOfMeasure,1,[OutputUnitId],IX_FK_Instruments_SubSystemId_UnitId,3,NONCLUSTERED,0,0,0,0,2,"[SubSystemId], [UnitId]",NOT_SUPPORTED
+FK_Instruments_OutputUOM,dbo,Instruments,ref,UnitOfMeasure,1,[OutputUnitId],IX_FK_Instruments_InstrumentTypeId,4,NONCLUSTERED,0,0,0,0,1,[InstrumentTypeId],NOT_SUPPORTED
+FK_Instruments_OutputUOM,dbo,Instruments,ref,UnitOfMeasure,1,[OutputUnitId],IX_FK_Instruments_ManufacturerId,5,NONCLUSTERED,0,0,0,0,1,[ManufacturerId],NOT_SUPPORTED
+FK_Instruments_OutputUOM,dbo,Instruments,ref,UnitOfMeasure,1,[OutputUnitId],IX_FK_Instruments_MeasurementUnitId,6,NONCLUSTERED,0,0,0,0,1,[MeasurementUnitId],NOT_SUPPORTED
+FK_Instruments_OutputUOM,dbo,Instruments,ref,UnitOfMeasure,1,[OutputUnitId],IX_FK_Instruments_OutputUnitId,7,NONCLUSTERED,0,0,0,0,1,[OutputUnitId],SUPPORTED
+FK_Instruments_OutputUOM,dbo,Instruments,ref,UnitOfMeasure,1,[OutputUnitId],IX_FK_Instruments_UnitId,8,NONCLUSTERED,0,0,0,0,1,[UnitId],NOT_SUPPORTED
+FK_Instruments_ProcessUnit,dbo,Instruments,dbo,ProcessUnits,1,[UnitId],PK_Instruments,1,CLUSTERED,1,1,0,0,1,[InstrumentId],NOT_SUPPORTED
+FK_Instruments_ProcessUnit,dbo,Instruments,dbo,ProcessUnits,1,[UnitId],UQ_Instruments_TagNumber,2,NONCLUSTERED,1,0,1,0,1,[TagNumber],NOT_SUPPORTED
+FK_Instruments_ProcessUnit,dbo,Instruments,dbo,ProcessUnits,1,[UnitId],IX_FK_Instruments_SubSystemId_UnitId,3,NONCLUSTERED,0,0,0,0,2,"[SubSystemId], [UnitId]",NOT_SUPPORTED
+FK_Instruments_ProcessUnit,dbo,Instruments,dbo,ProcessUnits,1,[UnitId],IX_FK_Instruments_InstrumentTypeId,4,NONCLUSTERED,0,0,0,0,1,[InstrumentTypeId],NOT_SUPPORTED
+FK_Instruments_ProcessUnit,dbo,Instruments,dbo,ProcessUnits,1,[UnitId],IX_FK_Instruments_ManufacturerId,5,NONCLUSTERED,0,0,0,0,1,[ManufacturerId],NOT_SUPPORTED
+FK_Instruments_ProcessUnit,dbo,Instruments,dbo,ProcessUnits,1,[UnitId],IX_FK_Instruments_MeasurementUnitId,6,NONCLUSTERED,0,0,0,0,1,[MeasurementUnitId],NOT_SUPPORTED
+FK_Instruments_ProcessUnit,dbo,Instruments,dbo,ProcessUnits,1,[UnitId],IX_FK_Instruments_OutputUnitId,7,NONCLUSTERED,0,0,0,0,1,[OutputUnitId],NOT_SUPPORTED
+FK_Instruments_ProcessUnit,dbo,Instruments,dbo,ProcessUnits,1,[UnitId],IX_FK_Instruments_UnitId,8,NONCLUSTERED,0,0,0,0,1,[UnitId],SUPPORTED
+FK_Instruments_SubSystem,dbo,Instruments,dbo,SubSystems,1,[SubSystemId],PK_Instruments,1,CLUSTERED,1,1,0,0,1,[InstrumentId],NOT_SUPPORTED
+FK_Instruments_SubSystem,dbo,Instruments,dbo,SubSystems,1,[SubSystemId],UQ_Instruments_TagNumber,2,NONCLUSTERED,1,0,1,0,1,[TagNumber],NOT_SUPPORTED
+FK_Instruments_SubSystem,dbo,Instruments,dbo,SubSystems,1,[SubSystemId],IX_FK_Instruments_SubSystemId_UnitId,3,NONCLUSTERED,0,0,0,0,2,"[SubSystemId], [UnitId]",SUPPORTED
+FK_Instruments_SubSystem,dbo,Instruments,dbo,SubSystems,1,[SubSystemId],IX_FK_Instruments_InstrumentTypeId,4,NONCLUSTERED,0,0,0,0,1,[InstrumentTypeId],NOT_SUPPORTED
+FK_Instruments_SubSystem,dbo,Instruments,dbo,SubSystems,1,[SubSystemId],IX_FK_Instruments_ManufacturerId,5,NONCLUSTERED,0,0,0,0,1,[ManufacturerId],NOT_SUPPORTED
+FK_Instruments_SubSystem,dbo,Instruments,dbo,SubSystems,1,[SubSystemId],IX_FK_Instruments_MeasurementUnitId,6,NONCLUSTERED,0,0,0,0,1,[MeasurementUnitId],NOT_SUPPORTED
+FK_Instruments_SubSystem,dbo,Instruments,dbo,SubSystems,1,[SubSystemId],IX_FK_Instruments_OutputUnitId,7,NONCLUSTERED,0,0,0,0,1,[OutputUnitId],NOT_SUPPORTED
+FK_Instruments_SubSystem,dbo,Instruments,dbo,SubSystems,1,[SubSystemId],IX_FK_Instruments_UnitId,8,NONCLUSTERED,0,0,0,0,1,[UnitId],NOT_SUPPORTED
+FK_Instruments_SubSystem_Unit,dbo,Instruments,dbo,SubSystems,2,"[SubSystemId], [UnitId]",PK_Instruments,1,CLUSTERED,1,1,0,0,1,[InstrumentId],INDEX_TOO_SHORT
+FK_Instruments_SubSystem_Unit,dbo,Instruments,dbo,SubSystems,2,"[SubSystemId], [UnitId]",UQ_Instruments_TagNumber,2,NONCLUSTERED,1,0,1,0,1,[TagNumber],INDEX_TOO_SHORT
+FK_Instruments_SubSystem_Unit,dbo,Instruments,dbo,SubSystems,2,"[SubSystemId], [UnitId]",IX_FK_Instruments_SubSystemId_UnitId,3,NONCLUSTERED,0,0,0,0,2,"[SubSystemId], [UnitId]",SUPPORTED
+FK_Instruments_SubSystem_Unit,dbo,Instruments,dbo,SubSystems,2,"[SubSystemId], [UnitId]",IX_FK_Instruments_InstrumentTypeId,4,NONCLUSTERED,0,0,0,0,1,[InstrumentTypeId],INDEX_TOO_SHORT
+FK_Instruments_SubSystem_Unit,dbo,Instruments,dbo,SubSystems,2,"[SubSystemId], [UnitId]",IX_FK_Instruments_ManufacturerId,5,NONCLUSTERED,0,0,0,0,1,[ManufacturerId],INDEX_TOO_SHORT
+FK_Instruments_SubSystem_Unit,dbo,Instruments,dbo,SubSystems,2,"[SubSystemId], [UnitId]",IX_FK_Instruments_MeasurementUnitId,6,NONCLUSTERED,0,0,0,0,1,[MeasurementUnitId],INDEX_TOO_SHORT
+FK_Instruments_SubSystem_Unit,dbo,Instruments,dbo,SubSystems,2,"[SubSystemId], [UnitId]",IX_FK_Instruments_OutputUnitId,7,NONCLUSTERED,0,0,0,0,1,[OutputUnitId],INDEX_TOO_SHORT
+FK_Instruments_SubSystem_Unit,dbo,Instruments,dbo,SubSystems,2,"[SubSystemId], [UnitId]",IX_FK_Instruments_UnitId,8,NONCLUSTERED,0,0,0,0,1,[UnitId],INDEX_TOO_SHORT
+FK_ProcessUnits_Site,dbo,ProcessUnits,dbo,Sites,1,[SiteId],PK_ProcessUnits,1,CLUSTERED,1,1,0,0,1,[UnitId],NOT_SUPPORTED
+FK_ProcessUnits_Site,dbo,ProcessUnits,dbo,Sites,1,[SiteId],UQ_ProcessUnits_Site_UnitCode,2,NONCLUSTERED,1,0,1,0,2,"[SiteId], [UnitCode]",SUPPORTED
+FK_ReferenceEquipment_AccuracyUOM,dbo,ReferenceEquipment,ref,UnitOfMeasure,1,[AccuracyUnitOfMeasureId],PK_ReferenceEquipment,1,CLUSTERED,1,1,0,0,1,[ReferenceEquipmentId],NOT_SUPPORTED
+FK_ReferenceEquipment_AccuracyUOM,dbo,ReferenceEquipment,ref,UnitOfMeasure,1,[AccuracyUnitOfMeasureId],UQ_ReferenceEquipment_Code,2,NONCLUSTERED,1,0,1,0,1,[EquipmentCode],NOT_SUPPORTED
+FK_ReferenceEquipment_Manufacturer,dbo,ReferenceEquipment,dbo,Manufacturers,1,[ManufacturerId],PK_ReferenceEquipment,1,CLUSTERED,1,1,0,0,1,[ReferenceEquipmentId],NOT_SUPPORTED
+FK_ReferenceEquipment_Manufacturer,dbo,ReferenceEquipment,dbo,Manufacturers,1,[ManufacturerId],UQ_ReferenceEquipment_Code,2,NONCLUSTERED,1,0,1,0,1,[EquipmentCode],NOT_SUPPORTED
+FK_SpareParts_Manufacturer,dbo,SpareParts,dbo,Manufacturers,1,[ManufacturerId],PK_SpareParts,1,CLUSTERED,1,1,0,0,1,[SparePartId],NOT_SUPPORTED
+FK_SpareParts_Manufacturer,dbo,SpareParts,dbo,Manufacturers,1,[ManufacturerId],UQ_SpareParts_PartNumber,2,NONCLUSTERED,1,0,1,0,1,[PartNumber],NOT_SUPPORTED
+FK_SpareParts_Manufacturer,dbo,SpareParts,dbo,Manufacturers,1,[ManufacturerId],IX_FK_SpareParts_ManufacturerId,3,NONCLUSTERED,0,0,0,0,1,[ManufacturerId],SUPPORTED
+FK_SpareParts_Manufacturer,dbo,SpareParts,dbo,Manufacturers,1,[ManufacturerId],IX_FK_SpareParts_StockUnitOfMeasureId,4,NONCLUSTERED,0,0,0,0,1,[StockUnitOfMeasureId],NOT_SUPPORTED
+FK_SpareParts_StockUOM,dbo,SpareParts,ref,UnitOfMeasure,1,[StockUnitOfMeasureId],PK_SpareParts,1,CLUSTERED,1,1,0,0,1,[SparePartId],NOT_SUPPORTED
+FK_SpareParts_StockUOM,dbo,SpareParts,ref,UnitOfMeasure,1,[StockUnitOfMeasureId],UQ_SpareParts_PartNumber,2,NONCLUSTERED,1,0,1,0,1,[PartNumber],NOT_SUPPORTED
+FK_SpareParts_StockUOM,dbo,SpareParts,ref,UnitOfMeasure,1,[StockUnitOfMeasureId],IX_FK_SpareParts_ManufacturerId,3,NONCLUSTERED,0,0,0,0,1,[ManufacturerId],NOT_SUPPORTED
+FK_SpareParts_StockUOM,dbo,SpareParts,ref,UnitOfMeasure,1,[StockUnitOfMeasureId],IX_FK_SpareParts_StockUnitOfMeasureId,4,NONCLUSTERED,0,0,0,0,1,[StockUnitOfMeasureId],SUPPORTED
+FK_SubSystems_ProcessUnit,dbo,SubSystems,dbo,ProcessUnits,1,[UnitId],PK_SubSystems,1,CLUSTERED,1,1,0,0,1,[SubSystemId],NOT_SUPPORTED
+FK_SubSystems_ProcessUnit,dbo,SubSystems,dbo,ProcessUnits,1,[UnitId],UQ_SubSystems_Unit_Code,2,NONCLUSTERED,1,0,1,0,2,"[UnitId], [SubSystemCode]",SUPPORTED
+FK_SubSystems_ProcessUnit,dbo,SubSystems,dbo,ProcessUnits,1,[UnitId],UQ_SubSystems_SubSystemId_UnitId,3,NONCLUSTERED,1,0,1,0,2,"[SubSystemId], [UnitId]",NOT_SUPPORTED
+FK_TripsInterlocks_ProcessUnit,dbo,TripsInterlocks,dbo,ProcessUnits,1,[ProcessUnitId],PK_TripsInterlocks,1,CLUSTERED,1,1,0,0,1,[TripId],NOT_SUPPORTED
+FK_TripsInterlocks_ProcessUnit,dbo,TripsInterlocks,dbo,ProcessUnits,1,[ProcessUnitId],UQ_TripsInterlocks_TripCode,2,NONCLUSTERED,1,0,1,0,1,[TripCode],NOT_SUPPORTED
+FK_TripsInterlocks_ProcessUnit,dbo,TripsInterlocks,dbo,ProcessUnits,1,[ProcessUnitId],IX_FK_TripsInterlocks_ProcessUnitId,3,NONCLUSTERED,0,0,0,0,1,[ProcessUnitId],SUPPORTED
+FK_CalibrationDocuments_Calibration,doc,CalibrationDocuments,event,CalibrationRecords,1,[CalibrationId],PK_CalibrationDocuments,1,CLUSTERED,1,1,0,0,1,[CalibrationDocumentId],NOT_SUPPORTED
+FK_CalibrationDocuments_Calibration,doc,CalibrationDocuments,event,CalibrationRecords,1,[CalibrationId],UQ_CalibrationDocuments_Calibration_Document,2,NONCLUSTERED,1,0,1,0,2,"[CalibrationId], [DocumentId]",SUPPORTED
+FK_CalibrationDocuments_CreatedBy,doc,CalibrationDocuments,dbo,Personnel,1,[CreatedBy],PK_CalibrationDocuments,1,CLUSTERED,1,1,0,0,1,[CalibrationDocumentId],NOT_SUPPORTED
+FK_CalibrationDocuments_CreatedBy,doc,CalibrationDocuments,dbo,Personnel,1,[CreatedBy],UQ_CalibrationDocuments_Calibration_Document,2,NONCLUSTERED,1,0,1,0,2,"[CalibrationId], [DocumentId]",NOT_SUPPORTED
+FK_CalibrationDocuments_Document,doc,CalibrationDocuments,doc,Documents,1,[DocumentId],PK_CalibrationDocuments,1,CLUSTERED,1,1,0,0,1,[CalibrationDocumentId],NOT_SUPPORTED
+FK_CalibrationDocuments_Document,doc,CalibrationDocuments,doc,Documents,1,[DocumentId],UQ_CalibrationDocuments_Calibration_Document,2,NONCLUSTERED,1,0,1,0,2,"[CalibrationId], [DocumentId]",NOT_SUPPORTED
+FK_CalibrationDocuments_UpdatedBy,doc,CalibrationDocuments,dbo,Personnel,1,[UpdatedBy],PK_CalibrationDocuments,1,CLUSTERED,1,1,0,0,1,[CalibrationDocumentId],NOT_SUPPORTED
+FK_CalibrationDocuments_UpdatedBy,doc,CalibrationDocuments,dbo,Personnel,1,[UpdatedBy],UQ_CalibrationDocuments_Calibration_Document,2,NONCLUSTERED,1,0,1,0,2,"[CalibrationId], [DocumentId]",NOT_SUPPORTED
+FK_DocumentFiles_Document,doc,DocumentFiles,doc,Documents,1,[DocumentId],PK_DocumentFiles,1,CLUSTERED,1,1,0,0,1,[DocumentFileId],NOT_SUPPORTED
+FK_DocumentFiles_UploadedBy,doc,DocumentFiles,dbo,Personnel,1,[UploadedBy],PK_DocumentFiles,1,CLUSTERED,1,1,0,0,1,[DocumentFileId],NOT_SUPPORTED
+FK_Documents_CreatedBy,doc,Documents,dbo,Personnel,1,[CreatedBy],PK_Documents,1,CLUSTERED,1,1,0,0,1,[DocumentId],NOT_SUPPORTED
+FK_Documents_CreatedBy,doc,Documents,dbo,Personnel,1,[CreatedBy],UQ_Documents_DocumentNumber,2,NONCLUSTERED,1,0,1,0,1,[DocumentNumber],NOT_SUPPORTED
+FK_Documents_UpdatedBy,doc,Documents,dbo,Personnel,1,[UpdatedBy],PK_Documents,1,CLUSTERED,1,1,0,0,1,[DocumentId],NOT_SUPPORTED
+FK_Documents_UpdatedBy,doc,Documents,dbo,Personnel,1,[UpdatedBy],UQ_Documents_DocumentNumber,2,NONCLUSTERED,1,0,1,0,1,[DocumentNumber],NOT_SUPPORTED
+FK_FailureDocuments_CreatedBy,doc,FailureDocuments,dbo,Personnel,1,[CreatedBy],PK_FailureDocuments,1,CLUSTERED,1,1,0,0,1,[FailureDocumentId],NOT_SUPPORTED
+FK_FailureDocuments_CreatedBy,doc,FailureDocuments,dbo,Personnel,1,[CreatedBy],UQ_FailureDocuments_Failure_Document,2,NONCLUSTERED,1,0,1,0,2,"[FailureId], [DocumentId]",NOT_SUPPORTED
+FK_FailureDocuments_Document,doc,FailureDocuments,doc,Documents,1,[DocumentId],PK_FailureDocuments,1,CLUSTERED,1,1,0,0,1,[FailureDocumentId],NOT_SUPPORTED
+FK_FailureDocuments_Document,doc,FailureDocuments,doc,Documents,1,[DocumentId],UQ_FailureDocuments_Failure_Document,2,NONCLUSTERED,1,0,1,0,2,"[FailureId], [DocumentId]",NOT_SUPPORTED
+FK_FailureDocuments_Failure,doc,FailureDocuments,event,FailureRecords,1,[FailureId],PK_FailureDocuments,1,CLUSTERED,1,1,0,0,1,[FailureDocumentId],NOT_SUPPORTED
+FK_FailureDocuments_Failure,doc,FailureDocuments,event,FailureRecords,1,[FailureId],UQ_FailureDocuments_Failure_Document,2,NONCLUSTERED,1,0,1,0,2,"[FailureId], [DocumentId]",SUPPORTED
+FK_FailureDocuments_UpdatedBy,doc,FailureDocuments,dbo,Personnel,1,[UpdatedBy],PK_FailureDocuments,1,CLUSTERED,1,1,0,0,1,[FailureDocumentId],NOT_SUPPORTED
+FK_FailureDocuments_UpdatedBy,doc,FailureDocuments,dbo,Personnel,1,[UpdatedBy],UQ_FailureDocuments_Failure_Document,2,NONCLUSTERED,1,0,1,0,2,"[FailureId], [DocumentId]",NOT_SUPPORTED
+FK_InstrumentDocuments_CreatedBy,doc,InstrumentDocuments,dbo,Personnel,1,[CreatedBy],PK_InstrumentDocuments,1,CLUSTERED,1,1,0,0,1,[InstrumentDocumentId],NOT_SUPPORTED
+FK_InstrumentDocuments_CreatedBy,doc,InstrumentDocuments,dbo,Personnel,1,[CreatedBy],UQ_InstrumentDocuments_Instrument_Document,2,NONCLUSTERED,1,0,1,0,2,"[InstrumentId], [DocumentId]",NOT_SUPPORTED
+FK_InstrumentDocuments_Document,doc,InstrumentDocuments,doc,Documents,1,[DocumentId],PK_InstrumentDocuments,1,CLUSTERED,1,1,0,0,1,[InstrumentDocumentId],NOT_SUPPORTED
+FK_InstrumentDocuments_Document,doc,InstrumentDocuments,doc,Documents,1,[DocumentId],UQ_InstrumentDocuments_Instrument_Document,2,NONCLUSTERED,1,0,1,0,2,"[InstrumentId], [DocumentId]",NOT_SUPPORTED
+FK_InstrumentDocuments_Instrument,doc,InstrumentDocuments,dbo,Instruments,1,[InstrumentId],PK_InstrumentDocuments,1,CLUSTERED,1,1,0,0,1,[InstrumentDocumentId],NOT_SUPPORTED
+FK_InstrumentDocuments_Instrument,doc,InstrumentDocuments,dbo,Instruments,1,[InstrumentId],UQ_InstrumentDocuments_Instrument_Document,2,NONCLUSTERED,1,0,1,0,2,"[InstrumentId], [DocumentId]",SUPPORTED
+FK_InstrumentDocuments_UpdatedBy,doc,InstrumentDocuments,dbo,Personnel,1,[UpdatedBy],PK_InstrumentDocuments,1,CLUSTERED,1,1,0,0,1,[InstrumentDocumentId],NOT_SUPPORTED
+FK_InstrumentDocuments_UpdatedBy,doc,InstrumentDocuments,dbo,Personnel,1,[UpdatedBy],UQ_InstrumentDocuments_Instrument_Document,2,NONCLUSTERED,1,0,1,0,2,"[InstrumentId], [DocumentId]",NOT_SUPPORTED
+FK_MaintenanceDocuments_CreatedBy,doc,MaintenanceDocuments,dbo,Personnel,1,[CreatedBy],PK_MaintenanceDocuments,1,CLUSTERED,1,1,0,0,1,[MaintenanceDocumentId],NOT_SUPPORTED
+FK_MaintenanceDocuments_CreatedBy,doc,MaintenanceDocuments,dbo,Personnel,1,[CreatedBy],UQ_MaintenanceDocuments_Maintenance_Document,2,NONCLUSTERED,1,0,1,0,2,"[MaintenanceId], [DocumentId]",NOT_SUPPORTED
+FK_MaintenanceDocuments_Document,doc,MaintenanceDocuments,doc,Documents,1,[DocumentId],PK_MaintenanceDocuments,1,CLUSTERED,1,1,0,0,1,[MaintenanceDocumentId],NOT_SUPPORTED
+FK_MaintenanceDocuments_Document,doc,MaintenanceDocuments,doc,Documents,1,[DocumentId],UQ_MaintenanceDocuments_Maintenance_Document,2,NONCLUSTERED,1,0,1,0,2,"[MaintenanceId], [DocumentId]",NOT_SUPPORTED
+FK_MaintenanceDocuments_Maintenance,doc,MaintenanceDocuments,event,MaintenanceRecords,1,[MaintenanceId],PK_MaintenanceDocuments,1,CLUSTERED,1,1,0,0,1,[MaintenanceDocumentId],NOT_SUPPORTED
+FK_MaintenanceDocuments_Maintenance,doc,MaintenanceDocuments,event,MaintenanceRecords,1,[MaintenanceId],UQ_MaintenanceDocuments_Maintenance_Document,2,NONCLUSTERED,1,0,1,0,2,"[MaintenanceId], [DocumentId]",SUPPORTED
+FK_MaintenanceDocuments_UpdatedBy,doc,MaintenanceDocuments,dbo,Personnel,1,[UpdatedBy],PK_MaintenanceDocuments,1,CLUSTERED,1,1,0,0,1,[MaintenanceDocumentId],NOT_SUPPORTED
+FK_MaintenanceDocuments_UpdatedBy,doc,MaintenanceDocuments,dbo,Personnel,1,[UpdatedBy],UQ_MaintenanceDocuments_Maintenance_Document,2,NONCLUSTERED,1,0,1,0,2,"[MaintenanceId], [DocumentId]",NOT_SUPPORTED
+FK_SparePartDocuments_CreatedBy,doc,SparePartDocuments,dbo,Personnel,1,[CreatedBy],PK_SparePartDocuments,1,CLUSTERED,1,1,0,0,1,[SparePartDocumentId],NOT_SUPPORTED
+FK_SparePartDocuments_CreatedBy,doc,SparePartDocuments,dbo,Personnel,1,[CreatedBy],UQ_SparePartDocuments_SparePart_Document,2,NONCLUSTERED,1,0,1,0,2,"[SparePartId], [DocumentId]",NOT_SUPPORTED
+FK_SparePartDocuments_Document,doc,SparePartDocuments,doc,Documents,1,[DocumentId],PK_SparePartDocuments,1,CLUSTERED,1,1,0,0,1,[SparePartDocumentId],NOT_SUPPORTED
+FK_SparePartDocuments_Document,doc,SparePartDocuments,doc,Documents,1,[DocumentId],UQ_SparePartDocuments_SparePart_Document,2,NONCLUSTERED,1,0,1,0,2,"[SparePartId], [DocumentId]",NOT_SUPPORTED
+FK_SparePartDocuments_SparePart,doc,SparePartDocuments,dbo,SpareParts,1,[SparePartId],PK_SparePartDocuments,1,CLUSTERED,1,1,0,0,1,[SparePartDocumentId],NOT_SUPPORTED
+FK_SparePartDocuments_SparePart,doc,SparePartDocuments,dbo,SpareParts,1,[SparePartId],UQ_SparePartDocuments_SparePart_Document,2,NONCLUSTERED,1,0,1,0,2,"[SparePartId], [DocumentId]",SUPPORTED
+FK_SparePartDocuments_UpdatedBy,doc,SparePartDocuments,dbo,Personnel,1,[UpdatedBy],PK_SparePartDocuments,1,CLUSTERED,1,1,0,0,1,[SparePartDocumentId],NOT_SUPPORTED
+FK_SparePartDocuments_UpdatedBy,doc,SparePartDocuments,dbo,Personnel,1,[UpdatedBy],UQ_SparePartDocuments_SparePart_Document,2,NONCLUSTERED,1,0,1,0,2,"[SparePartId], [DocumentId]",NOT_SUPPORTED
+FK_CalibrationRecords_ApprovedBy,event,CalibrationRecords,dbo,Personnel,1,[ApprovedByPersonnelId],PK_CalibrationRecords,1,CLUSTERED,1,1,0,0,1,[CalibrationId],NOT_SUPPORTED
+FK_CalibrationRecords_ApprovedBy,event,CalibrationRecords,dbo,Personnel,1,[ApprovedByPersonnelId],IX_FK_CalibrationRecords_ApprovedByPersonnelId,2,NONCLUSTERED,0,0,0,0,1,[ApprovedByPersonnelId],SUPPORTED
+FK_CalibrationRecords_ApprovedBy,event,CalibrationRecords,dbo,Personnel,1,[ApprovedByPersonnelId],IX_FK_CalibrationRecords_InstrumentId,3,NONCLUSTERED,0,0,0,0,1,[InstrumentId],NOT_SUPPORTED
+FK_CalibrationRecords_ApprovedBy,event,CalibrationRecords,dbo,Personnel,1,[ApprovedByPersonnelId],IX_FK_CalibrationRecords_PerformedByPersonnelId,4,NONCLUSTERED,0,0,0,0,1,[PerformedByPersonnelId],NOT_SUPPORTED
+FK_CalibrationRecords_ApprovedBy,event,CalibrationRecords,dbo,Personnel,1,[ApprovedByPersonnelId],IX_FK_CalibrationRecords_ReferenceEquipmentId,5,NONCLUSTERED,0,0,0,0,1,[ReferenceEquipmentId],NOT_SUPPORTED
+FK_CalibrationRecords_Instrument,event,CalibrationRecords,dbo,Instruments,1,[InstrumentId],PK_CalibrationRecords,1,CLUSTERED,1,1,0,0,1,[CalibrationId],NOT_SUPPORTED
+FK_CalibrationRecords_Instrument,event,CalibrationRecords,dbo,Instruments,1,[InstrumentId],IX_FK_CalibrationRecords_ApprovedByPersonnelId,2,NONCLUSTERED,0,0,0,0,1,[ApprovedByPersonnelId],NOT_SUPPORTED
+FK_CalibrationRecords_Instrument,event,CalibrationRecords,dbo,Instruments,1,[InstrumentId],IX_FK_CalibrationRecords_InstrumentId,3,NONCLUSTERED,0,0,0,0,1,[InstrumentId],SUPPORTED
+FK_CalibrationRecords_Instrument,event,CalibrationRecords,dbo,Instruments,1,[InstrumentId],IX_FK_CalibrationRecords_PerformedByPersonnelId,4,NONCLUSTERED,0,0,0,0,1,[PerformedByPersonnelId],NOT_SUPPORTED
+FK_CalibrationRecords_Instrument,event,CalibrationRecords,dbo,Instruments,1,[InstrumentId],IX_FK_CalibrationRecords_ReferenceEquipmentId,5,NONCLUSTERED,0,0,0,0,1,[ReferenceEquipmentId],NOT_SUPPORTED
+FK_CalibrationRecords_PerformedBy,event,CalibrationRecords,dbo,Personnel,1,[PerformedByPersonnelId],PK_CalibrationRecords,1,CLUSTERED,1,1,0,0,1,[CalibrationId],NOT_SUPPORTED
+FK_CalibrationRecords_PerformedBy,event,CalibrationRecords,dbo,Personnel,1,[PerformedByPersonnelId],IX_FK_CalibrationRecords_ApprovedByPersonnelId,2,NONCLUSTERED,0,0,0,0,1,[ApprovedByPersonnelId],NOT_SUPPORTED
+FK_CalibrationRecords_PerformedBy,event,CalibrationRecords,dbo,Personnel,1,[PerformedByPersonnelId],IX_FK_CalibrationRecords_InstrumentId,3,NONCLUSTERED,0,0,0,0,1,[InstrumentId],NOT_SUPPORTED
+FK_CalibrationRecords_PerformedBy,event,CalibrationRecords,dbo,Personnel,1,[PerformedByPersonnelId],IX_FK_CalibrationRecords_PerformedByPersonnelId,4,NONCLUSTERED,0,0,0,0,1,[PerformedByPersonnelId],SUPPORTED
+FK_CalibrationRecords_PerformedBy,event,CalibrationRecords,dbo,Personnel,1,[PerformedByPersonnelId],IX_FK_CalibrationRecords_ReferenceEquipmentId,5,NONCLUSTERED,0,0,0,0,1,[ReferenceEquipmentId],NOT_SUPPORTED
+FK_CalibrationRecords_ReferenceEquipment,event,CalibrationRecords,dbo,ReferenceEquipment,1,[ReferenceEquipmentId],PK_CalibrationRecords,1,CLUSTERED,1,1,0,0,1,[CalibrationId],NOT_SUPPORTED
+FK_CalibrationRecords_ReferenceEquipment,event,CalibrationRecords,dbo,ReferenceEquipment,1,[ReferenceEquipmentId],IX_FK_CalibrationRecords_ApprovedByPersonnelId,2,NONCLUSTERED,0,0,0,0,1,[ApprovedByPersonnelId],NOT_SUPPORTED
+FK_CalibrationRecords_ReferenceEquipment,event,CalibrationRecords,dbo,ReferenceEquipment,1,[ReferenceEquipmentId],IX_FK_CalibrationRecords_InstrumentId,3,NONCLUSTERED,0,0,0,0,1,[InstrumentId],NOT_SUPPORTED
+FK_CalibrationRecords_ReferenceEquipment,event,CalibrationRecords,dbo,ReferenceEquipment,1,[ReferenceEquipmentId],IX_FK_CalibrationRecords_PerformedByPersonnelId,4,NONCLUSTERED,0,0,0,0,1,[PerformedByPersonnelId],NOT_SUPPORTED
+FK_CalibrationRecords_ReferenceEquipment,event,CalibrationRecords,dbo,ReferenceEquipment,1,[ReferenceEquipmentId],IX_FK_CalibrationRecords_ReferenceEquipmentId,5,NONCLUSTERED,0,0,0,0,1,[ReferenceEquipmentId],SUPPORTED
+FK_CalibrationTestPoints_AcceptanceUOM,event,CalibrationTestPoints,ref,UnitOfMeasure,1,[AcceptanceUnitOfMeasureId],PK_CalibrationTestPoints,1,CLUSTERED,1,1,0,0,1,[CalibrationTestPointId],NOT_SUPPORTED
+FK_CalibrationTestPoints_AcceptanceUOM,event,CalibrationTestPoints,ref,UnitOfMeasure,1,[AcceptanceUnitOfMeasureId],UQ_CalibrationTestPoints_Sequence,2,NONCLUSTERED,1,0,1,0,2,"[CalibrationId], [TestSequence]",NOT_SUPPORTED
+FK_CalibrationTestPoints_AcceptanceUOM,event,CalibrationTestPoints,ref,UnitOfMeasure,1,[AcceptanceUnitOfMeasureId],IX_FK_CalibrationTestPoints_AcceptanceUnitOfMeasureId,3,NONCLUSTERED,0,0,0,0,1,[AcceptanceUnitOfMeasureId],SUPPORTED
+FK_CalibrationTestPoints_AcceptanceUOM,event,CalibrationTestPoints,ref,UnitOfMeasure,1,[AcceptanceUnitOfMeasureId],IX_FK_CalibrationTestPoints_AppliedUnitOfMeasureId,4,NONCLUSTERED,0,0,0,0,1,[AppliedUnitOfMeasureId],NOT_SUPPORTED
+FK_CalibrationTestPoints_AcceptanceUOM,event,CalibrationTestPoints,ref,UnitOfMeasure,1,[AcceptanceUnitOfMeasureId],IX_FK_CalibrationTestPoints_AsFoundUnitOfMeasureId,5,NONCLUSTERED,0,0,0,0,1,[AsFoundUnitOfMeasureId],NOT_SUPPORTED
+FK_CalibrationTestPoints_AcceptanceUOM,event,CalibrationTestPoints,ref,UnitOfMeasure,1,[AcceptanceUnitOfMeasureId],IX_FK_CalibrationTestPoints_AsLeftUnitOfMeasureId,6,NONCLUSTERED,0,0,0,0,1,[AsLeftUnitOfMeasureId],NOT_SUPPORTED
+FK_CalibrationTestPoints_AppliedUOM,event,CalibrationTestPoints,ref,UnitOfMeasure,1,[AppliedUnitOfMeasureId],PK_CalibrationTestPoints,1,CLUSTERED,1,1,0,0,1,[CalibrationTestPointId],NOT_SUPPORTED
+FK_CalibrationTestPoints_AppliedUOM,event,CalibrationTestPoints,ref,UnitOfMeasure,1,[AppliedUnitOfMeasureId],UQ_CalibrationTestPoints_Sequence,2,NONCLUSTERED,1,0,1,0,2,"[CalibrationId], [TestSequence]",NOT_SUPPORTED
+FK_CalibrationTestPoints_AppliedUOM,event,CalibrationTestPoints,ref,UnitOfMeasure,1,[AppliedUnitOfMeasureId],IX_FK_CalibrationTestPoints_AcceptanceUnitOfMeasureId,3,NONCLUSTERED,0,0,0,0,1,[AcceptanceUnitOfMeasureId],NOT_SUPPORTED
+FK_CalibrationTestPoints_AppliedUOM,event,CalibrationTestPoints,ref,UnitOfMeasure,1,[AppliedUnitOfMeasureId],IX_FK_CalibrationTestPoints_AppliedUnitOfMeasureId,4,NONCLUSTERED,0,0,0,0,1,[AppliedUnitOfMeasureId],SUPPORTED
+FK_CalibrationTestPoints_AppliedUOM,event,CalibrationTestPoints,ref,UnitOfMeasure,1,[AppliedUnitOfMeasureId],IX_FK_CalibrationTestPoints_AsFoundUnitOfMeasureId,5,NONCLUSTERED,0,0,0,0,1,[AsFoundUnitOfMeasureId],NOT_SUPPORTED
+FK_CalibrationTestPoints_AppliedUOM,event,CalibrationTestPoints,ref,UnitOfMeasure,1,[AppliedUnitOfMeasureId],IX_FK_CalibrationTestPoints_AsLeftUnitOfMeasureId,6,NONCLUSTERED,0,0,0,0,1,[AsLeftUnitOfMeasureId],NOT_SUPPORTED
+FK_CalibrationTestPoints_AsFoundUOM,event,CalibrationTestPoints,ref,UnitOfMeasure,1,[AsFoundUnitOfMeasureId],PK_CalibrationTestPoints,1,CLUSTERED,1,1,0,0,1,[CalibrationTestPointId],NOT_SUPPORTED
+FK_CalibrationTestPoints_AsFoundUOM,event,CalibrationTestPoints,ref,UnitOfMeasure,1,[AsFoundUnitOfMeasureId],UQ_CalibrationTestPoints_Sequence,2,NONCLUSTERED,1,0,1,0,2,"[CalibrationId], [TestSequence]",NOT_SUPPORTED
+FK_CalibrationTestPoints_AsFoundUOM,event,CalibrationTestPoints,ref,UnitOfMeasure,1,[AsFoundUnitOfMeasureId],IX_FK_CalibrationTestPoints_AcceptanceUnitOfMeasureId,3,NONCLUSTERED,0,0,0,0,1,[AcceptanceUnitOfMeasureId],NOT_SUPPORTED
+FK_CalibrationTestPoints_AsFoundUOM,event,CalibrationTestPoints,ref,UnitOfMeasure,1,[AsFoundUnitOfMeasureId],IX_FK_CalibrationTestPoints_AppliedUnitOfMeasureId,4,NONCLUSTERED,0,0,0,0,1,[AppliedUnitOfMeasureId],NOT_SUPPORTED
+FK_CalibrationTestPoints_AsFoundUOM,event,CalibrationTestPoints,ref,UnitOfMeasure,1,[AsFoundUnitOfMeasureId],IX_FK_CalibrationTestPoints_AsFoundUnitOfMeasureId,5,NONCLUSTERED,0,0,0,0,1,[AsFoundUnitOfMeasureId],SUPPORTED
+FK_CalibrationTestPoints_AsFoundUOM,event,CalibrationTestPoints,ref,UnitOfMeasure,1,[AsFoundUnitOfMeasureId],IX_FK_CalibrationTestPoints_AsLeftUnitOfMeasureId,6,NONCLUSTERED,0,0,0,0,1,[AsLeftUnitOfMeasureId],NOT_SUPPORTED
+FK_CalibrationTestPoints_AsLeftUOM,event,CalibrationTestPoints,ref,UnitOfMeasure,1,[AsLeftUnitOfMeasureId],PK_CalibrationTestPoints,1,CLUSTERED,1,1,0,0,1,[CalibrationTestPointId],NOT_SUPPORTED
+FK_CalibrationTestPoints_AsLeftUOM,event,CalibrationTestPoints,ref,UnitOfMeasure,1,[AsLeftUnitOfMeasureId],UQ_CalibrationTestPoints_Sequence,2,NONCLUSTERED,1,0,1,0,2,"[CalibrationId], [TestSequence]",NOT_SUPPORTED
+FK_CalibrationTestPoints_AsLeftUOM,event,CalibrationTestPoints,ref,UnitOfMeasure,1,[AsLeftUnitOfMeasureId],IX_FK_CalibrationTestPoints_AcceptanceUnitOfMeasureId,3,NONCLUSTERED,0,0,0,0,1,[AcceptanceUnitOfMeasureId],NOT_SUPPORTED
+FK_CalibrationTestPoints_AsLeftUOM,event,CalibrationTestPoints,ref,UnitOfMeasure,1,[AsLeftUnitOfMeasureId],IX_FK_CalibrationTestPoints_AppliedUnitOfMeasureId,4,NONCLUSTERED,0,0,0,0,1,[AppliedUnitOfMeasureId],NOT_SUPPORTED
+FK_CalibrationTestPoints_AsLeftUOM,event,CalibrationTestPoints,ref,UnitOfMeasure,1,[AsLeftUnitOfMeasureId],IX_FK_CalibrationTestPoints_AsFoundUnitOfMeasureId,5,NONCLUSTERED,0,0,0,0,1,[AsFoundUnitOfMeasureId],NOT_SUPPORTED
+FK_CalibrationTestPoints_AsLeftUOM,event,CalibrationTestPoints,ref,UnitOfMeasure,1,[AsLeftUnitOfMeasureId],IX_FK_CalibrationTestPoints_AsLeftUnitOfMeasureId,6,NONCLUSTERED,0,0,0,0,1,[AsLeftUnitOfMeasureId],SUPPORTED
+FK_CalibrationTestPoints_Calibration,event,CalibrationTestPoints,event,CalibrationRecords,1,[CalibrationId],PK_CalibrationTestPoints,1,CLUSTERED,1,1,0,0,1,[CalibrationTestPointId],NOT_SUPPORTED
+FK_CalibrationTestPoints_Calibration,event,CalibrationTestPoints,event,CalibrationRecords,1,[CalibrationId],UQ_CalibrationTestPoints_Sequence,2,NONCLUSTERED,1,0,1,0,2,"[CalibrationId], [TestSequence]",SUPPORTED
+FK_CalibrationTestPoints_Calibration,event,CalibrationTestPoints,event,CalibrationRecords,1,[CalibrationId],IX_FK_CalibrationTestPoints_AcceptanceUnitOfMeasureId,3,NONCLUSTERED,0,0,0,0,1,[AcceptanceUnitOfMeasureId],NOT_SUPPORTED
+FK_CalibrationTestPoints_Calibration,event,CalibrationTestPoints,event,CalibrationRecords,1,[CalibrationId],IX_FK_CalibrationTestPoints_AppliedUnitOfMeasureId,4,NONCLUSTERED,0,0,0,0,1,[AppliedUnitOfMeasureId],NOT_SUPPORTED
+FK_CalibrationTestPoints_Calibration,event,CalibrationTestPoints,event,CalibrationRecords,1,[CalibrationId],IX_FK_CalibrationTestPoints_AsFoundUnitOfMeasureId,5,NONCLUSTERED,0,0,0,0,1,[AsFoundUnitOfMeasureId],NOT_SUPPORTED
+FK_CalibrationTestPoints_Calibration,event,CalibrationTestPoints,event,CalibrationRecords,1,[CalibrationId],IX_FK_CalibrationTestPoints_AsLeftUnitOfMeasureId,6,NONCLUSTERED,0,0,0,0,1,[AsLeftUnitOfMeasureId],NOT_SUPPORTED
+FK_FailureRecords_Currency,event,FailureRecords,ref,Currency,1,[CurrencyId],PK_FailureRecords,1,CLUSTERED,1,1,0,0,1,[FailureId],NOT_SUPPORTED
+FK_FailureRecords_Currency,event,FailureRecords,ref,Currency,1,[CurrencyId],UQ_FailureRecords_FailureId_InstrumentId,2,NONCLUSTERED,1,0,1,0,2,"[FailureId], [InstrumentId]",NOT_SUPPORTED
+FK_FailureRecords_Currency,event,FailureRecords,ref,Currency,1,[CurrencyId],IX_FK_FailureRecords_CurrencyId,3,NONCLUSTERED,0,0,0,0,1,[CurrencyId],SUPPORTED
+FK_FailureRecords_Currency,event,FailureRecords,ref,Currency,1,[CurrencyId],IX_FK_FailureRecords_InstrumentId,4,NONCLUSTERED,0,0,0,0,1,[InstrumentId],NOT_SUPPORTED
+FK_FailureRecords_Currency,event,FailureRecords,ref,Currency,1,[CurrencyId],IX_FK_FailureRecords_PreviousFailureId_InstrumentId,5,NONCLUSTERED,0,0,0,0,2,"[PreviousFailureId], [InstrumentId]",NOT_SUPPORTED
+FK_FailureRecords_Instrument,event,FailureRecords,dbo,Instruments,1,[InstrumentId],PK_FailureRecords,1,CLUSTERED,1,1,0,0,1,[FailureId],NOT_SUPPORTED
+FK_FailureRecords_Instrument,event,FailureRecords,dbo,Instruments,1,[InstrumentId],UQ_FailureRecords_FailureId_InstrumentId,2,NONCLUSTERED,1,0,1,0,2,"[FailureId], [InstrumentId]",NOT_SUPPORTED
+FK_FailureRecords_Instrument,event,FailureRecords,dbo,Instruments,1,[InstrumentId],IX_FK_FailureRecords_CurrencyId,3,NONCLUSTERED,0,0,0,0,1,[CurrencyId],NOT_SUPPORTED
+FK_FailureRecords_Instrument,event,FailureRecords,dbo,Instruments,1,[InstrumentId],IX_FK_FailureRecords_InstrumentId,4,NONCLUSTERED,0,0,0,0,1,[InstrumentId],SUPPORTED
+FK_FailureRecords_Instrument,event,FailureRecords,dbo,Instruments,1,[InstrumentId],IX_FK_FailureRecords_PreviousFailureId_InstrumentId,5,NONCLUSTERED,0,0,0,0,2,"[PreviousFailureId], [InstrumentId]",NOT_SUPPORTED
+FK_FailureRecords_PreviousFailure,event,FailureRecords,event,FailureRecords,1,[PreviousFailureId],PK_FailureRecords,1,CLUSTERED,1,1,0,0,1,[FailureId],NOT_SUPPORTED
+FK_FailureRecords_PreviousFailure,event,FailureRecords,event,FailureRecords,1,[PreviousFailureId],UQ_FailureRecords_FailureId_InstrumentId,2,NONCLUSTERED,1,0,1,0,2,"[FailureId], [InstrumentId]",NOT_SUPPORTED
+FK_FailureRecords_PreviousFailure,event,FailureRecords,event,FailureRecords,1,[PreviousFailureId],IX_FK_FailureRecords_CurrencyId,3,NONCLUSTERED,0,0,0,0,1,[CurrencyId],NOT_SUPPORTED
+FK_FailureRecords_PreviousFailure,event,FailureRecords,event,FailureRecords,1,[PreviousFailureId],IX_FK_FailureRecords_InstrumentId,4,NONCLUSTERED,0,0,0,0,1,[InstrumentId],NOT_SUPPORTED
+FK_FailureRecords_PreviousFailure,event,FailureRecords,event,FailureRecords,1,[PreviousFailureId],IX_FK_FailureRecords_PreviousFailureId_InstrumentId,5,NONCLUSTERED,0,0,0,0,2,"[PreviousFailureId], [InstrumentId]",SUPPORTED
+FK_FailureRecords_PreviousFailure_Instrument,event,FailureRecords,event,FailureRecords,2,"[PreviousFailureId], [InstrumentId]",PK_FailureRecords,1,CLUSTERED,1,1,0,0,1,[FailureId],INDEX_TOO_SHORT
+FK_FailureRecords_PreviousFailure_Instrument,event,FailureRecords,event,FailureRecords,2,"[PreviousFailureId], [InstrumentId]",UQ_FailureRecords_FailureId_InstrumentId,2,NONCLUSTERED,1,0,1,0,2,"[FailureId], [InstrumentId]",NOT_SUPPORTED
+FK_FailureRecords_PreviousFailure_Instrument,event,FailureRecords,event,FailureRecords,2,"[PreviousFailureId], [InstrumentId]",IX_FK_FailureRecords_CurrencyId,3,NONCLUSTERED,0,0,0,0,1,[CurrencyId],INDEX_TOO_SHORT
+FK_FailureRecords_PreviousFailure_Instrument,event,FailureRecords,event,FailureRecords,2,"[PreviousFailureId], [InstrumentId]",IX_FK_FailureRecords_InstrumentId,4,NONCLUSTERED,0,0,0,0,1,[InstrumentId],INDEX_TOO_SHORT
+FK_FailureRecords_PreviousFailure_Instrument,event,FailureRecords,event,FailureRecords,2,"[PreviousFailureId], [InstrumentId]",IX_FK_FailureRecords_PreviousFailureId_InstrumentId,5,NONCLUSTERED,0,0,0,0,2,"[PreviousFailureId], [InstrumentId]",SUPPORTED
+FK_InstrumentBypassHistory_AuthorizedBy,event,InstrumentBypassHistory,dbo,Personnel,1,[AuthorizedByPersonnelId],PK_InstrumentBypassHistory,1,CLUSTERED,1,1,0,0,1,[InstrumentBypassHistoryId],NOT_SUPPORTED
+FK_InstrumentBypassHistory_AuthorizedBy,event,InstrumentBypassHistory,dbo,Personnel,1,[AuthorizedByPersonnelId],IX_FK_InstrumentBypassHistory_AuthorizedByPersonnelId,2,NONCLUSTERED,0,0,0,0,1,[AuthorizedByPersonnelId],SUPPORTED
+FK_InstrumentBypassHistory_AuthorizedBy,event,InstrumentBypassHistory,dbo,Personnel,1,[AuthorizedByPersonnelId],IX_FK_InstrumentBypassHistory_CreatedBy,3,NONCLUSTERED,0,0,0,0,1,[CreatedBy],NOT_SUPPORTED
+FK_InstrumentBypassHistory_AuthorizedBy,event,InstrumentBypassHistory,dbo,Personnel,1,[AuthorizedByPersonnelId],IX_FK_InstrumentBypassHistory_InstrumentId,4,NONCLUSTERED,0,0,0,0,1,[InstrumentId],NOT_SUPPORTED
+FK_InstrumentBypassHistory_AuthorizedBy,event,InstrumentBypassHistory,dbo,Personnel,1,[AuthorizedByPersonnelId],UX_InstrumentBypassHistory_OpenRecord,5,NONCLUSTERED,1,0,0,0,1,[InstrumentId],NOT_SUPPORTED
+FK_InstrumentBypassHistory_CreatedBy,event,InstrumentBypassHistory,dbo,Personnel,1,[CreatedBy],PK_InstrumentBypassHistory,1,CLUSTERED,1,1,0,0,1,[InstrumentBypassHistoryId],NOT_SUPPORTED
+FK_InstrumentBypassHistory_CreatedBy,event,InstrumentBypassHistory,dbo,Personnel,1,[CreatedBy],IX_FK_InstrumentBypassHistory_AuthorizedByPersonnelId,2,NONCLUSTERED,0,0,0,0,1,[AuthorizedByPersonnelId],NOT_SUPPORTED
+FK_InstrumentBypassHistory_CreatedBy,event,InstrumentBypassHistory,dbo,Personnel,1,[CreatedBy],IX_FK_InstrumentBypassHistory_CreatedBy,3,NONCLUSTERED,0,0,0,0,1,[CreatedBy],SUPPORTED
+FK_InstrumentBypassHistory_CreatedBy,event,InstrumentBypassHistory,dbo,Personnel,1,[CreatedBy],IX_FK_InstrumentBypassHistory_InstrumentId,4,NONCLUSTERED,0,0,0,0,1,[InstrumentId],NOT_SUPPORTED
+FK_InstrumentBypassHistory_CreatedBy,event,InstrumentBypassHistory,dbo,Personnel,1,[CreatedBy],UX_InstrumentBypassHistory_OpenRecord,5,NONCLUSTERED,1,0,0,0,1,[InstrumentId],NOT_SUPPORTED
+FK_InstrumentBypassHistory_Instrument,event,InstrumentBypassHistory,dbo,Instruments,1,[InstrumentId],PK_InstrumentBypassHistory,1,CLUSTERED,1,1,0,0,1,[InstrumentBypassHistoryId],NOT_SUPPORTED
+FK_InstrumentBypassHistory_Instrument,event,InstrumentBypassHistory,dbo,Instruments,1,[InstrumentId],IX_FK_InstrumentBypassHistory_AuthorizedByPersonnelId,2,NONCLUSTERED,0,0,0,0,1,[AuthorizedByPersonnelId],NOT_SUPPORTED
+FK_InstrumentBypassHistory_Instrument,event,InstrumentBypassHistory,dbo,Instruments,1,[InstrumentId],IX_FK_InstrumentBypassHistory_CreatedBy,3,NONCLUSTERED,0,0,0,0,1,[CreatedBy],NOT_SUPPORTED
+FK_InstrumentBypassHistory_Instrument,event,InstrumentBypassHistory,dbo,Instruments,1,[InstrumentId],IX_FK_InstrumentBypassHistory_InstrumentId,4,NONCLUSTERED,0,0,0,0,1,[InstrumentId],SUPPORTED
+FK_InstrumentBypassHistory_Instrument,event,InstrumentBypassHistory,dbo,Instruments,1,[InstrumentId],UX_InstrumentBypassHistory_OpenRecord,5,NONCLUSTERED,1,0,0,0,1,[InstrumentId],SUPPORTED
+FK_InstrumentLifecycle_CreatedBy,event,InstrumentLifecycle,dbo,Personnel,1,[CreatedBy],PK_InstrumentLifecycle,1,CLUSTERED,1,1,0,0,1,[InstrumentLifecycleId],NOT_SUPPORTED
+FK_InstrumentLifecycle_CreatedBy,event,InstrumentLifecycle,dbo,Personnel,1,[CreatedBy],IX_FK_InstrumentLifecycle_CreatedBy,2,NONCLUSTERED,0,0,0,0,1,[CreatedBy],SUPPORTED
+FK_InstrumentLifecycle_CreatedBy,event,InstrumentLifecycle,dbo,Personnel,1,[CreatedBy],IX_FK_InstrumentLifecycle_InstrumentId,3,NONCLUSTERED,0,0,0,0,1,[InstrumentId],NOT_SUPPORTED
+FK_InstrumentLifecycle_CreatedBy,event,InstrumentLifecycle,dbo,Personnel,1,[CreatedBy],IX_FK_InstrumentLifecycle_LifecycleStatusCode,4,NONCLUSTERED,0,0,0,0,1,[LifecycleStatusCode],NOT_SUPPORTED
+FK_InstrumentLifecycle_CreatedBy,event,InstrumentLifecycle,dbo,Personnel,1,[CreatedBy],UX_InstrumentLifecycle_OpenRecord,5,NONCLUSTERED,1,0,0,0,1,[InstrumentId],NOT_SUPPORTED
+FK_InstrumentLifecycle_Instrument,event,InstrumentLifecycle,dbo,Instruments,1,[InstrumentId],PK_InstrumentLifecycle,1,CLUSTERED,1,1,0,0,1,[InstrumentLifecycleId],NOT_SUPPORTED
+FK_InstrumentLifecycle_Instrument,event,InstrumentLifecycle,dbo,Instruments,1,[InstrumentId],IX_FK_InstrumentLifecycle_CreatedBy,2,NONCLUSTERED,0,0,0,0,1,[CreatedBy],NOT_SUPPORTED
+FK_InstrumentLifecycle_Instrument,event,InstrumentLifecycle,dbo,Instruments,1,[InstrumentId],IX_FK_InstrumentLifecycle_InstrumentId,3,NONCLUSTERED,0,0,0,0,1,[InstrumentId],SUPPORTED
+FK_InstrumentLifecycle_Instrument,event,InstrumentLifecycle,dbo,Instruments,1,[InstrumentId],IX_FK_InstrumentLifecycle_LifecycleStatusCode,4,NONCLUSTERED,0,0,0,0,1,[LifecycleStatusCode],NOT_SUPPORTED
+FK_InstrumentLifecycle_Instrument,event,InstrumentLifecycle,dbo,Instruments,1,[InstrumentId],UX_InstrumentLifecycle_OpenRecord,5,NONCLUSTERED,1,0,0,0,1,[InstrumentId],SUPPORTED
+FK_InstrumentLifecycle_Status,event,InstrumentLifecycle,ref,LifecycleStatus,1,[LifecycleStatusCode],PK_InstrumentLifecycle,1,CLUSTERED,1,1,0,0,1,[InstrumentLifecycleId],NOT_SUPPORTED
+FK_InstrumentLifecycle_Status,event,InstrumentLifecycle,ref,LifecycleStatus,1,[LifecycleStatusCode],IX_FK_InstrumentLifecycle_CreatedBy,2,NONCLUSTERED,0,0,0,0,1,[CreatedBy],NOT_SUPPORTED
+FK_InstrumentLifecycle_Status,event,InstrumentLifecycle,ref,LifecycleStatus,1,[LifecycleStatusCode],IX_FK_InstrumentLifecycle_InstrumentId,3,NONCLUSTERED,0,0,0,0,1,[InstrumentId],NOT_SUPPORTED
+FK_InstrumentLifecycle_Status,event,InstrumentLifecycle,ref,LifecycleStatus,1,[LifecycleStatusCode],IX_FK_InstrumentLifecycle_LifecycleStatusCode,4,NONCLUSTERED,0,0,0,0,1,[LifecycleStatusCode],SUPPORTED
+FK_InstrumentLifecycle_Status,event,InstrumentLifecycle,ref,LifecycleStatus,1,[LifecycleStatusCode],UX_InstrumentLifecycle_OpenRecord,5,NONCLUSTERED,1,0,0,0,1,[InstrumentId],NOT_SUPPORTED
+FK_InstrumentOperationalStatusHistory_CreatedBy,event,InstrumentOperationalStatusHistory,dbo,Personnel,1,[CreatedBy],PK_InstrumentOperationalStatusHistory,1,CLUSTERED,1,1,0,0,1,[InstrumentOperationalStatusHistoryId],NOT_SUPPORTED
+FK_InstrumentOperationalStatusHistory_CreatedBy,event,InstrumentOperationalStatusHistory,dbo,Personnel,1,[CreatedBy],IX_FK_InstrumentOperationalStatusHistory_FailureId_InstrumentId,2,NONCLUSTERED,0,0,0,0,2,"[FailureId], [InstrumentId]",NOT_SUPPORTED
+FK_InstrumentOperationalStatusHistory_CreatedBy,event,InstrumentOperationalStatusHistory,dbo,Personnel,1,[CreatedBy],IX_FK_InstrumentOperationalStatusHistory_MaintenanceId_InstrumentId,3,NONCLUSTERED,0,0,0,0,2,"[MaintenanceId], [InstrumentId]",NOT_SUPPORTED
+FK_InstrumentOperationalStatusHistory_CreatedBy,event,InstrumentOperationalStatusHistory,dbo,Personnel,1,[CreatedBy],IX_FK_InstrumentOperationalStatusHistory_CreatedBy,4,NONCLUSTERED,0,0,0,0,1,[CreatedBy],SUPPORTED
+FK_InstrumentOperationalStatusHistory_CreatedBy,event,InstrumentOperationalStatusHistory,dbo,Personnel,1,[CreatedBy],IX_FK_InstrumentOperationalStatusHistory_InstrumentId,5,NONCLUSTERED,0,0,0,0,1,[InstrumentId],NOT_SUPPORTED
+FK_InstrumentOperationalStatusHistory_CreatedBy,event,InstrumentOperationalStatusHistory,dbo,Personnel,1,[CreatedBy],IX_FK_InstrumentOperationalStatusHistory_StatusCode,6,NONCLUSTERED,0,0,0,0,1,[StatusCode],NOT_SUPPORTED
+FK_InstrumentOperationalStatusHistory_CreatedBy,event,InstrumentOperationalStatusHistory,dbo,Personnel,1,[CreatedBy],UX_InstrumentOperationalStatusHistory_OpenRecord,7,NONCLUSTERED,1,0,0,0,1,[InstrumentId],NOT_SUPPORTED
+FK_InstrumentOperationalStatusHistory_Failure,event,InstrumentOperationalStatusHistory,event,FailureRecords,1,[FailureId],PK_InstrumentOperationalStatusHistory,1,CLUSTERED,1,1,0,0,1,[InstrumentOperationalStatusHistoryId],NOT_SUPPORTED
+FK_InstrumentOperationalStatusHistory_Failure,event,InstrumentOperationalStatusHistory,event,FailureRecords,1,[FailureId],IX_FK_InstrumentOperationalStatusHistory_FailureId_InstrumentId,2,NONCLUSTERED,0,0,0,0,2,"[FailureId], [InstrumentId]",SUPPORTED
+FK_InstrumentOperationalStatusHistory_Failure,event,InstrumentOperationalStatusHistory,event,FailureRecords,1,[FailureId],IX_FK_InstrumentOperationalStatusHistory_MaintenanceId_InstrumentId,3,NONCLUSTERED,0,0,0,0,2,"[MaintenanceId], [InstrumentId]",NOT_SUPPORTED
+FK_InstrumentOperationalStatusHistory_Failure,event,InstrumentOperationalStatusHistory,event,FailureRecords,1,[FailureId],IX_FK_InstrumentOperationalStatusHistory_CreatedBy,4,NONCLUSTERED,0,0,0,0,1,[CreatedBy],NOT_SUPPORTED
+FK_InstrumentOperationalStatusHistory_Failure,event,InstrumentOperationalStatusHistory,event,FailureRecords,1,[FailureId],IX_FK_InstrumentOperationalStatusHistory_InstrumentId,5,NONCLUSTERED,0,0,0,0,1,[InstrumentId],NOT_SUPPORTED
+FK_InstrumentOperationalStatusHistory_Failure,event,InstrumentOperationalStatusHistory,event,FailureRecords,1,[FailureId],IX_FK_InstrumentOperationalStatusHistory_StatusCode,6,NONCLUSTERED,0,0,0,0,1,[StatusCode],NOT_SUPPORTED
+FK_InstrumentOperationalStatusHistory_Failure,event,InstrumentOperationalStatusHistory,event,FailureRecords,1,[FailureId],UX_InstrumentOperationalStatusHistory_OpenRecord,7,NONCLUSTERED,1,0,0,0,1,[InstrumentId],NOT_SUPPORTED
+FK_InstrumentOperationalStatusHistory_Instrument,event,InstrumentOperationalStatusHistory,dbo,Instruments,1,[InstrumentId],PK_InstrumentOperationalStatusHistory,1,CLUSTERED,1,1,0,0,1,[InstrumentOperationalStatusHistoryId],NOT_SUPPORTED
+FK_InstrumentOperationalStatusHistory_Instrument,event,InstrumentOperationalStatusHistory,dbo,Instruments,1,[InstrumentId],IX_FK_InstrumentOperationalStatusHistory_FailureId_InstrumentId,2,NONCLUSTERED,0,0,0,0,2,"[FailureId], [InstrumentId]",NOT_SUPPORTED
+FK_InstrumentOperationalStatusHistory_Instrument,event,InstrumentOperationalStatusHistory,dbo,Instruments,1,[InstrumentId],IX_FK_InstrumentOperationalStatusHistory_MaintenanceId_InstrumentId,3,NONCLUSTERED,0,0,0,0,2,"[MaintenanceId], [InstrumentId]",NOT_SUPPORTED
+FK_InstrumentOperationalStatusHistory_Instrument,event,InstrumentOperationalStatusHistory,dbo,Instruments,1,[InstrumentId],IX_FK_InstrumentOperationalStatusHistory_CreatedBy,4,NONCLUSTERED,0,0,0,0,1,[CreatedBy],NOT_SUPPORTED
+FK_InstrumentOperationalStatusHistory_Instrument,event,InstrumentOperationalStatusHistory,dbo,Instruments,1,[InstrumentId],IX_FK_InstrumentOperationalStatusHistory_InstrumentId,5,NONCLUSTERED,0,0,0,0,1,[InstrumentId],SUPPORTED
+FK_InstrumentOperationalStatusHistory_Instrument,event,InstrumentOperationalStatusHistory,dbo,Instruments,1,[InstrumentId],IX_FK_InstrumentOperationalStatusHistory_StatusCode,6,NONCLUSTERED,0,0,0,0,1,[StatusCode],NOT_SUPPORTED
+FK_InstrumentOperationalStatusHistory_Instrument,event,InstrumentOperationalStatusHistory,dbo,Instruments,1,[InstrumentId],UX_InstrumentOperationalStatusHistory_OpenRecord,7,NONCLUSTERED,1,0,0,0,1,[InstrumentId],SUPPORTED
+FK_InstrumentOperationalStatusHistory_Maintenance,event,InstrumentOperationalStatusHistory,event,MaintenanceRecords,1,[MaintenanceId],PK_InstrumentOperationalStatusHistory,1,CLUSTERED,1,1,0,0,1,[InstrumentOperationalStatusHistoryId],NOT_SUPPORTED
+FK_InstrumentOperationalStatusHistory_Maintenance,event,InstrumentOperationalStatusHistory,event,MaintenanceRecords,1,[MaintenanceId],IX_FK_InstrumentOperationalStatusHistory_FailureId_InstrumentId,2,NONCLUSTERED,0,0,0,0,2,"[FailureId], [InstrumentId]",NOT_SUPPORTED
+FK_InstrumentOperationalStatusHistory_Maintenance,event,InstrumentOperationalStatusHistory,event,MaintenanceRecords,1,[MaintenanceId],IX_FK_InstrumentOperationalStatusHistory_MaintenanceId_InstrumentId,3,NONCLUSTERED,0,0,0,0,2,"[MaintenanceId], [InstrumentId]",SUPPORTED
+FK_InstrumentOperationalStatusHistory_Maintenance,event,InstrumentOperationalStatusHistory,event,MaintenanceRecords,1,[MaintenanceId],IX_FK_InstrumentOperationalStatusHistory_CreatedBy,4,NONCLUSTERED,0,0,0,0,1,[CreatedBy],NOT_SUPPORTED
+FK_InstrumentOperationalStatusHistory_Maintenance,event,InstrumentOperationalStatusHistory,event,MaintenanceRecords,1,[MaintenanceId],IX_FK_InstrumentOperationalStatusHistory_InstrumentId,5,NONCLUSTERED,0,0,0,0,1,[InstrumentId],NOT_SUPPORTED
+FK_InstrumentOperationalStatusHistory_Maintenance,event,InstrumentOperationalStatusHistory,event,MaintenanceRecords,1,[MaintenanceId],IX_FK_InstrumentOperationalStatusHistory_StatusCode,6,NONCLUSTERED,0,0,0,0,1,[StatusCode],NOT_SUPPORTED
+FK_InstrumentOperationalStatusHistory_Maintenance,event,InstrumentOperationalStatusHistory,event,MaintenanceRecords,1,[MaintenanceId],UX_InstrumentOperationalStatusHistory_OpenRecord,7,NONCLUSTERED,1,0,0,0,1,[InstrumentId],NOT_SUPPORTED
+FK_InstrumentOperationalStatusHistory_Status,event,InstrumentOperationalStatusHistory,ref,InstrumentStatus,1,[StatusCode],PK_InstrumentOperationalStatusHistory,1,CLUSTERED,1,1,0,0,1,[InstrumentOperationalStatusHistoryId],NOT_SUPPORTED
+FK_InstrumentOperationalStatusHistory_Status,event,InstrumentOperationalStatusHistory,ref,InstrumentStatus,1,[StatusCode],IX_FK_InstrumentOperationalStatusHistory_FailureId_InstrumentId,2,NONCLUSTERED,0,0,0,0,2,"[FailureId], [InstrumentId]",NOT_SUPPORTED
+FK_InstrumentOperationalStatusHistory_Status,event,InstrumentOperationalStatusHistory,ref,InstrumentStatus,1,[StatusCode],IX_FK_InstrumentOperationalStatusHistory_MaintenanceId_InstrumentId,3,NONCLUSTERED,0,0,0,0,2,"[MaintenanceId], [InstrumentId]",NOT_SUPPORTED
+FK_InstrumentOperationalStatusHistory_Status,event,InstrumentOperationalStatusHistory,ref,InstrumentStatus,1,[StatusCode],IX_FK_InstrumentOperationalStatusHistory_CreatedBy,4,NONCLUSTERED,0,0,0,0,1,[CreatedBy],NOT_SUPPORTED
+FK_InstrumentOperationalStatusHistory_Status,event,InstrumentOperationalStatusHistory,ref,InstrumentStatus,1,[StatusCode],IX_FK_InstrumentOperationalStatusHistory_InstrumentId,5,NONCLUSTERED,0,0,0,0,1,[InstrumentId],NOT_SUPPORTED
+FK_InstrumentOperationalStatusHistory_Status,event,InstrumentOperationalStatusHistory,ref,InstrumentStatus,1,[StatusCode],IX_FK_InstrumentOperationalStatusHistory_StatusCode,6,NONCLUSTERED,0,0,0,0,1,[StatusCode],SUPPORTED
+FK_InstrumentOperationalStatusHistory_Status,event,InstrumentOperationalStatusHistory,ref,InstrumentStatus,1,[StatusCode],UX_InstrumentOperationalStatusHistory_OpenRecord,7,NONCLUSTERED,1,0,0,0,1,[InstrumentId],NOT_SUPPORTED
+FK_StatusHistory_Failure_Instrument,event,InstrumentOperationalStatusHistory,event,FailureRecords,2,"[FailureId], [InstrumentId]",PK_InstrumentOperationalStatusHistory,1,CLUSTERED,1,1,0,0,1,[InstrumentOperationalStatusHistoryId],INDEX_TOO_SHORT
+FK_StatusHistory_Failure_Instrument,event,InstrumentOperationalStatusHistory,event,FailureRecords,2,"[FailureId], [InstrumentId]",IX_FK_InstrumentOperationalStatusHistory_FailureId_InstrumentId,2,NONCLUSTERED,0,0,0,0,2,"[FailureId], [InstrumentId]",SUPPORTED
+FK_StatusHistory_Failure_Instrument,event,InstrumentOperationalStatusHistory,event,FailureRecords,2,"[FailureId], [InstrumentId]",IX_FK_InstrumentOperationalStatusHistory_MaintenanceId_InstrumentId,3,NONCLUSTERED,0,0,0,0,2,"[MaintenanceId], [InstrumentId]",NOT_SUPPORTED
+FK_StatusHistory_Failure_Instrument,event,InstrumentOperationalStatusHistory,event,FailureRecords,2,"[FailureId], [InstrumentId]",IX_FK_InstrumentOperationalStatusHistory_CreatedBy,4,NONCLUSTERED,0,0,0,0,1,[CreatedBy],INDEX_TOO_SHORT
+FK_StatusHistory_Failure_Instrument,event,InstrumentOperationalStatusHistory,event,FailureRecords,2,"[FailureId], [InstrumentId]",IX_FK_InstrumentOperationalStatusHistory_InstrumentId,5,NONCLUSTERED,0,0,0,0,1,[InstrumentId],INDEX_TOO_SHORT
+FK_StatusHistory_Failure_Instrument,event,InstrumentOperationalStatusHistory,event,FailureRecords,2,"[FailureId], [InstrumentId]",IX_FK_InstrumentOperationalStatusHistory_StatusCode,6,NONCLUSTERED,0,0,0,0,1,[StatusCode],INDEX_TOO_SHORT
+FK_StatusHistory_Failure_Instrument,event,InstrumentOperationalStatusHistory,event,FailureRecords,2,"[FailureId], [InstrumentId]",UX_InstrumentOperationalStatusHistory_OpenRecord,7,NONCLUSTERED,1,0,0,0,1,[InstrumentId],INDEX_TOO_SHORT
+FK_StatusHistory_Maintenance_Instrument,event,InstrumentOperationalStatusHistory,event,MaintenanceRecords,2,"[MaintenanceId], [InstrumentId]",PK_InstrumentOperationalStatusHistory,1,CLUSTERED,1,1,0,0,1,[InstrumentOperationalStatusHistoryId],INDEX_TOO_SHORT
+FK_StatusHistory_Maintenance_Instrument,event,InstrumentOperationalStatusHistory,event,MaintenanceRecords,2,"[MaintenanceId], [InstrumentId]",IX_FK_InstrumentOperationalStatusHistory_FailureId_InstrumentId,2,NONCLUSTERED,0,0,0,0,2,"[FailureId], [InstrumentId]",NOT_SUPPORTED
+FK_StatusHistory_Maintenance_Instrument,event,InstrumentOperationalStatusHistory,event,MaintenanceRecords,2,"[MaintenanceId], [InstrumentId]",IX_FK_InstrumentOperationalStatusHistory_MaintenanceId_InstrumentId,3,NONCLUSTERED,0,0,0,0,2,"[MaintenanceId], [InstrumentId]",SUPPORTED
+FK_StatusHistory_Maintenance_Instrument,event,InstrumentOperationalStatusHistory,event,MaintenanceRecords,2,"[MaintenanceId], [InstrumentId]",IX_FK_InstrumentOperationalStatusHistory_CreatedBy,4,NONCLUSTERED,0,0,0,0,1,[CreatedBy],INDEX_TOO_SHORT
+FK_StatusHistory_Maintenance_Instrument,event,InstrumentOperationalStatusHistory,event,MaintenanceRecords,2,"[MaintenanceId], [InstrumentId]",IX_FK_InstrumentOperationalStatusHistory_InstrumentId,5,NONCLUSTERED,0,0,0,0,1,[InstrumentId],INDEX_TOO_SHORT
+FK_StatusHistory_Maintenance_Instrument,event,InstrumentOperationalStatusHistory,event,MaintenanceRecords,2,"[MaintenanceId], [InstrumentId]",IX_FK_InstrumentOperationalStatusHistory_StatusCode,6,NONCLUSTERED,0,0,0,0,1,[StatusCode],INDEX_TOO_SHORT
+FK_StatusHistory_Maintenance_Instrument,event,InstrumentOperationalStatusHistory,event,MaintenanceRecords,2,"[MaintenanceId], [InstrumentId]",UX_InstrumentOperationalStatusHistory_OpenRecord,7,NONCLUSTERED,1,0,0,0,1,[InstrumentId],INDEX_TOO_SHORT
+FK_MaintenanceLabor_Currency,event,MaintenanceLabor,ref,Currency,1,[CurrencyId],PK_MaintenanceLabor,1,CLUSTERED,1,1,0,0,1,[MaintenanceLaborId],NOT_SUPPORTED
+FK_MaintenanceLabor_Maintenance,event,MaintenanceLabor,event,MaintenanceRecords,1,[MaintenanceId],PK_MaintenanceLabor,1,CLUSTERED,1,1,0,0,1,[MaintenanceLaborId],NOT_SUPPORTED
+FK_MaintenanceLabor_Personnel,event,MaintenanceLabor,dbo,Personnel,1,[PersonnelId],PK_MaintenanceLabor,1,CLUSTERED,1,1,0,0,1,[MaintenanceLaborId],NOT_SUPPORTED
+FK_MaintenanceRecords_Currency,event,MaintenanceRecords,ref,Currency,1,[CurrencyId],PK_MaintenanceRecords,1,CLUSTERED,1,1,0,0,1,[MaintenanceId],NOT_SUPPORTED
+FK_MaintenanceRecords_Currency,event,MaintenanceRecords,ref,Currency,1,[CurrencyId],UQ_MaintenanceRecords_MaintenanceId_InstrumentId,2,NONCLUSTERED,1,0,1,0,2,"[MaintenanceId], [InstrumentId]",NOT_SUPPORTED
+FK_MaintenanceRecords_Currency,event,MaintenanceRecords,ref,Currency,1,[CurrencyId],IX_FK_MaintenanceRecords_CurrencyId,3,NONCLUSTERED,0,0,0,0,1,[CurrencyId],SUPPORTED
+FK_MaintenanceRecords_Currency,event,MaintenanceRecords,ref,Currency,1,[CurrencyId],IX_FK_MaintenanceRecords_InstrumentId,4,NONCLUSTERED,0,0,0,0,1,[InstrumentId],NOT_SUPPORTED
+FK_MaintenanceRecords_Instrument,event,MaintenanceRecords,dbo,Instruments,1,[InstrumentId],PK_MaintenanceRecords,1,CLUSTERED,1,1,0,0,1,[MaintenanceId],NOT_SUPPORTED
+FK_MaintenanceRecords_Instrument,event,MaintenanceRecords,dbo,Instruments,1,[InstrumentId],UQ_MaintenanceRecords_MaintenanceId_InstrumentId,2,NONCLUSTERED,1,0,1,0,2,"[MaintenanceId], [InstrumentId]",NOT_SUPPORTED
+FK_MaintenanceRecords_Instrument,event,MaintenanceRecords,dbo,Instruments,1,[InstrumentId],IX_FK_MaintenanceRecords_CurrencyId,3,NONCLUSTERED,0,0,0,0,1,[CurrencyId],NOT_SUPPORTED
+FK_MaintenanceRecords_Instrument,event,MaintenanceRecords,dbo,Instruments,1,[InstrumentId],IX_FK_MaintenanceRecords_InstrumentId,4,NONCLUSTERED,0,0,0,0,1,[InstrumentId],SUPPORTED
+FK_SparePartUsage_CreatedBy,event,SparePartUsage,dbo,Personnel,1,[CreatedBy],PK_SparePartUsage,1,CLUSTERED,1,1,0,0,1,[SparePartUsageId],NOT_SUPPORTED
+FK_SparePartUsage_CreatedBy,event,SparePartUsage,dbo,Personnel,1,[CreatedBy],IX_FK_SparePartUsage_FailureId_InstrumentId,2,NONCLUSTERED,0,0,0,0,2,"[FailureId], [InstrumentId]",NOT_SUPPORTED
+FK_SparePartUsage_CreatedBy,event,SparePartUsage,dbo,Personnel,1,[CreatedBy],IX_FK_SparePartUsage_InventoryTransactionId_SparePartId,3,NONCLUSTERED,0,0,0,0,2,"[InventoryTransactionId], [SparePartId]",NOT_SUPPORTED
+FK_SparePartUsage_CreatedBy,event,SparePartUsage,dbo,Personnel,1,[CreatedBy],IX_FK_SparePartUsage_MaintenanceId_InstrumentId,4,NONCLUSTERED,0,0,0,0,2,"[MaintenanceId], [InstrumentId]",NOT_SUPPORTED
+FK_SparePartUsage_CreatedBy,event,SparePartUsage,dbo,Personnel,1,[CreatedBy],IX_FK_SparePartUsage_CreatedBy,5,NONCLUSTERED,0,0,0,0,1,[CreatedBy],SUPPORTED
+FK_SparePartUsage_CreatedBy,event,SparePartUsage,dbo,Personnel,1,[CreatedBy],IX_FK_SparePartUsage_CurrencyId,6,NONCLUSTERED,0,0,0,0,1,[CurrencyId],NOT_SUPPORTED
+FK_SparePartUsage_CreatedBy,event,SparePartUsage,dbo,Personnel,1,[CreatedBy],IX_FK_SparePartUsage_InstrumentId,7,NONCLUSTERED,0,0,0,0,1,[InstrumentId],NOT_SUPPORTED
+FK_SparePartUsage_CreatedBy,event,SparePartUsage,dbo,Personnel,1,[CreatedBy],IX_FK_SparePartUsage_PersonnelId,8,NONCLUSTERED,0,0,0,0,1,[PersonnelId],NOT_SUPPORTED
+FK_SparePartUsage_CreatedBy,event,SparePartUsage,dbo,Personnel,1,[CreatedBy],IX_FK_SparePartUsage_SparePartId,9,NONCLUSTERED,0,0,0,0,1,[SparePartId],NOT_SUPPORTED
+FK_SparePartUsage_CreatedBy,event,SparePartUsage,dbo,Personnel,1,[CreatedBy],IX_FK_SparePartUsage_UnitOfMeasureId,10,NONCLUSTERED,0,0,0,0,1,[UnitOfMeasureId],NOT_SUPPORTED
+FK_SparePartUsage_Currency,event,SparePartUsage,ref,Currency,1,[CurrencyId],PK_SparePartUsage,1,CLUSTERED,1,1,0,0,1,[SparePartUsageId],NOT_SUPPORTED
+FK_SparePartUsage_Currency,event,SparePartUsage,ref,Currency,1,[CurrencyId],IX_FK_SparePartUsage_FailureId_InstrumentId,2,NONCLUSTERED,0,0,0,0,2,"[FailureId], [InstrumentId]",NOT_SUPPORTED
+FK_SparePartUsage_Currency,event,SparePartUsage,ref,Currency,1,[CurrencyId],IX_FK_SparePartUsage_InventoryTransactionId_SparePartId,3,NONCLUSTERED,0,0,0,0,2,"[InventoryTransactionId], [SparePartId]",NOT_SUPPORTED
+FK_SparePartUsage_Currency,event,SparePartUsage,ref,Currency,1,[CurrencyId],IX_FK_SparePartUsage_MaintenanceId_InstrumentId,4,NONCLUSTERED,0,0,0,0,2,"[MaintenanceId], [InstrumentId]",NOT_SUPPORTED
+FK_SparePartUsage_Currency,event,SparePartUsage,ref,Currency,1,[CurrencyId],IX_FK_SparePartUsage_CreatedBy,5,NONCLUSTERED,0,0,0,0,1,[CreatedBy],NOT_SUPPORTED
+FK_SparePartUsage_Currency,event,SparePartUsage,ref,Currency,1,[CurrencyId],IX_FK_SparePartUsage_CurrencyId,6,NONCLUSTERED,0,0,0,0,1,[CurrencyId],SUPPORTED
+FK_SparePartUsage_Currency,event,SparePartUsage,ref,Currency,1,[CurrencyId],IX_FK_SparePartUsage_InstrumentId,7,NONCLUSTERED,0,0,0,0,1,[InstrumentId],NOT_SUPPORTED
+FK_SparePartUsage_Currency,event,SparePartUsage,ref,Currency,1,[CurrencyId],IX_FK_SparePartUsage_PersonnelId,8,NONCLUSTERED,0,0,0,0,1,[PersonnelId],NOT_SUPPORTED
+FK_SparePartUsage_Currency,event,SparePartUsage,ref,Currency,1,[CurrencyId],IX_FK_SparePartUsage_SparePartId,9,NONCLUSTERED,0,0,0,0,1,[SparePartId],NOT_SUPPORTED
+FK_SparePartUsage_Currency,event,SparePartUsage,ref,Currency,1,[CurrencyId],IX_FK_SparePartUsage_UnitOfMeasureId,10,NONCLUSTERED,0,0,0,0,1,[UnitOfMeasureId],NOT_SUPPORTED
+FK_SparePartUsage_Failure,event,SparePartUsage,event,FailureRecords,1,[FailureId],PK_SparePartUsage,1,CLUSTERED,1,1,0,0,1,[SparePartUsageId],NOT_SUPPORTED
+FK_SparePartUsage_Failure,event,SparePartUsage,event,FailureRecords,1,[FailureId],IX_FK_SparePartUsage_FailureId_InstrumentId,2,NONCLUSTERED,0,0,0,0,2,"[FailureId], [InstrumentId]",SUPPORTED
+FK_SparePartUsage_Failure,event,SparePartUsage,event,FailureRecords,1,[FailureId],IX_FK_SparePartUsage_InventoryTransactionId_SparePartId,3,NONCLUSTERED,0,0,0,0,2,"[InventoryTransactionId], [SparePartId]",NOT_SUPPORTED
+FK_SparePartUsage_Failure,event,SparePartUsage,event,FailureRecords,1,[FailureId],IX_FK_SparePartUsage_MaintenanceId_InstrumentId,4,NONCLUSTERED,0,0,0,0,2,"[MaintenanceId], [InstrumentId]",NOT_SUPPORTED
+FK_SparePartUsage_Failure,event,SparePartUsage,event,FailureRecords,1,[FailureId],IX_FK_SparePartUsage_CreatedBy,5,NONCLUSTERED,0,0,0,0,1,[CreatedBy],NOT_SUPPORTED
+FK_SparePartUsage_Failure,event,SparePartUsage,event,FailureRecords,1,[FailureId],IX_FK_SparePartUsage_CurrencyId,6,NONCLUSTERED,0,0,0,0,1,[CurrencyId],NOT_SUPPORTED
+FK_SparePartUsage_Failure,event,SparePartUsage,event,FailureRecords,1,[FailureId],IX_FK_SparePartUsage_InstrumentId,7,NONCLUSTERED,0,0,0,0,1,[InstrumentId],NOT_SUPPORTED
+FK_SparePartUsage_Failure,event,SparePartUsage,event,FailureRecords,1,[FailureId],IX_FK_SparePartUsage_PersonnelId,8,NONCLUSTERED,0,0,0,0,1,[PersonnelId],NOT_SUPPORTED
+FK_SparePartUsage_Failure,event,SparePartUsage,event,FailureRecords,1,[FailureId],IX_FK_SparePartUsage_SparePartId,9,NONCLUSTERED,0,0,0,0,1,[SparePartId],NOT_SUPPORTED
+FK_SparePartUsage_Failure,event,SparePartUsage,event,FailureRecords,1,[FailureId],IX_FK_SparePartUsage_UnitOfMeasureId,10,NONCLUSTERED,0,0,0,0,1,[UnitOfMeasureId],NOT_SUPPORTED
+FK_SparePartUsage_Failure_Instrument,event,SparePartUsage,event,FailureRecords,2,"[FailureId], [InstrumentId]",PK_SparePartUsage,1,CLUSTERED,1,1,0,0,1,[SparePartUsageId],INDEX_TOO_SHORT
+FK_SparePartUsage_Failure_Instrument,event,SparePartUsage,event,FailureRecords,2,"[FailureId], [InstrumentId]",IX_FK_SparePartUsage_FailureId_InstrumentId,2,NONCLUSTERED,0,0,0,0,2,"[FailureId], [InstrumentId]",SUPPORTED
+FK_SparePartUsage_Failure_Instrument,event,SparePartUsage,event,FailureRecords,2,"[FailureId], [InstrumentId]",IX_FK_SparePartUsage_InventoryTransactionId_SparePartId,3,NONCLUSTERED,0,0,0,0,2,"[InventoryTransactionId], [SparePartId]",NOT_SUPPORTED
+FK_SparePartUsage_Failure_Instrument,event,SparePartUsage,event,FailureRecords,2,"[FailureId], [InstrumentId]",IX_FK_SparePartUsage_MaintenanceId_InstrumentId,4,NONCLUSTERED,0,0,0,0,2,"[MaintenanceId], [InstrumentId]",NOT_SUPPORTED
+FK_SparePartUsage_Failure_Instrument,event,SparePartUsage,event,FailureRecords,2,"[FailureId], [InstrumentId]",IX_FK_SparePartUsage_CreatedBy,5,NONCLUSTERED,0,0,0,0,1,[CreatedBy],INDEX_TOO_SHORT
+FK_SparePartUsage_Failure_Instrument,event,SparePartUsage,event,FailureRecords,2,"[FailureId], [InstrumentId]",IX_FK_SparePartUsage_CurrencyId,6,NONCLUSTERED,0,0,0,0,1,[CurrencyId],INDEX_TOO_SHORT
+FK_SparePartUsage_Failure_Instrument,event,SparePartUsage,event,FailureRecords,2,"[FailureId], [InstrumentId]",IX_FK_SparePartUsage_InstrumentId,7,NONCLUSTERED,0,0,0,0,1,[InstrumentId],INDEX_TOO_SHORT
+FK_SparePartUsage_Failure_Instrument,event,SparePartUsage,event,FailureRecords,2,"[FailureId], [InstrumentId]",IX_FK_SparePartUsage_PersonnelId,8,NONCLUSTERED,0,0,0,0,1,[PersonnelId],INDEX_TOO_SHORT
+FK_SparePartUsage_Failure_Instrument,event,SparePartUsage,event,FailureRecords,2,"[FailureId], [InstrumentId]",IX_FK_SparePartUsage_SparePartId,9,NONCLUSTERED,0,0,0,0,1,[SparePartId],INDEX_TOO_SHORT
+FK_SparePartUsage_Failure_Instrument,event,SparePartUsage,event,FailureRecords,2,"[FailureId], [InstrumentId]",IX_FK_SparePartUsage_UnitOfMeasureId,10,NONCLUSTERED,0,0,0,0,1,[UnitOfMeasureId],INDEX_TOO_SHORT
+FK_SparePartUsage_Instrument,event,SparePartUsage,dbo,Instruments,1,[InstrumentId],PK_SparePartUsage,1,CLUSTERED,1,1,0,0,1,[SparePartUsageId],NOT_SUPPORTED
+FK_SparePartUsage_Instrument,event,SparePartUsage,dbo,Instruments,1,[InstrumentId],IX_FK_SparePartUsage_FailureId_InstrumentId,2,NONCLUSTERED,0,0,0,0,2,"[FailureId], [InstrumentId]",NOT_SUPPORTED
+FK_SparePartUsage_Instrument,event,SparePartUsage,dbo,Instruments,1,[InstrumentId],IX_FK_SparePartUsage_InventoryTransactionId_SparePartId,3,NONCLUSTERED,0,0,0,0,2,"[InventoryTransactionId], [SparePartId]",NOT_SUPPORTED
+FK_SparePartUsage_Instrument,event,SparePartUsage,dbo,Instruments,1,[InstrumentId],IX_FK_SparePartUsage_MaintenanceId_InstrumentId,4,NONCLUSTERED,0,0,0,0,2,"[MaintenanceId], [InstrumentId]",NOT_SUPPORTED
+FK_SparePartUsage_Instrument,event,SparePartUsage,dbo,Instruments,1,[InstrumentId],IX_FK_SparePartUsage_CreatedBy,5,NONCLUSTERED,0,0,0,0,1,[CreatedBy],NOT_SUPPORTED
+FK_SparePartUsage_Instrument,event,SparePartUsage,dbo,Instruments,1,[InstrumentId],IX_FK_SparePartUsage_CurrencyId,6,NONCLUSTERED,0,0,0,0,1,[CurrencyId],NOT_SUPPORTED
+FK_SparePartUsage_Instrument,event,SparePartUsage,dbo,Instruments,1,[InstrumentId],IX_FK_SparePartUsage_InstrumentId,7,NONCLUSTERED,0,0,0,0,1,[InstrumentId],SUPPORTED
+FK_SparePartUsage_Instrument,event,SparePartUsage,dbo,Instruments,1,[InstrumentId],IX_FK_SparePartUsage_PersonnelId,8,NONCLUSTERED,0,0,0,0,1,[PersonnelId],NOT_SUPPORTED
+FK_SparePartUsage_Instrument,event,SparePartUsage,dbo,Instruments,1,[InstrumentId],IX_FK_SparePartUsage_SparePartId,9,NONCLUSTERED,0,0,0,0,1,[SparePartId],NOT_SUPPORTED
+FK_SparePartUsage_Instrument,event,SparePartUsage,dbo,Instruments,1,[InstrumentId],IX_FK_SparePartUsage_UnitOfMeasureId,10,NONCLUSTERED,0,0,0,0,1,[UnitOfMeasureId],NOT_SUPPORTED
+FK_SparePartUsage_InventoryTransaction,event,SparePartUsage,inv,InventoryTransactions,1,[InventoryTransactionId],PK_SparePartUsage,1,CLUSTERED,1,1,0,0,1,[SparePartUsageId],NOT_SUPPORTED
+FK_SparePartUsage_InventoryTransaction,event,SparePartUsage,inv,InventoryTransactions,1,[InventoryTransactionId],IX_FK_SparePartUsage_FailureId_InstrumentId,2,NONCLUSTERED,0,0,0,0,2,"[FailureId], [InstrumentId]",NOT_SUPPORTED
+FK_SparePartUsage_InventoryTransaction,event,SparePartUsage,inv,InventoryTransactions,1,[InventoryTransactionId],IX_FK_SparePartUsage_InventoryTransactionId_SparePartId,3,NONCLUSTERED,0,0,0,0,2,"[InventoryTransactionId], [SparePartId]",SUPPORTED
+FK_SparePartUsage_InventoryTransaction,event,SparePartUsage,inv,InventoryTransactions,1,[InventoryTransactionId],IX_FK_SparePartUsage_MaintenanceId_InstrumentId,4,NONCLUSTERED,0,0,0,0,2,"[MaintenanceId], [InstrumentId]",NOT_SUPPORTED
+FK_SparePartUsage_InventoryTransaction,event,SparePartUsage,inv,InventoryTransactions,1,[InventoryTransactionId],IX_FK_SparePartUsage_CreatedBy,5,NONCLUSTERED,0,0,0,0,1,[CreatedBy],NOT_SUPPORTED
+FK_SparePartUsage_InventoryTransaction,event,SparePartUsage,inv,InventoryTransactions,1,[InventoryTransactionId],IX_FK_SparePartUsage_CurrencyId,6,NONCLUSTERED,0,0,0,0,1,[CurrencyId],NOT_SUPPORTED
+FK_SparePartUsage_InventoryTransaction,event,SparePartUsage,inv,InventoryTransactions,1,[InventoryTransactionId],IX_FK_SparePartUsage_InstrumentId,7,NONCLUSTERED,0,0,0,0,1,[InstrumentId],NOT_SUPPORTED
+FK_SparePartUsage_InventoryTransaction,event,SparePartUsage,inv,InventoryTransactions,1,[InventoryTransactionId],IX_FK_SparePartUsage_PersonnelId,8,NONCLUSTERED,0,0,0,0,1,[PersonnelId],NOT_SUPPORTED
+FK_SparePartUsage_InventoryTransaction,event,SparePartUsage,inv,InventoryTransactions,1,[InventoryTransactionId],IX_FK_SparePartUsage_SparePartId,9,NONCLUSTERED,0,0,0,0,1,[SparePartId],NOT_SUPPORTED
+FK_SparePartUsage_InventoryTransaction,event,SparePartUsage,inv,InventoryTransactions,1,[InventoryTransactionId],IX_FK_SparePartUsage_UnitOfMeasureId,10,NONCLUSTERED,0,0,0,0,1,[UnitOfMeasureId],NOT_SUPPORTED
+FK_SparePartUsage_InventoryTransaction_SparePart,event,SparePartUsage,inv,InventoryTransactions,2,"[InventoryTransactionId], [SparePartId]",PK_SparePartUsage,1,CLUSTERED,1,1,0,0,1,[SparePartUsageId],INDEX_TOO_SHORT
+FK_SparePartUsage_InventoryTransaction_SparePart,event,SparePartUsage,inv,InventoryTransactions,2,"[InventoryTransactionId], [SparePartId]",IX_FK_SparePartUsage_FailureId_InstrumentId,2,NONCLUSTERED,0,0,0,0,2,"[FailureId], [InstrumentId]",NOT_SUPPORTED
+FK_SparePartUsage_InventoryTransaction_SparePart,event,SparePartUsage,inv,InventoryTransactions,2,"[InventoryTransactionId], [SparePartId]",IX_FK_SparePartUsage_InventoryTransactionId_SparePartId,3,NONCLUSTERED,0,0,0,0,2,"[InventoryTransactionId], [SparePartId]",SUPPORTED
+FK_SparePartUsage_InventoryTransaction_SparePart,event,SparePartUsage,inv,InventoryTransactions,2,"[InventoryTransactionId], [SparePartId]",IX_FK_SparePartUsage_MaintenanceId_InstrumentId,4,NONCLUSTERED,0,0,0,0,2,"[MaintenanceId], [InstrumentId]",NOT_SUPPORTED
+FK_SparePartUsage_InventoryTransaction_SparePart,event,SparePartUsage,inv,InventoryTransactions,2,"[InventoryTransactionId], [SparePartId]",IX_FK_SparePartUsage_CreatedBy,5,NONCLUSTERED,0,0,0,0,1,[CreatedBy],INDEX_TOO_SHORT
+FK_SparePartUsage_InventoryTransaction_SparePart,event,SparePartUsage,inv,InventoryTransactions,2,"[InventoryTransactionId], [SparePartId]",IX_FK_SparePartUsage_CurrencyId,6,NONCLUSTERED,0,0,0,0,1,[CurrencyId],INDEX_TOO_SHORT
+FK_SparePartUsage_InventoryTransaction_SparePart,event,SparePartUsage,inv,InventoryTransactions,2,"[InventoryTransactionId], [SparePartId]",IX_FK_SparePartUsage_InstrumentId,7,NONCLUSTERED,0,0,0,0,1,[InstrumentId],INDEX_TOO_SHORT
+FK_SparePartUsage_InventoryTransaction_SparePart,event,SparePartUsage,inv,InventoryTransactions,2,"[InventoryTransactionId], [SparePartId]",IX_FK_SparePartUsage_PersonnelId,8,NONCLUSTERED,0,0,0,0,1,[PersonnelId],INDEX_TOO_SHORT
+FK_SparePartUsage_InventoryTransaction_SparePart,event,SparePartUsage,inv,InventoryTransactions,2,"[InventoryTransactionId], [SparePartId]",IX_FK_SparePartUsage_SparePartId,9,NONCLUSTERED,0,0,0,0,1,[SparePartId],INDEX_TOO_SHORT
+FK_SparePartUsage_InventoryTransaction_SparePart,event,SparePartUsage,inv,InventoryTransactions,2,"[InventoryTransactionId], [SparePartId]",IX_FK_SparePartUsage_UnitOfMeasureId,10,NONCLUSTERED,0,0,0,0,1,[UnitOfMeasureId],INDEX_TOO_SHORT
+FK_SparePartUsage_Maintenance,event,SparePartUsage,event,MaintenanceRecords,1,[MaintenanceId],PK_SparePartUsage,1,CLUSTERED,1,1,0,0,1,[SparePartUsageId],NOT_SUPPORTED
+FK_SparePartUsage_Maintenance,event,SparePartUsage,event,MaintenanceRecords,1,[MaintenanceId],IX_FK_SparePartUsage_FailureId_InstrumentId,2,NONCLUSTERED,0,0,0,0,2,"[FailureId], [InstrumentId]",NOT_SUPPORTED
+FK_SparePartUsage_Maintenance,event,SparePartUsage,event,MaintenanceRecords,1,[MaintenanceId],IX_FK_SparePartUsage_InventoryTransactionId_SparePartId,3,NONCLUSTERED,0,0,0,0,2,"[InventoryTransactionId], [SparePartId]",NOT_SUPPORTED
+FK_SparePartUsage_Maintenance,event,SparePartUsage,event,MaintenanceRecords,1,[MaintenanceId],IX_FK_SparePartUsage_MaintenanceId_InstrumentId,4,NONCLUSTERED,0,0,0,0,2,"[MaintenanceId], [InstrumentId]",SUPPORTED
+FK_SparePartUsage_Maintenance,event,SparePartUsage,event,MaintenanceRecords,1,[MaintenanceId],IX_FK_SparePartUsage_CreatedBy,5,NONCLUSTERED,0,0,0,0,1,[CreatedBy],NOT_SUPPORTED
+FK_SparePartUsage_Maintenance,event,SparePartUsage,event,MaintenanceRecords,1,[MaintenanceId],IX_FK_SparePartUsage_CurrencyId,6,NONCLUSTERED,0,0,0,0,1,[CurrencyId],NOT_SUPPORTED
+FK_SparePartUsage_Maintenance,event,SparePartUsage,event,MaintenanceRecords,1,[MaintenanceId],IX_FK_SparePartUsage_InstrumentId,7,NONCLUSTERED,0,0,0,0,1,[InstrumentId],NOT_SUPPORTED
+FK_SparePartUsage_Maintenance,event,SparePartUsage,event,MaintenanceRecords,1,[MaintenanceId],IX_FK_SparePartUsage_PersonnelId,8,NONCLUSTERED,0,0,0,0,1,[PersonnelId],NOT_SUPPORTED
+FK_SparePartUsage_Maintenance,event,SparePartUsage,event,MaintenanceRecords,1,[MaintenanceId],IX_FK_SparePartUsage_SparePartId,9,NONCLUSTERED,0,0,0,0,1,[SparePartId],NOT_SUPPORTED
+FK_SparePartUsage_Maintenance,event,SparePartUsage,event,MaintenanceRecords,1,[MaintenanceId],IX_FK_SparePartUsage_UnitOfMeasureId,10,NONCLUSTERED,0,0,0,0,1,[UnitOfMeasureId],NOT_SUPPORTED
+FK_SparePartUsage_Maintenance_Instrument,event,SparePartUsage,event,MaintenanceRecords,2,"[MaintenanceId], [InstrumentId]",PK_SparePartUsage,1,CLUSTERED,1,1,0,0,1,[SparePartUsageId],INDEX_TOO_SHORT
+FK_SparePartUsage_Maintenance_Instrument,event,SparePartUsage,event,MaintenanceRecords,2,"[MaintenanceId], [InstrumentId]",IX_FK_SparePartUsage_FailureId_InstrumentId,2,NONCLUSTERED,0,0,0,0,2,"[FailureId], [InstrumentId]",NOT_SUPPORTED
+FK_SparePartUsage_Maintenance_Instrument,event,SparePartUsage,event,MaintenanceRecords,2,"[MaintenanceId], [InstrumentId]",IX_FK_SparePartUsage_InventoryTransactionId_SparePartId,3,NONCLUSTERED,0,0,0,0,2,"[InventoryTransactionId], [SparePartId]",NOT_SUPPORTED
+FK_SparePartUsage_Maintenance_Instrument,event,SparePartUsage,event,MaintenanceRecords,2,"[MaintenanceId], [InstrumentId]",IX_FK_SparePartUsage_MaintenanceId_InstrumentId,4,NONCLUSTERED,0,0,0,0,2,"[MaintenanceId], [InstrumentId]",SUPPORTED
+FK_SparePartUsage_Maintenance_Instrument,event,SparePartUsage,event,MaintenanceRecords,2,"[MaintenanceId], [InstrumentId]",IX_FK_SparePartUsage_CreatedBy,5,NONCLUSTERED,0,0,0,0,1,[CreatedBy],INDEX_TOO_SHORT
+FK_SparePartUsage_Maintenance_Instrument,event,SparePartUsage,event,MaintenanceRecords,2,"[MaintenanceId], [InstrumentId]",IX_FK_SparePartUsage_CurrencyId,6,NONCLUSTERED,0,0,0,0,1,[CurrencyId],INDEX_TOO_SHORT
+FK_SparePartUsage_Maintenance_Instrument,event,SparePartUsage,event,MaintenanceRecords,2,"[MaintenanceId], [InstrumentId]",IX_FK_SparePartUsage_InstrumentId,7,NONCLUSTERED,0,0,0,0,1,[InstrumentId],INDEX_TOO_SHORT
+FK_SparePartUsage_Maintenance_Instrument,event,SparePartUsage,event,MaintenanceRecords,2,"[MaintenanceId], [InstrumentId]",IX_FK_SparePartUsage_PersonnelId,8,NONCLUSTERED,0,0,0,0,1,[PersonnelId],INDEX_TOO_SHORT
+FK_SparePartUsage_Maintenance_Instrument,event,SparePartUsage,event,MaintenanceRecords,2,"[MaintenanceId], [InstrumentId]",IX_FK_SparePartUsage_SparePartId,9,NONCLUSTERED,0,0,0,0,1,[SparePartId],INDEX_TOO_SHORT
+FK_SparePartUsage_Maintenance_Instrument,event,SparePartUsage,event,MaintenanceRecords,2,"[MaintenanceId], [InstrumentId]",IX_FK_SparePartUsage_UnitOfMeasureId,10,NONCLUSTERED,0,0,0,0,1,[UnitOfMeasureId],INDEX_TOO_SHORT
+FK_SparePartUsage_Personnel,event,SparePartUsage,dbo,Personnel,1,[PersonnelId],PK_SparePartUsage,1,CLUSTERED,1,1,0,0,1,[SparePartUsageId],NOT_SUPPORTED
+FK_SparePartUsage_Personnel,event,SparePartUsage,dbo,Personnel,1,[PersonnelId],IX_FK_SparePartUsage_FailureId_InstrumentId,2,NONCLUSTERED,0,0,0,0,2,"[FailureId], [InstrumentId]",NOT_SUPPORTED
+FK_SparePartUsage_Personnel,event,SparePartUsage,dbo,Personnel,1,[PersonnelId],IX_FK_SparePartUsage_InventoryTransactionId_SparePartId,3,NONCLUSTERED,0,0,0,0,2,"[InventoryTransactionId], [SparePartId]",NOT_SUPPORTED
+FK_SparePartUsage_Personnel,event,SparePartUsage,dbo,Personnel,1,[PersonnelId],IX_FK_SparePartUsage_MaintenanceId_InstrumentId,4,NONCLUSTERED,0,0,0,0,2,"[MaintenanceId], [InstrumentId]",NOT_SUPPORTED
+FK_SparePartUsage_Personnel,event,SparePartUsage,dbo,Personnel,1,[PersonnelId],IX_FK_SparePartUsage_CreatedBy,5,NONCLUSTERED,0,0,0,0,1,[CreatedBy],NOT_SUPPORTED
+FK_SparePartUsage_Personnel,event,SparePartUsage,dbo,Personnel,1,[PersonnelId],IX_FK_SparePartUsage_CurrencyId,6,NONCLUSTERED,0,0,0,0,1,[CurrencyId],NOT_SUPPORTED
+FK_SparePartUsage_Personnel,event,SparePartUsage,dbo,Personnel,1,[PersonnelId],IX_FK_SparePartUsage_InstrumentId,7,NONCLUSTERED,0,0,0,0,1,[InstrumentId],NOT_SUPPORTED
+FK_SparePartUsage_Personnel,event,SparePartUsage,dbo,Personnel,1,[PersonnelId],IX_FK_SparePartUsage_PersonnelId,8,NONCLUSTERED,0,0,0,0,1,[PersonnelId],SUPPORTED
+FK_SparePartUsage_Personnel,event,SparePartUsage,dbo,Personnel,1,[PersonnelId],IX_FK_SparePartUsage_SparePartId,9,NONCLUSTERED,0,0,0,0,1,[SparePartId],NOT_SUPPORTED
+FK_SparePartUsage_Personnel,event,SparePartUsage,dbo,Personnel,1,[PersonnelId],IX_FK_SparePartUsage_UnitOfMeasureId,10,NONCLUSTERED,0,0,0,0,1,[UnitOfMeasureId],NOT_SUPPORTED
+FK_SparePartUsage_SparePart,event,SparePartUsage,dbo,SpareParts,1,[SparePartId],PK_SparePartUsage,1,CLUSTERED,1,1,0,0,1,[SparePartUsageId],NOT_SUPPORTED
+FK_SparePartUsage_SparePart,event,SparePartUsage,dbo,SpareParts,1,[SparePartId],IX_FK_SparePartUsage_FailureId_InstrumentId,2,NONCLUSTERED,0,0,0,0,2,"[FailureId], [InstrumentId]",NOT_SUPPORTED
+FK_SparePartUsage_SparePart,event,SparePartUsage,dbo,SpareParts,1,[SparePartId],IX_FK_SparePartUsage_InventoryTransactionId_SparePartId,3,NONCLUSTERED,0,0,0,0,2,"[InventoryTransactionId], [SparePartId]",NOT_SUPPORTED
+FK_SparePartUsage_SparePart,event,SparePartUsage,dbo,SpareParts,1,[SparePartId],IX_FK_SparePartUsage_MaintenanceId_InstrumentId,4,NONCLUSTERED,0,0,0,0,2,"[MaintenanceId], [InstrumentId]",NOT_SUPPORTED
+FK_SparePartUsage_SparePart,event,SparePartUsage,dbo,SpareParts,1,[SparePartId],IX_FK_SparePartUsage_CreatedBy,5,NONCLUSTERED,0,0,0,0,1,[CreatedBy],NOT_SUPPORTED
+FK_SparePartUsage_SparePart,event,SparePartUsage,dbo,SpareParts,1,[SparePartId],IX_FK_SparePartUsage_CurrencyId,6,NONCLUSTERED,0,0,0,0,1,[CurrencyId],NOT_SUPPORTED
+FK_SparePartUsage_SparePart,event,SparePartUsage,dbo,SpareParts,1,[SparePartId],IX_FK_SparePartUsage_InstrumentId,7,NONCLUSTERED,0,0,0,0,1,[InstrumentId],NOT_SUPPORTED
+FK_SparePartUsage_SparePart,event,SparePartUsage,dbo,SpareParts,1,[SparePartId],IX_FK_SparePartUsage_PersonnelId,8,NONCLUSTERED,0,0,0,0,1,[PersonnelId],NOT_SUPPORTED
+FK_SparePartUsage_SparePart,event,SparePartUsage,dbo,SpareParts,1,[SparePartId],IX_FK_SparePartUsage_SparePartId,9,NONCLUSTERED,0,0,0,0,1,[SparePartId],SUPPORTED
+FK_SparePartUsage_SparePart,event,SparePartUsage,dbo,SpareParts,1,[SparePartId],IX_FK_SparePartUsage_UnitOfMeasureId,10,NONCLUSTERED,0,0,0,0,1,[UnitOfMeasureId],NOT_SUPPORTED
+FK_SparePartUsage_UOM,event,SparePartUsage,ref,UnitOfMeasure,1,[UnitOfMeasureId],PK_SparePartUsage,1,CLUSTERED,1,1,0,0,1,[SparePartUsageId],NOT_SUPPORTED
+FK_SparePartUsage_UOM,event,SparePartUsage,ref,UnitOfMeasure,1,[UnitOfMeasureId],IX_FK_SparePartUsage_FailureId_InstrumentId,2,NONCLUSTERED,0,0,0,0,2,"[FailureId], [InstrumentId]",NOT_SUPPORTED
+FK_SparePartUsage_UOM,event,SparePartUsage,ref,UnitOfMeasure,1,[UnitOfMeasureId],IX_FK_SparePartUsage_InventoryTransactionId_SparePartId,3,NONCLUSTERED,0,0,0,0,2,"[InventoryTransactionId], [SparePartId]",NOT_SUPPORTED
+FK_SparePartUsage_UOM,event,SparePartUsage,ref,UnitOfMeasure,1,[UnitOfMeasureId],IX_FK_SparePartUsage_MaintenanceId_InstrumentId,4,NONCLUSTERED,0,0,0,0,2,"[MaintenanceId], [InstrumentId]",NOT_SUPPORTED
+FK_SparePartUsage_UOM,event,SparePartUsage,ref,UnitOfMeasure,1,[UnitOfMeasureId],IX_FK_SparePartUsage_CreatedBy,5,NONCLUSTERED,0,0,0,0,1,[CreatedBy],NOT_SUPPORTED
+FK_SparePartUsage_UOM,event,SparePartUsage,ref,UnitOfMeasure,1,[UnitOfMeasureId],IX_FK_SparePartUsage_CurrencyId,6,NONCLUSTERED,0,0,0,0,1,[CurrencyId],NOT_SUPPORTED
+FK_SparePartUsage_UOM,event,SparePartUsage,ref,UnitOfMeasure,1,[UnitOfMeasureId],IX_FK_SparePartUsage_InstrumentId,7,NONCLUSTERED,0,0,0,0,1,[InstrumentId],NOT_SUPPORTED
+FK_SparePartUsage_UOM,event,SparePartUsage,ref,UnitOfMeasure,1,[UnitOfMeasureId],IX_FK_SparePartUsage_PersonnelId,8,NONCLUSTERED,0,0,0,0,1,[PersonnelId],NOT_SUPPORTED
+FK_SparePartUsage_UOM,event,SparePartUsage,ref,UnitOfMeasure,1,[UnitOfMeasureId],IX_FK_SparePartUsage_SparePartId,9,NONCLUSTERED,0,0,0,0,1,[SparePartId],NOT_SUPPORTED
+FK_SparePartUsage_UOM,event,SparePartUsage,ref,UnitOfMeasure,1,[UnitOfMeasureId],IX_FK_SparePartUsage_UnitOfMeasureId,10,NONCLUSTERED,0,0,0,0,1,[UnitOfMeasureId],SUPPORTED
+FK_InventoryLocations_Parent,inv,InventoryLocations,inv,InventoryLocations,1,[ParentLocationId],PK_InventoryLocations,1,CLUSTERED,1,1,0,0,1,[InventoryLocationId],NOT_SUPPORTED
+FK_InventoryLocations_Parent,inv,InventoryLocations,inv,InventoryLocations,1,[ParentLocationId],UQ_InventoryLocations_Code,2,NONCLUSTERED,1,0,1,0,1,[LocationCode],NOT_SUPPORTED
+FK_InventoryLocations_Site,inv,InventoryLocations,dbo,Sites,1,[SiteId],PK_InventoryLocations,1,CLUSTERED,1,1,0,0,1,[InventoryLocationId],NOT_SUPPORTED
+FK_InventoryLocations_Site,inv,InventoryLocations,dbo,Sites,1,[SiteId],UQ_InventoryLocations_Code,2,NONCLUSTERED,1,0,1,0,1,[LocationCode],NOT_SUPPORTED
+FK_InventoryTransactions_CreatedBy,inv,InventoryTransactions,dbo,Personnel,1,[CreatedBy],PK_InventoryTransactions,1,CLUSTERED,1,1,0,0,1,[InventoryTransactionId],NOT_SUPPORTED
+FK_InventoryTransactions_CreatedBy,inv,InventoryTransactions,dbo,Personnel,1,[CreatedBy],UQ_InventoryTransactions_Id_SparePart,2,NONCLUSTERED,1,0,1,0,2,"[InventoryTransactionId], [SparePartId]",NOT_SUPPORTED
+FK_InventoryTransactions_CreatedBy,inv,InventoryTransactions,dbo,Personnel,1,[CreatedBy],IX_FK_InventoryTransactions_CreatedBy,3,NONCLUSTERED,0,0,0,0,1,[CreatedBy],SUPPORTED
+FK_InventoryTransactions_CreatedBy,inv,InventoryTransactions,dbo,Personnel,1,[CreatedBy],IX_FK_InventoryTransactions_CurrencyId,4,NONCLUSTERED,0,0,0,0,1,[CurrencyId],NOT_SUPPORTED
+FK_InventoryTransactions_CreatedBy,inv,InventoryTransactions,dbo,Personnel,1,[CreatedBy],IX_FK_InventoryTransactions_FailureId,5,NONCLUSTERED,0,0,0,0,1,[FailureId],NOT_SUPPORTED
+FK_InventoryTransactions_CreatedBy,inv,InventoryTransactions,dbo,Personnel,1,[CreatedBy],IX_FK_InventoryTransactions_InventoryLocationId,6,NONCLUSTERED,0,0,0,0,1,[InventoryLocationId],NOT_SUPPORTED
+FK_InventoryTransactions_CreatedBy,inv,InventoryTransactions,dbo,Personnel,1,[CreatedBy],IX_FK_InventoryTransactions_MaintenanceId,7,NONCLUSTERED,0,0,0,0,1,[MaintenanceId],NOT_SUPPORTED
+FK_InventoryTransactions_CreatedBy,inv,InventoryTransactions,dbo,Personnel,1,[CreatedBy],IX_FK_InventoryTransactions_PersonnelId,8,NONCLUSTERED,0,0,0,0,1,[PersonnelId],NOT_SUPPORTED
+FK_InventoryTransactions_CreatedBy,inv,InventoryTransactions,dbo,Personnel,1,[CreatedBy],IX_FK_InventoryTransactions_SparePartId,9,NONCLUSTERED,0,0,0,0,1,[SparePartId],NOT_SUPPORTED
+FK_InventoryTransactions_CreatedBy,inv,InventoryTransactions,dbo,Personnel,1,[CreatedBy],IX_FK_InventoryTransactions_SupplierId,10,NONCLUSTERED,0,0,0,0,1,[SupplierId],NOT_SUPPORTED
+FK_InventoryTransactions_CreatedBy,inv,InventoryTransactions,dbo,Personnel,1,[CreatedBy],IX_FK_InventoryTransactions_UnitOfMeasureId,11,NONCLUSTERED,0,0,0,0,1,[UnitOfMeasureId],NOT_SUPPORTED
+FK_InventoryTransactions_Currency,inv,InventoryTransactions,ref,Currency,1,[CurrencyId],PK_InventoryTransactions,1,CLUSTERED,1,1,0,0,1,[InventoryTransactionId],NOT_SUPPORTED
+FK_InventoryTransactions_Currency,inv,InventoryTransactions,ref,Currency,1,[CurrencyId],UQ_InventoryTransactions_Id_SparePart,2,NONCLUSTERED,1,0,1,0,2,"[InventoryTransactionId], [SparePartId]",NOT_SUPPORTED
+FK_InventoryTransactions_Currency,inv,InventoryTransactions,ref,Currency,1,[CurrencyId],IX_FK_InventoryTransactions_CreatedBy,3,NONCLUSTERED,0,0,0,0,1,[CreatedBy],NOT_SUPPORTED
+FK_InventoryTransactions_Currency,inv,InventoryTransactions,ref,Currency,1,[CurrencyId],IX_FK_InventoryTransactions_CurrencyId,4,NONCLUSTERED,0,0,0,0,1,[CurrencyId],SUPPORTED
+FK_InventoryTransactions_Currency,inv,InventoryTransactions,ref,Currency,1,[CurrencyId],IX_FK_InventoryTransactions_FailureId,5,NONCLUSTERED,0,0,0,0,1,[FailureId],NOT_SUPPORTED
+FK_InventoryTransactions_Currency,inv,InventoryTransactions,ref,Currency,1,[CurrencyId],IX_FK_InventoryTransactions_InventoryLocationId,6,NONCLUSTERED,0,0,0,0,1,[InventoryLocationId],NOT_SUPPORTED
+FK_InventoryTransactions_Currency,inv,InventoryTransactions,ref,Currency,1,[CurrencyId],IX_FK_InventoryTransactions_MaintenanceId,7,NONCLUSTERED,0,0,0,0,1,[MaintenanceId],NOT_SUPPORTED
+FK_InventoryTransactions_Currency,inv,InventoryTransactions,ref,Currency,1,[CurrencyId],IX_FK_InventoryTransactions_PersonnelId,8,NONCLUSTERED,0,0,0,0,1,[PersonnelId],NOT_SUPPORTED
+FK_InventoryTransactions_Currency,inv,InventoryTransactions,ref,Currency,1,[CurrencyId],IX_FK_InventoryTransactions_SparePartId,9,NONCLUSTERED,0,0,0,0,1,[SparePartId],NOT_SUPPORTED
+FK_InventoryTransactions_Currency,inv,InventoryTransactions,ref,Currency,1,[CurrencyId],IX_FK_InventoryTransactions_SupplierId,10,NONCLUSTERED,0,0,0,0,1,[SupplierId],NOT_SUPPORTED
+FK_InventoryTransactions_Currency,inv,InventoryTransactions,ref,Currency,1,[CurrencyId],IX_FK_InventoryTransactions_UnitOfMeasureId,11,NONCLUSTERED,0,0,0,0,1,[UnitOfMeasureId],NOT_SUPPORTED
+FK_InventoryTransactions_Failure,inv,InventoryTransactions,event,FailureRecords,1,[FailureId],PK_InventoryTransactions,1,CLUSTERED,1,1,0,0,1,[InventoryTransactionId],NOT_SUPPORTED
+FK_InventoryTransactions_Failure,inv,InventoryTransactions,event,FailureRecords,1,[FailureId],UQ_InventoryTransactions_Id_SparePart,2,NONCLUSTERED,1,0,1,0,2,"[InventoryTransactionId], [SparePartId]",NOT_SUPPORTED
+FK_InventoryTransactions_Failure,inv,InventoryTransactions,event,FailureRecords,1,[FailureId],IX_FK_InventoryTransactions_CreatedBy,3,NONCLUSTERED,0,0,0,0,1,[CreatedBy],NOT_SUPPORTED
+FK_InventoryTransactions_Failure,inv,InventoryTransactions,event,FailureRecords,1,[FailureId],IX_FK_InventoryTransactions_CurrencyId,4,NONCLUSTERED,0,0,0,0,1,[CurrencyId],NOT_SUPPORTED
+FK_InventoryTransactions_Failure,inv,InventoryTransactions,event,FailureRecords,1,[FailureId],IX_FK_InventoryTransactions_FailureId,5,NONCLUSTERED,0,0,0,0,1,[FailureId],SUPPORTED
+FK_InventoryTransactions_Failure,inv,InventoryTransactions,event,FailureRecords,1,[FailureId],IX_FK_InventoryTransactions_InventoryLocationId,6,NONCLUSTERED,0,0,0,0,1,[InventoryLocationId],NOT_SUPPORTED
+FK_InventoryTransactions_Failure,inv,InventoryTransactions,event,FailureRecords,1,[FailureId],IX_FK_InventoryTransactions_MaintenanceId,7,NONCLUSTERED,0,0,0,0,1,[MaintenanceId],NOT_SUPPORTED
+FK_InventoryTransactions_Failure,inv,InventoryTransactions,event,FailureRecords,1,[FailureId],IX_FK_InventoryTransactions_PersonnelId,8,NONCLUSTERED,0,0,0,0,1,[PersonnelId],NOT_SUPPORTED
+FK_InventoryTransactions_Failure,inv,InventoryTransactions,event,FailureRecords,1,[FailureId],IX_FK_InventoryTransactions_SparePartId,9,NONCLUSTERED,0,0,0,0,1,[SparePartId],NOT_SUPPORTED
+FK_InventoryTransactions_Failure,inv,InventoryTransactions,event,FailureRecords,1,[FailureId],IX_FK_InventoryTransactions_SupplierId,10,NONCLUSTERED,0,0,0,0,1,[SupplierId],NOT_SUPPORTED
+FK_InventoryTransactions_Failure,inv,InventoryTransactions,event,FailureRecords,1,[FailureId],IX_FK_InventoryTransactions_UnitOfMeasureId,11,NONCLUSTERED,0,0,0,0,1,[UnitOfMeasureId],NOT_SUPPORTED
+FK_InventoryTransactions_Location,inv,InventoryTransactions,inv,InventoryLocations,1,[InventoryLocationId],PK_InventoryTransactions,1,CLUSTERED,1,1,0,0,1,[InventoryTransactionId],NOT_SUPPORTED
+FK_InventoryTransactions_Location,inv,InventoryTransactions,inv,InventoryLocations,1,[InventoryLocationId],UQ_InventoryTransactions_Id_SparePart,2,NONCLUSTERED,1,0,1,0,2,"[InventoryTransactionId], [SparePartId]",NOT_SUPPORTED
+FK_InventoryTransactions_Location,inv,InventoryTransactions,inv,InventoryLocations,1,[InventoryLocationId],IX_FK_InventoryTransactions_CreatedBy,3,NONCLUSTERED,0,0,0,0,1,[CreatedBy],NOT_SUPPORTED
+FK_InventoryTransactions_Location,inv,InventoryTransactions,inv,InventoryLocations,1,[InventoryLocationId],IX_FK_InventoryTransactions_CurrencyId,4,NONCLUSTERED,0,0,0,0,1,[CurrencyId],NOT_SUPPORTED
+FK_InventoryTransactions_Location,inv,InventoryTransactions,inv,InventoryLocations,1,[InventoryLocationId],IX_FK_InventoryTransactions_FailureId,5,NONCLUSTERED,0,0,0,0,1,[FailureId],NOT_SUPPORTED
+FK_InventoryTransactions_Location,inv,InventoryTransactions,inv,InventoryLocations,1,[InventoryLocationId],IX_FK_InventoryTransactions_InventoryLocationId,6,NONCLUSTERED,0,0,0,0,1,[InventoryLocationId],SUPPORTED
+FK_InventoryTransactions_Location,inv,InventoryTransactions,inv,InventoryLocations,1,[InventoryLocationId],IX_FK_InventoryTransactions_MaintenanceId,7,NONCLUSTERED,0,0,0,0,1,[MaintenanceId],NOT_SUPPORTED
+FK_InventoryTransactions_Location,inv,InventoryTransactions,inv,InventoryLocations,1,[InventoryLocationId],IX_FK_InventoryTransactions_PersonnelId,8,NONCLUSTERED,0,0,0,0,1,[PersonnelId],NOT_SUPPORTED
+FK_InventoryTransactions_Location,inv,InventoryTransactions,inv,InventoryLocations,1,[InventoryLocationId],IX_FK_InventoryTransactions_SparePartId,9,NONCLUSTERED,0,0,0,0,1,[SparePartId],NOT_SUPPORTED
+FK_InventoryTransactions_Location,inv,InventoryTransactions,inv,InventoryLocations,1,[InventoryLocationId],IX_FK_InventoryTransactions_SupplierId,10,NONCLUSTERED,0,0,0,0,1,[SupplierId],NOT_SUPPORTED
+FK_InventoryTransactions_Location,inv,InventoryTransactions,inv,InventoryLocations,1,[InventoryLocationId],IX_FK_InventoryTransactions_UnitOfMeasureId,11,NONCLUSTERED,0,0,0,0,1,[UnitOfMeasureId],NOT_SUPPORTED
+FK_InventoryTransactions_Maintenance,inv,InventoryTransactions,event,MaintenanceRecords,1,[MaintenanceId],PK_InventoryTransactions,1,CLUSTERED,1,1,0,0,1,[InventoryTransactionId],NOT_SUPPORTED
+FK_InventoryTransactions_Maintenance,inv,InventoryTransactions,event,MaintenanceRecords,1,[MaintenanceId],UQ_InventoryTransactions_Id_SparePart,2,NONCLUSTERED,1,0,1,0,2,"[InventoryTransactionId], [SparePartId]",NOT_SUPPORTED
+FK_InventoryTransactions_Maintenance,inv,InventoryTransactions,event,MaintenanceRecords,1,[MaintenanceId],IX_FK_InventoryTransactions_CreatedBy,3,NONCLUSTERED,0,0,0,0,1,[CreatedBy],NOT_SUPPORTED
+FK_InventoryTransactions_Maintenance,inv,InventoryTransactions,event,MaintenanceRecords,1,[MaintenanceId],IX_FK_InventoryTransactions_CurrencyId,4,NONCLUSTERED,0,0,0,0,1,[CurrencyId],NOT_SUPPORTED
+FK_InventoryTransactions_Maintenance,inv,InventoryTransactions,event,MaintenanceRecords,1,[MaintenanceId],IX_FK_InventoryTransactions_FailureId,5,NONCLUSTERED,0,0,0,0,1,[FailureId],NOT_SUPPORTED
+FK_InventoryTransactions_Maintenance,inv,InventoryTransactions,event,MaintenanceRecords,1,[MaintenanceId],IX_FK_InventoryTransactions_InventoryLocationId,6,NONCLUSTERED,0,0,0,0,1,[InventoryLocationId],NOT_SUPPORTED
+FK_InventoryTransactions_Maintenance,inv,InventoryTransactions,event,MaintenanceRecords,1,[MaintenanceId],IX_FK_InventoryTransactions_MaintenanceId,7,NONCLUSTERED,0,0,0,0,1,[MaintenanceId],SUPPORTED
+FK_InventoryTransactions_Maintenance,inv,InventoryTransactions,event,MaintenanceRecords,1,[MaintenanceId],IX_FK_InventoryTransactions_PersonnelId,8,NONCLUSTERED,0,0,0,0,1,[PersonnelId],NOT_SUPPORTED
+FK_InventoryTransactions_Maintenance,inv,InventoryTransactions,event,MaintenanceRecords,1,[MaintenanceId],IX_FK_InventoryTransactions_SparePartId,9,NONCLUSTERED,0,0,0,0,1,[SparePartId],NOT_SUPPORTED
+FK_InventoryTransactions_Maintenance,inv,InventoryTransactions,event,MaintenanceRecords,1,[MaintenanceId],IX_FK_InventoryTransactions_SupplierId,10,NONCLUSTERED,0,0,0,0,1,[SupplierId],NOT_SUPPORTED
+FK_InventoryTransactions_Maintenance,inv,InventoryTransactions,event,MaintenanceRecords,1,[MaintenanceId],IX_FK_InventoryTransactions_UnitOfMeasureId,11,NONCLUSTERED,0,0,0,0,1,[UnitOfMeasureId],NOT_SUPPORTED
+FK_InventoryTransactions_Personnel,inv,InventoryTransactions,dbo,Personnel,1,[PersonnelId],PK_InventoryTransactions,1,CLUSTERED,1,1,0,0,1,[InventoryTransactionId],NOT_SUPPORTED
+FK_InventoryTransactions_Personnel,inv,InventoryTransactions,dbo,Personnel,1,[PersonnelId],UQ_InventoryTransactions_Id_SparePart,2,NONCLUSTERED,1,0,1,0,2,"[InventoryTransactionId], [SparePartId]",NOT_SUPPORTED
+FK_InventoryTransactions_Personnel,inv,InventoryTransactions,dbo,Personnel,1,[PersonnelId],IX_FK_InventoryTransactions_CreatedBy,3,NONCLUSTERED,0,0,0,0,1,[CreatedBy],NOT_SUPPORTED
+FK_InventoryTransactions_Personnel,inv,InventoryTransactions,dbo,Personnel,1,[PersonnelId],IX_FK_InventoryTransactions_CurrencyId,4,NONCLUSTERED,0,0,0,0,1,[CurrencyId],NOT_SUPPORTED
+FK_InventoryTransactions_Personnel,inv,InventoryTransactions,dbo,Personnel,1,[PersonnelId],IX_FK_InventoryTransactions_FailureId,5,NONCLUSTERED,0,0,0,0,1,[FailureId],NOT_SUPPORTED
+FK_InventoryTransactions_Personnel,inv,InventoryTransactions,dbo,Personnel,1,[PersonnelId],IX_FK_InventoryTransactions_InventoryLocationId,6,NONCLUSTERED,0,0,0,0,1,[InventoryLocationId],NOT_SUPPORTED
+FK_InventoryTransactions_Personnel,inv,InventoryTransactions,dbo,Personnel,1,[PersonnelId],IX_FK_InventoryTransactions_MaintenanceId,7,NONCLUSTERED,0,0,0,0,1,[MaintenanceId],NOT_SUPPORTED
+FK_InventoryTransactions_Personnel,inv,InventoryTransactions,dbo,Personnel,1,[PersonnelId],IX_FK_InventoryTransactions_PersonnelId,8,NONCLUSTERED,0,0,0,0,1,[PersonnelId],SUPPORTED
+FK_InventoryTransactions_Personnel,inv,InventoryTransactions,dbo,Personnel,1,[PersonnelId],IX_FK_InventoryTransactions_SparePartId,9,NONCLUSTERED,0,0,0,0,1,[SparePartId],NOT_SUPPORTED
+FK_InventoryTransactions_Personnel,inv,InventoryTransactions,dbo,Personnel,1,[PersonnelId],IX_FK_InventoryTransactions_SupplierId,10,NONCLUSTERED,0,0,0,0,1,[SupplierId],NOT_SUPPORTED
+FK_InventoryTransactions_Personnel,inv,InventoryTransactions,dbo,Personnel,1,[PersonnelId],IX_FK_InventoryTransactions_UnitOfMeasureId,11,NONCLUSTERED,0,0,0,0,1,[UnitOfMeasureId],NOT_SUPPORTED
+FK_InventoryTransactions_SparePart,inv,InventoryTransactions,dbo,SpareParts,1,[SparePartId],PK_InventoryTransactions,1,CLUSTERED,1,1,0,0,1,[InventoryTransactionId],NOT_SUPPORTED
+FK_InventoryTransactions_SparePart,inv,InventoryTransactions,dbo,SpareParts,1,[SparePartId],UQ_InventoryTransactions_Id_SparePart,2,NONCLUSTERED,1,0,1,0,2,"[InventoryTransactionId], [SparePartId]",NOT_SUPPORTED
+FK_InventoryTransactions_SparePart,inv,InventoryTransactions,dbo,SpareParts,1,[SparePartId],IX_FK_InventoryTransactions_CreatedBy,3,NONCLUSTERED,0,0,0,0,1,[CreatedBy],NOT_SUPPORTED
+FK_InventoryTransactions_SparePart,inv,InventoryTransactions,dbo,SpareParts,1,[SparePartId],IX_FK_InventoryTransactions_CurrencyId,4,NONCLUSTERED,0,0,0,0,1,[CurrencyId],NOT_SUPPORTED
+FK_InventoryTransactions_SparePart,inv,InventoryTransactions,dbo,SpareParts,1,[SparePartId],IX_FK_InventoryTransactions_FailureId,5,NONCLUSTERED,0,0,0,0,1,[FailureId],NOT_SUPPORTED
+FK_InventoryTransactions_SparePart,inv,InventoryTransactions,dbo,SpareParts,1,[SparePartId],IX_FK_InventoryTransactions_InventoryLocationId,6,NONCLUSTERED,0,0,0,0,1,[InventoryLocationId],NOT_SUPPORTED
+FK_InventoryTransactions_SparePart,inv,InventoryTransactions,dbo,SpareParts,1,[SparePartId],IX_FK_InventoryTransactions_MaintenanceId,7,NONCLUSTERED,0,0,0,0,1,[MaintenanceId],NOT_SUPPORTED
+FK_InventoryTransactions_SparePart,inv,InventoryTransactions,dbo,SpareParts,1,[SparePartId],IX_FK_InventoryTransactions_PersonnelId,8,NONCLUSTERED,0,0,0,0,1,[PersonnelId],NOT_SUPPORTED
+FK_InventoryTransactions_SparePart,inv,InventoryTransactions,dbo,SpareParts,1,[SparePartId],IX_FK_InventoryTransactions_SparePartId,9,NONCLUSTERED,0,0,0,0,1,[SparePartId],SUPPORTED
+FK_InventoryTransactions_SparePart,inv,InventoryTransactions,dbo,SpareParts,1,[SparePartId],IX_FK_InventoryTransactions_SupplierId,10,NONCLUSTERED,0,0,0,0,1,[SupplierId],NOT_SUPPORTED
+FK_InventoryTransactions_SparePart,inv,InventoryTransactions,dbo,SpareParts,1,[SparePartId],IX_FK_InventoryTransactions_UnitOfMeasureId,11,NONCLUSTERED,0,0,0,0,1,[UnitOfMeasureId],NOT_SUPPORTED
+FK_InventoryTransactions_Supplier,inv,InventoryTransactions,dbo,Suppliers,1,[SupplierId],PK_InventoryTransactions,1,CLUSTERED,1,1,0,0,1,[InventoryTransactionId],NOT_SUPPORTED
+FK_InventoryTransactions_Supplier,inv,InventoryTransactions,dbo,Suppliers,1,[SupplierId],UQ_InventoryTransactions_Id_SparePart,2,NONCLUSTERED,1,0,1,0,2,"[InventoryTransactionId], [SparePartId]",NOT_SUPPORTED
+FK_InventoryTransactions_Supplier,inv,InventoryTransactions,dbo,Suppliers,1,[SupplierId],IX_FK_InventoryTransactions_CreatedBy,3,NONCLUSTERED,0,0,0,0,1,[CreatedBy],NOT_SUPPORTED
+FK_InventoryTransactions_Supplier,inv,InventoryTransactions,dbo,Suppliers,1,[SupplierId],IX_FK_InventoryTransactions_CurrencyId,4,NONCLUSTERED,0,0,0,0,1,[CurrencyId],NOT_SUPPORTED
+FK_InventoryTransactions_Supplier,inv,InventoryTransactions,dbo,Suppliers,1,[SupplierId],IX_FK_InventoryTransactions_FailureId,5,NONCLUSTERED,0,0,0,0,1,[FailureId],NOT_SUPPORTED
+FK_InventoryTransactions_Supplier,inv,InventoryTransactions,dbo,Suppliers,1,[SupplierId],IX_FK_InventoryTransactions_InventoryLocationId,6,NONCLUSTERED,0,0,0,0,1,[InventoryLocationId],NOT_SUPPORTED
+FK_InventoryTransactions_Supplier,inv,InventoryTransactions,dbo,Suppliers,1,[SupplierId],IX_FK_InventoryTransactions_MaintenanceId,7,NONCLUSTERED,0,0,0,0,1,[MaintenanceId],NOT_SUPPORTED
+FK_InventoryTransactions_Supplier,inv,InventoryTransactions,dbo,Suppliers,1,[SupplierId],IX_FK_InventoryTransactions_PersonnelId,8,NONCLUSTERED,0,0,0,0,1,[PersonnelId],NOT_SUPPORTED
+FK_InventoryTransactions_Supplier,inv,InventoryTransactions,dbo,Suppliers,1,[SupplierId],IX_FK_InventoryTransactions_SparePartId,9,NONCLUSTERED,0,0,0,0,1,[SparePartId],NOT_SUPPORTED
+FK_InventoryTransactions_Supplier,inv,InventoryTransactions,dbo,Suppliers,1,[SupplierId],IX_FK_InventoryTransactions_SupplierId,10,NONCLUSTERED,0,0,0,0,1,[SupplierId],SUPPORTED
+FK_InventoryTransactions_Supplier,inv,InventoryTransactions,dbo,Suppliers,1,[SupplierId],IX_FK_InventoryTransactions_UnitOfMeasureId,11,NONCLUSTERED,0,0,0,0,1,[UnitOfMeasureId],NOT_SUPPORTED
+FK_InventoryTransactions_UOM,inv,InventoryTransactions,ref,UnitOfMeasure,1,[UnitOfMeasureId],PK_InventoryTransactions,1,CLUSTERED,1,1,0,0,1,[InventoryTransactionId],NOT_SUPPORTED
+FK_InventoryTransactions_UOM,inv,InventoryTransactions,ref,UnitOfMeasure,1,[UnitOfMeasureId],UQ_InventoryTransactions_Id_SparePart,2,NONCLUSTERED,1,0,1,0,2,"[InventoryTransactionId], [SparePartId]",NOT_SUPPORTED
+FK_InventoryTransactions_UOM,inv,InventoryTransactions,ref,UnitOfMeasure,1,[UnitOfMeasureId],IX_FK_InventoryTransactions_CreatedBy,3,NONCLUSTERED,0,0,0,0,1,[CreatedBy],NOT_SUPPORTED
+FK_InventoryTransactions_UOM,inv,InventoryTransactions,ref,UnitOfMeasure,1,[UnitOfMeasureId],IX_FK_InventoryTransactions_CurrencyId,4,NONCLUSTERED,0,0,0,0,1,[CurrencyId],NOT_SUPPORTED
+FK_InventoryTransactions_UOM,inv,InventoryTransactions,ref,UnitOfMeasure,1,[UnitOfMeasureId],IX_FK_InventoryTransactions_FailureId,5,NONCLUSTERED,0,0,0,0,1,[FailureId],NOT_SUPPORTED
+FK_InventoryTransactions_UOM,inv,InventoryTransactions,ref,UnitOfMeasure,1,[UnitOfMeasureId],IX_FK_InventoryTransactions_InventoryLocationId,6,NONCLUSTERED,0,0,0,0,1,[InventoryLocationId],NOT_SUPPORTED
+FK_InventoryTransactions_UOM,inv,InventoryTransactions,ref,UnitOfMeasure,1,[UnitOfMeasureId],IX_FK_InventoryTransactions_MaintenanceId,7,NONCLUSTERED,0,0,0,0,1,[MaintenanceId],NOT_SUPPORTED
+FK_InventoryTransactions_UOM,inv,InventoryTransactions,ref,UnitOfMeasure,1,[UnitOfMeasureId],IX_FK_InventoryTransactions_PersonnelId,8,NONCLUSTERED,0,0,0,0,1,[PersonnelId],NOT_SUPPORTED
+FK_InventoryTransactions_UOM,inv,InventoryTransactions,ref,UnitOfMeasure,1,[UnitOfMeasureId],IX_FK_InventoryTransactions_SparePartId,9,NONCLUSTERED,0,0,0,0,1,[SparePartId],NOT_SUPPORTED
+FK_InventoryTransactions_UOM,inv,InventoryTransactions,ref,UnitOfMeasure,1,[UnitOfMeasureId],IX_FK_InventoryTransactions_SupplierId,10,NONCLUSTERED,0,0,0,0,1,[SupplierId],NOT_SUPPORTED
+FK_InventoryTransactions_UOM,inv,InventoryTransactions,ref,UnitOfMeasure,1,[UnitOfMeasureId],IX_FK_InventoryTransactions_UnitOfMeasureId,11,NONCLUSTERED,0,0,0,0,1,[UnitOfMeasureId],SUPPORTED
+FK_SparePartInventoryPolicy_Location,inv,SparePartInventoryPolicy,inv,InventoryLocations,1,[InventoryLocationId],PK_SparePartInventoryPolicy,1,CLUSTERED,1,1,0,0,1,[SparePartInventoryPolicyId],NOT_SUPPORTED
+FK_SparePartInventoryPolicy_Location,inv,SparePartInventoryPolicy,inv,InventoryLocations,1,[InventoryLocationId],UQ_SparePartInventoryPolicy_SparePart_Location,2,NONCLUSTERED,1,0,1,0,2,"[SparePartId], [InventoryLocationId]",NOT_SUPPORTED
+FK_SparePartInventoryPolicy_SparePart,inv,SparePartInventoryPolicy,dbo,SpareParts,1,[SparePartId],PK_SparePartInventoryPolicy,1,CLUSTERED,1,1,0,0,1,[SparePartInventoryPolicyId],NOT_SUPPORTED
+FK_SparePartInventoryPolicy_SparePart,inv,SparePartInventoryPolicy,dbo,SpareParts,1,[SparePartId],UQ_SparePartInventoryPolicy_SparePart_Location,2,NONCLUSTERED,1,0,1,0,2,"[SparePartId], [InventoryLocationId]",SUPPORTED
+FK_SparePartSuppliers_Currency,inv,SparePartSuppliers,ref,Currency,1,[CurrencyId],PK_SparePartSuppliers,1,CLUSTERED,1,1,0,0,1,[SparePartSupplierId],NOT_SUPPORTED
+FK_SparePartSuppliers_Currency,inv,SparePartSuppliers,ref,Currency,1,[CurrencyId],UQ_SparePartSuppliers,2,NONCLUSTERED,1,0,1,0,2,"[SparePartId], [SupplierId]",NOT_SUPPORTED
+FK_SparePartSuppliers_SparePart,inv,SparePartSuppliers,dbo,SpareParts,1,[SparePartId],PK_SparePartSuppliers,1,CLUSTERED,1,1,0,0,1,[SparePartSupplierId],NOT_SUPPORTED
+FK_SparePartSuppliers_SparePart,inv,SparePartSuppliers,dbo,SpareParts,1,[SparePartId],UQ_SparePartSuppliers,2,NONCLUSTERED,1,0,1,0,2,"[SparePartId], [SupplierId]",SUPPORTED
+FK_UnitOfMeasure_BaseUnit,ref,UnitOfMeasure,ref,UnitOfMeasure,1,[BaseUnitOfMeasureId],PK_UnitOfMeasure,1,CLUSTERED,1,1,0,0,1,[UnitOfMeasureId],NOT_SUPPORTED
+FK_UnitOfMeasure_BaseUnit,ref,UnitOfMeasure,ref,UnitOfMeasure,1,[BaseUnitOfMeasureId],UQ_UnitOfMeasure_UomCode,2,NONCLUSTERED,1,0,1,0,1,[UomCode],NOT_SUPPORTED
+FK_InstrumentControlSystems_ControlSystem,rel,InstrumentControlSystems,dbo,ControlSystems,1,[ControlSystemId],PK_InstrumentControlSystems,1,CLUSTERED,1,1,0,0,2,"[InstrumentId], [ControlSystemId]",NOT_SUPPORTED
+FK_InstrumentControlSystems_CreatedBy,rel,InstrumentControlSystems,dbo,Personnel,1,[CreatedBy],PK_InstrumentControlSystems,1,CLUSTERED,1,1,0,0,2,"[InstrumentId], [ControlSystemId]",NOT_SUPPORTED
+FK_InstrumentControlSystems_Instrument,rel,InstrumentControlSystems,dbo,Instruments,1,[InstrumentId],PK_InstrumentControlSystems,1,CLUSTERED,1,1,0,0,2,"[InstrumentId], [ControlSystemId]",SUPPORTED
+FK_InstrumentRedundancy_CreatedBy,rel,InstrumentRedundancy,dbo,Personnel,1,[CreatedBy],PK_InstrumentRedundancy,1,CLUSTERED,1,1,0,0,2,"[InstrumentId1], [InstrumentId2]",NOT_SUPPORTED
+FK_InstrumentRedundancy_CreatedBy,rel,InstrumentRedundancy,dbo,Personnel,1,[CreatedBy],IX_FK_InstrumentRedundancy_CreatedBy,2,NONCLUSTERED,0,0,0,0,1,[CreatedBy],SUPPORTED
+FK_InstrumentRedundancy_CreatedBy,rel,InstrumentRedundancy,dbo,Personnel,1,[CreatedBy],IX_FK_InstrumentRedundancy_InstrumentId2,3,NONCLUSTERED,0,0,0,0,1,[InstrumentId2],NOT_SUPPORTED
+FK_InstrumentRedundancy_Instrument1,rel,InstrumentRedundancy,dbo,Instruments,1,[InstrumentId1],PK_InstrumentRedundancy,1,CLUSTERED,1,1,0,0,2,"[InstrumentId1], [InstrumentId2]",SUPPORTED
+FK_InstrumentRedundancy_Instrument1,rel,InstrumentRedundancy,dbo,Instruments,1,[InstrumentId1],IX_FK_InstrumentRedundancy_CreatedBy,2,NONCLUSTERED,0,0,0,0,1,[CreatedBy],NOT_SUPPORTED
+FK_InstrumentRedundancy_Instrument1,rel,InstrumentRedundancy,dbo,Instruments,1,[InstrumentId1],IX_FK_InstrumentRedundancy_InstrumentId2,3,NONCLUSTERED,0,0,0,0,1,[InstrumentId2],NOT_SUPPORTED
+FK_InstrumentRedundancy_Instrument2,rel,InstrumentRedundancy,dbo,Instruments,1,[InstrumentId2],PK_InstrumentRedundancy,1,CLUSTERED,1,1,0,0,2,"[InstrumentId1], [InstrumentId2]",NOT_SUPPORTED
+FK_InstrumentRedundancy_Instrument2,rel,InstrumentRedundancy,dbo,Instruments,1,[InstrumentId2],IX_FK_InstrumentRedundancy_CreatedBy,2,NONCLUSTERED,0,0,0,0,1,[CreatedBy],NOT_SUPPORTED
+FK_InstrumentRedundancy_Instrument2,rel,InstrumentRedundancy,dbo,Instruments,1,[InstrumentId2],IX_FK_InstrumentRedundancy_InstrumentId2,3,NONCLUSTERED,0,0,0,0,1,[InstrumentId2],SUPPORTED
+FK_ProcessUnitControlSystems_ControlSystem,rel,ProcessUnitControlSystems,dbo,ControlSystems,1,[ControlSystemId],PK_ProcessUnitControlSystems,1,CLUSTERED,1,1,0,0,2,"[ProcessUnitId], [ControlSystemId]",NOT_SUPPORTED
+FK_ProcessUnitControlSystems_CreatedBy,rel,ProcessUnitControlSystems,dbo,Personnel,1,[CreatedBy],PK_ProcessUnitControlSystems,1,CLUSTERED,1,1,0,0,2,"[ProcessUnitId], [ControlSystemId]",NOT_SUPPORTED
+FK_ProcessUnitControlSystems_ProcessUnit,rel,ProcessUnitControlSystems,dbo,ProcessUnits,1,[ProcessUnitId],PK_ProcessUnitControlSystems,1,CLUSTERED,1,1,0,0,2,"[ProcessUnitId], [ControlSystemId]",SUPPORTED
+FK_SparePartInstruments_CreatedBy,rel,SparePartInstruments,dbo,Personnel,1,[CreatedBy],PK_SparePartInstruments,1,CLUSTERED,1,1,0,0,2,"[SparePartId], [InstrumentId]",NOT_SUPPORTED
+FK_SparePartInstruments_Instrument,rel,SparePartInstruments,dbo,Instruments,1,[InstrumentId],PK_SparePartInstruments,1,CLUSTERED,1,1,0,0,2,"[SparePartId], [InstrumentId]",NOT_SUPPORTED
+FK_SparePartInstruments_SparePart,rel,SparePartInstruments,dbo,SpareParts,1,[SparePartId],PK_SparePartInstruments,1,CLUSTERED,1,1,0,0,2,"[SparePartId], [InstrumentId]",SUPPORTED
+FK_SparePartInstrumentTypes_CreatedBy,rel,SparePartInstrumentTypes,dbo,Personnel,1,[CreatedBy],PK_SparePartInstrumentTypes,1,CLUSTERED,1,1,0,0,2,"[SparePartId], [InstrumentTypeId]",NOT_SUPPORTED
+FK_SparePartInstrumentTypes_InstrumentType,rel,SparePartInstrumentTypes,dbo,InstrumentTypes,1,[InstrumentTypeId],PK_SparePartInstrumentTypes,1,CLUSTERED,1,1,0,0,2,"[SparePartId], [InstrumentTypeId]",NOT_SUPPORTED
+FK_SparePartInstrumentTypes_SparePart,rel,SparePartInstrumentTypes,dbo,SpareParts,1,[SparePartId],PK_SparePartInstrumentTypes,1,CLUSTERED,1,1,0,0,2,"[SparePartId], [InstrumentTypeId]",SUPPORTED
+FK_SparePartInterchangeability_CreatedBy,rel,SparePartInterchangeability,dbo,Personnel,1,[CreatedBy],PK_SparePartInterchangeability,1,CLUSTERED,1,1,0,0,2,"[SparePartId1], [SparePartId2]",NOT_SUPPORTED
+FK_SparePartInterchangeability_CreatedBy,rel,SparePartInterchangeability,dbo,Personnel,1,[CreatedBy],IX_FK_SparePartInterchangeability_CreatedBy,2,NONCLUSTERED,0,0,0,0,1,[CreatedBy],SUPPORTED
+FK_SparePartInterchangeability_CreatedBy,rel,SparePartInterchangeability,dbo,Personnel,1,[CreatedBy],IX_FK_SparePartInterchangeability_SparePartId2,3,NONCLUSTERED,0,0,0,0,1,[SparePartId2],NOT_SUPPORTED
+FK_SparePartInterchangeability_Part1,rel,SparePartInterchangeability,dbo,SpareParts,1,[SparePartId1],PK_SparePartInterchangeability,1,CLUSTERED,1,1,0,0,2,"[SparePartId1], [SparePartId2]",SUPPORTED
+FK_SparePartInterchangeability_Part1,rel,SparePartInterchangeability,dbo,SpareParts,1,[SparePartId1],IX_FK_SparePartInterchangeability_CreatedBy,2,NONCLUSTERED,0,0,0,0,1,[CreatedBy],NOT_SUPPORTED
+FK_SparePartInterchangeability_Part1,rel,SparePartInterchangeability,dbo,SpareParts,1,[SparePartId1],IX_FK_SparePartInterchangeability_SparePartId2,3,NONCLUSTERED,0,0,0,0,1,[SparePartId2],NOT_SUPPORTED
+FK_SparePartInterchangeability_Part2,rel,SparePartInterchangeability,dbo,SpareParts,1,[SparePartId2],PK_SparePartInterchangeability,1,CLUSTERED,1,1,0,0,2,"[SparePartId1], [SparePartId2]",NOT_SUPPORTED
+FK_SparePartInterchangeability_Part2,rel,SparePartInterchangeability,dbo,SpareParts,1,[SparePartId2],IX_FK_SparePartInterchangeability_CreatedBy,2,NONCLUSTERED,0,0,0,0,1,[CreatedBy],NOT_SUPPORTED
+FK_SparePartInterchangeability_Part2,rel,SparePartInterchangeability,dbo,SpareParts,1,[SparePartId2],IX_FK_SparePartInterchangeability_SparePartId2,3,NONCLUSTERED,0,0,0,0,1,[SparePartId2],SUPPORTED
+FK_TripInstruments_CreatedBy,rel,TripInstruments,dbo,Personnel,1,[CreatedBy],PK_TripInstruments,1,CLUSTERED,1,1,0,0,3,"[TripId], [InstrumentId], [TripRoleCode]",NOT_SUPPORTED
+FK_TripInstruments_CreatedBy,rel,TripInstruments,dbo,Personnel,1,[CreatedBy],IX_FK_TripInstruments_CreatedBy,2,NONCLUSTERED,0,0,0,0,1,[CreatedBy],SUPPORTED
+FK_TripInstruments_CreatedBy,rel,TripInstruments,dbo,Personnel,1,[CreatedBy],IX_FK_TripInstruments_InstrumentId,3,NONCLUSTERED,0,0,0,0,1,[InstrumentId],NOT_SUPPORTED
+FK_TripInstruments_Instrument,rel,TripInstruments,dbo,Instruments,1,[InstrumentId],PK_TripInstruments,1,CLUSTERED,1,1,0,0,3,"[TripId], [InstrumentId], [TripRoleCode]",NOT_SUPPORTED
+FK_TripInstruments_Instrument,rel,TripInstruments,dbo,Instruments,1,[InstrumentId],IX_FK_TripInstruments_CreatedBy,2,NONCLUSTERED,0,0,0,0,1,[CreatedBy],NOT_SUPPORTED
+FK_TripInstruments_Instrument,rel,TripInstruments,dbo,Instruments,1,[InstrumentId],IX_FK_TripInstruments_InstrumentId,3,NONCLUSTERED,0,0,0,0,1,[InstrumentId],SUPPORTED
+FK_TripInstruments_Trip,rel,TripInstruments,dbo,TripsInterlocks,1,[TripId],PK_TripInstruments,1,CLUSTERED,1,1,0,0,3,"[TripId], [InstrumentId], [TripRoleCode]",SUPPORTED
+FK_TripInstruments_Trip,rel,TripInstruments,dbo,TripsInterlocks,1,[TripId],IX_FK_TripInstruments_CreatedBy,2,NONCLUSTERED,0,0,0,0,1,[CreatedBy],NOT_SUPPORTED
+FK_TripInstruments_Trip,rel,TripInstruments,dbo,TripsInterlocks,1,[TripId],IX_FK_TripInstruments_InstrumentId,3,NONCLUSTERED,0,0,0,0,1,[InstrumentId],NOT_SUPPORTED
