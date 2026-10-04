@@ -1,0 +1,10 @@
+﻿event,CalibrationRecords,CalibrationDate,datetime2,CalibrationEventDate,2
+event,CalibrationRecords,CreatedDateTime,datetime2,CalibrationEventDate,5
+event,FailureRecords,FailureDate,datetime2,FailureEventDate,2
+event,FailureRecords,CreatedDateTime,datetime2,FailureEventDate,5
+event,MaintenanceRecords,MaintenanceDate,datetime2,MaintenanceEventDate,2
+event,MaintenanceRecords,CreatedDateTime,datetime2,MaintenanceEventDate,5
+event,SparePartUsage,UsageDateTime,datetime2,SparePartUsageEventDate,1
+event,SparePartUsage,CreatedDateTime,datetime2,SparePartUsageEventDate,5
+inv,InventoryTransactions,TransactionDateTime,datetime2,InventoryTransactionDate,1
+inv,InventoryTransactions,CreatedDateTime,datetime2,InventoryTransactionDate,3
