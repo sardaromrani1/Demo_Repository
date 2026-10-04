@@ -1,0 +1,140 @@
+﻿dbo,ControlSystems,PK_ControlSystems,[ControlSystemId] ASC,NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+dbo,ControlSystems,UQ_ControlSystems_Name,[ControlSystemName] ASC,NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+dbo,ControlSystems,UQ_ControlSystems_Code,[ControlSystemCode] ASC,NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+event,FailureRecords,PK_FailureRecords,[FailureId] ASC,NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+event,FailureRecords,UQ_FailureRecords_FailureId_InstrumentId,"[FailureId] ASC, [InstrumentId] ASC",NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+event,FailureRecords,IX_FK_FailureRecords_CurrencyId,[CurrencyId] ASC,NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+event,FailureRecords,IX_FK_FailureRecords_InstrumentId,[InstrumentId] ASC,NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+event,FailureRecords,IX_FK_FailureRecords_PreviousFailureId_InstrumentId,"[PreviousFailureId] ASC, [InstrumentId] ASC",NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+doc,MaintenanceDocuments,PK_MaintenanceDocuments,[MaintenanceDocumentId] ASC,NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+doc,MaintenanceDocuments,UQ_MaintenanceDocuments_Maintenance_Document,"[MaintenanceId] ASC, [DocumentId] ASC",NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+dbo,Instruments,PK_Instruments,[InstrumentId] ASC,NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+dbo,Instruments,UQ_Instruments_TagNumber,[TagNumber] ASC,NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+dbo,Instruments,IX_FK_Instruments_SubSystemId_UnitId,"[SubSystemId] ASC, [UnitId] ASC",NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+dbo,Instruments,IX_FK_Instruments_InstrumentTypeId,[InstrumentTypeId] ASC,NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+dbo,Instruments,IX_FK_Instruments_ManufacturerId,[ManufacturerId] ASC,NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+dbo,Instruments,IX_FK_Instruments_MeasurementUnitId,[MeasurementUnitId] ASC,NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+dbo,Instruments,IX_FK_Instruments_OutputUnitId,[OutputUnitId] ASC,NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+dbo,Instruments,IX_FK_Instruments_UnitId,[UnitId] ASC,NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+event,InstrumentLifecycle,PK_InstrumentLifecycle,[InstrumentLifecycleId] ASC,NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+event,InstrumentLifecycle,IX_FK_InstrumentLifecycle_CreatedBy,[CreatedBy] ASC,NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+event,InstrumentLifecycle,IX_FK_InstrumentLifecycle_InstrumentId,[InstrumentId] ASC,NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+event,InstrumentLifecycle,IX_FK_InstrumentLifecycle_LifecycleStatusCode,[LifecycleStatusCode] ASC,NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+event,InstrumentLifecycle,UX_InstrumentLifecycle_OpenRecord,[InstrumentId] ASC,NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+doc,FailureDocuments,PK_FailureDocuments,[FailureDocumentId] ASC,NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+doc,FailureDocuments,UQ_FailureDocuments_Failure_Document,"[FailureId] ASC, [DocumentId] ASC",NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+event,InstrumentOperationalStatusHistory,PK_InstrumentOperationalStatusHistory,[InstrumentOperationalStatusHistoryId] ASC,NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+event,InstrumentOperationalStatusHistory,IX_FK_InstrumentOperationalStatusHistory_FailureId_InstrumentId,"[FailureId] ASC, [InstrumentId] ASC",NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+event,InstrumentOperationalStatusHistory,IX_FK_InstrumentOperationalStatusHistory_MaintenanceId_InstrumentId,"[MaintenanceId] ASC, [InstrumentId] ASC",NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+event,InstrumentOperationalStatusHistory,IX_FK_InstrumentOperationalStatusHistory_CreatedBy,[CreatedBy] ASC,NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+event,InstrumentOperationalStatusHistory,IX_FK_InstrumentOperationalStatusHistory_InstrumentId,[InstrumentId] ASC,NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+event,InstrumentOperationalStatusHistory,IX_FK_InstrumentOperationalStatusHistory_StatusCode,[StatusCode] ASC,NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+event,InstrumentOperationalStatusHistory,UX_InstrumentOperationalStatusHistory_OpenRecord,[InstrumentId] ASC,NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+dbo,SpareParts,PK_SpareParts,[SparePartId] ASC,NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+dbo,SpareParts,UQ_SpareParts_PartNumber,[PartNumber] ASC,NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+dbo,SpareParts,IX_FK_SpareParts_ManufacturerId,[ManufacturerId] ASC,NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+dbo,SpareParts,IX_FK_SpareParts_StockUnitOfMeasureId,[StockUnitOfMeasureId] ASC,NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+doc,CalibrationDocuments,PK_CalibrationDocuments,[CalibrationDocumentId] ASC,NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+doc,CalibrationDocuments,UQ_CalibrationDocuments_Calibration_Document,"[CalibrationId] ASC, [DocumentId] ASC",NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+event,InstrumentBypassHistory,PK_InstrumentBypassHistory,[InstrumentBypassHistoryId] ASC,NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+event,InstrumentBypassHistory,IX_FK_InstrumentBypassHistory_AuthorizedByPersonnelId,[AuthorizedByPersonnelId] ASC,NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+event,InstrumentBypassHistory,IX_FK_InstrumentBypassHistory_CreatedBy,[CreatedBy] ASC,NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+event,InstrumentBypassHistory,IX_FK_InstrumentBypassHistory_InstrumentId,[InstrumentId] ASC,NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+event,InstrumentBypassHistory,UX_InstrumentBypassHistory_OpenRecord,[InstrumentId] ASC,NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+inv,InventoryLocations,PK_InventoryLocations,[InventoryLocationId] ASC,NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+inv,InventoryLocations,UQ_InventoryLocations_Code,[LocationCode] ASC,NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+doc,SparePartDocuments,PK_SparePartDocuments,[SparePartDocumentId] ASC,NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+doc,SparePartDocuments,UQ_SparePartDocuments_SparePart_Document,"[SparePartId] ASC, [DocumentId] ASC",NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+rel,ProcessUnitControlSystems,PK_ProcessUnitControlSystems,"[ProcessUnitId] ASC, [ControlSystemId] ASC",NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+inv,SparePartInventoryPolicy,PK_SparePartInventoryPolicy,[SparePartInventoryPolicyId] ASC,NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+inv,SparePartInventoryPolicy,UQ_SparePartInventoryPolicy_SparePart_Location,"[SparePartId] ASC, [InventoryLocationId] ASC",NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+rel,InstrumentControlSystems,PK_InstrumentControlSystems,"[InstrumentId] ASC, [ControlSystemId] ASC",NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+ref,Currency,PK_Currency,[CurrencyId] ASC,NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+ref,Currency,UQ_Currency_CurrencyCode,[CurrencyCode] ASC,NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+rel,InstrumentRedundancy,PK_InstrumentRedundancy,"[InstrumentId1] ASC, [InstrumentId2] ASC",NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+rel,InstrumentRedundancy,IX_FK_InstrumentRedundancy_CreatedBy,[CreatedBy] ASC,NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+rel,InstrumentRedundancy,IX_FK_InstrumentRedundancy_InstrumentId2,[InstrumentId2] ASC,NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+dbo,TripsInterlocks,PK_TripsInterlocks,[TripId] ASC,NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+dbo,TripsInterlocks,UQ_TripsInterlocks_TripCode,[TripCode] ASC,NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+dbo,TripsInterlocks,IX_FK_TripsInterlocks_ProcessUnitId,[ProcessUnitId] ASC,NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+ref,UnitOfMeasure,PK_UnitOfMeasure,[UnitOfMeasureId] ASC,NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+ref,UnitOfMeasure,UQ_UnitOfMeasure_UomCode,[UomCode] ASC,NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+dbo,Suppliers,PK_Suppliers,[SupplierId] ASC,NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+dbo,Suppliers,UQ_Suppliers_Code,[SupplierCode] ASC,NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+dbo,Personnel,PK_Personnel,[PersonnelId] ASC,NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+dbo,Personnel,UQ_Personnel_PersonnelCode,[PersonnelCode] ASC,NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+inv,SparePartSuppliers,PK_SparePartSuppliers,[SparePartSupplierId] ASC,NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+inv,SparePartSuppliers,UQ_SparePartSuppliers,"[SparePartId] ASC, [SupplierId] ASC",NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+rel,SparePartInstrumentTypes,PK_SparePartInstrumentTypes,"[SparePartId] ASC, [InstrumentTypeId] ASC",NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+dbo,Manufacturers,PK_Manufacturers,[ManufacturerId] ASC,NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+dbo,Manufacturers,UQ_Manufacturers_Name,[ManufacturerName] ASC,NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+dbo,Manufacturers,UQ_Manufacturers_Code,[ManufacturerCode] ASC,NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+rel,SparePartInstruments,PK_SparePartInstruments,"[SparePartId] ASC, [InstrumentId] ASC",NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+inv,InventoryTransactions,PK_InventoryTransactions,[InventoryTransactionId] ASC,NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+inv,InventoryTransactions,UQ_InventoryTransactions_Id_SparePart,"[InventoryTransactionId] ASC, [SparePartId] ASC",NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+inv,InventoryTransactions,IX_FK_InventoryTransactions_CreatedBy,[CreatedBy] ASC,NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+inv,InventoryTransactions,IX_FK_InventoryTransactions_CurrencyId,[CurrencyId] ASC,NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+inv,InventoryTransactions,IX_FK_InventoryTransactions_FailureId,[FailureId] ASC,NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+inv,InventoryTransactions,IX_FK_InventoryTransactions_InventoryLocationId,[InventoryLocationId] ASC,NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+inv,InventoryTransactions,IX_FK_InventoryTransactions_MaintenanceId,[MaintenanceId] ASC,NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+inv,InventoryTransactions,IX_FK_InventoryTransactions_PersonnelId,[PersonnelId] ASC,NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+inv,InventoryTransactions,IX_FK_InventoryTransactions_SparePartId,[SparePartId] ASC,NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+inv,InventoryTransactions,IX_FK_InventoryTransactions_SupplierId,[SupplierId] ASC,NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+inv,InventoryTransactions,IX_FK_InventoryTransactions_UnitOfMeasureId,[UnitOfMeasureId] ASC,NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+rel,SparePartInterchangeability,PK_SparePartInterchangeability,"[SparePartId1] ASC, [SparePartId2] ASC",NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+rel,SparePartInterchangeability,IX_FK_SparePartInterchangeability_CreatedBy,[CreatedBy] ASC,NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+rel,SparePartInterchangeability,IX_FK_SparePartInterchangeability_SparePartId2,[SparePartId2] ASC,NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+dbo,Contractors,PK_Contractors,[ContractorId] ASC,NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+dbo,Contractors,UQ_Contractors_Name,[ContractorName] ASC,NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+dbo,Contractors,UQ_Contractors_Code,[ContractorCode] ASC,NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+rel,TripInstruments,PK_TripInstruments,"[TripId] ASC, [InstrumentId] ASC, [TripRoleCode] ASC",NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+rel,TripInstruments,IX_FK_TripInstruments_CreatedBy,[CreatedBy] ASC,NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+rel,TripInstruments,IX_FK_TripInstruments_InstrumentId,[InstrumentId] ASC,NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+dbo,ReferenceEquipment,PK_ReferenceEquipment,[ReferenceEquipmentId] ASC,NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+dbo,ReferenceEquipment,UQ_ReferenceEquipment_Code,[EquipmentCode] ASC,NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+event,SparePartUsage,PK_SparePartUsage,[SparePartUsageId] ASC,NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+event,SparePartUsage,IX_FK_SparePartUsage_FailureId_InstrumentId,"[FailureId] ASC, [InstrumentId] ASC",NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+event,SparePartUsage,IX_FK_SparePartUsage_InventoryTransactionId_SparePartId,"[InventoryTransactionId] ASC, [SparePartId] ASC",NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+event,SparePartUsage,IX_FK_SparePartUsage_MaintenanceId_InstrumentId,"[MaintenanceId] ASC, [InstrumentId] ASC",NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+event,SparePartUsage,IX_FK_SparePartUsage_CreatedBy,[CreatedBy] ASC,NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+event,SparePartUsage,IX_FK_SparePartUsage_CurrencyId,[CurrencyId] ASC,NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+event,SparePartUsage,IX_FK_SparePartUsage_InstrumentId,[InstrumentId] ASC,NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+event,SparePartUsage,IX_FK_SparePartUsage_PersonnelId,[PersonnelId] ASC,NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+event,SparePartUsage,IX_FK_SparePartUsage_SparePartId,[SparePartId] ASC,NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+event,SparePartUsage,IX_FK_SparePartUsage_UnitOfMeasureId,[UnitOfMeasureId] ASC,NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+event,CalibrationRecords,PK_CalibrationRecords,[CalibrationId] ASC,NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+event,CalibrationRecords,IX_FK_CalibrationRecords_ApprovedByPersonnelId,[ApprovedByPersonnelId] ASC,NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+event,CalibrationRecords,IX_FK_CalibrationRecords_InstrumentId,[InstrumentId] ASC,NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+event,CalibrationRecords,IX_FK_CalibrationRecords_PerformedByPersonnelId,[PerformedByPersonnelId] ASC,NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+event,CalibrationRecords,IX_FK_CalibrationRecords_ReferenceEquipmentId,[ReferenceEquipmentId] ASC,NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+ref,InstrumentStatus,PK_InstrumentStatus,[StatusCode] ASC,NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+ref,InstrumentStatus,UQ_InstrumentStatus_Name,[StatusName] ASC,NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+ref,LifecycleStatus,PK_LifecycleStatus,[LifecycleStatusCode] ASC,NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+ref,LifecycleStatus,UQ_LifecycleStatus_Name,[LifecycleStatusName] ASC,NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+event,CalibrationTestPoints,PK_CalibrationTestPoints,[CalibrationTestPointId] ASC,NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+event,CalibrationTestPoints,UQ_CalibrationTestPoints_Sequence,"[CalibrationId] ASC, [TestSequence] ASC",NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+event,CalibrationTestPoints,IX_FK_CalibrationTestPoints_AcceptanceUnitOfMeasureId,[AcceptanceUnitOfMeasureId] ASC,NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+event,CalibrationTestPoints,IX_FK_CalibrationTestPoints_AppliedUnitOfMeasureId,[AppliedUnitOfMeasureId] ASC,NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+event,CalibrationTestPoints,IX_FK_CalibrationTestPoints_AsFoundUnitOfMeasureId,[AsFoundUnitOfMeasureId] ASC,NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+event,CalibrationTestPoints,IX_FK_CalibrationTestPoints_AsLeftUnitOfMeasureId,[AsLeftUnitOfMeasureId] ASC,NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+doc,Documents,PK_Documents,[DocumentId] ASC,NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+doc,Documents,UQ_Documents_DocumentNumber,[DocumentNumber] ASC,NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+dbo,Sites,PK_Sites,[SiteId] ASC,NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+dbo,Sites,UQ_Sites_SiteName,[SiteName] ASC,NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+dbo,Sites,UQ_Sites_SiteCode,[SiteCode] ASC,NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+dbo,ProcessUnits,PK_ProcessUnits,[UnitId] ASC,NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+dbo,ProcessUnits,UQ_ProcessUnits_Site_UnitCode,"[SiteId] ASC, [UnitCode] ASC",NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+event,MaintenanceRecords,PK_MaintenanceRecords,[MaintenanceId] ASC,NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+event,MaintenanceRecords,UQ_MaintenanceRecords_MaintenanceId_InstrumentId,"[MaintenanceId] ASC, [InstrumentId] ASC",NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+event,MaintenanceRecords,IX_FK_MaintenanceRecords_CurrencyId,[CurrencyId] ASC,NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+event,MaintenanceRecords,IX_FK_MaintenanceRecords_InstrumentId,[InstrumentId] ASC,NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+doc,DocumentFiles,PK_DocumentFiles,[DocumentFileId] ASC,NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+dbo,SubSystems,PK_SubSystems,[SubSystemId] ASC,NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+dbo,SubSystems,UQ_SubSystems_Unit_Code,"[UnitId] ASC, [SubSystemCode] ASC",NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+dbo,SubSystems,UQ_SubSystems_SubSystemId_UnitId,"[SubSystemId] ASC, [UnitId] ASC",NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+doc,InstrumentDocuments,PK_InstrumentDocuments,[InstrumentDocumentId] ASC,NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+doc,InstrumentDocuments,UQ_InstrumentDocuments_Instrument_Document,"[InstrumentId] ASC, [DocumentId] ASC",NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+event,MaintenanceLabor,PK_MaintenanceLabor,[MaintenanceLaborId] ASC,NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+dbo,InstrumentTypes,PK_InstrumentTypes,[InstrumentTypeId] ASC,NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+dbo,InstrumentTypes,UQ_InstrumentTypes_Name,[InstrumentTypeName] ASC,NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS
+dbo,InstrumentTypes,UQ_InstrumentTypes_Code,[InstrumentTypeCode] ASC,NULL,0,0,0,0,NO_RUNTIME_STATISTICS,NO_OBSERVED_USER_READS

@@ -1,0 +1,13 @@
+﻿1,HIGH,Maintenance History,event,MaintenanceRecords,"[InstrumentId], [MaintenanceDate]",PARTIAL_PREFIX_SUPPORT,NULL,NULL,NULL,NULL,NULL,NULL,NULL,Frequent instrument maintenance-history retrieval by instrument and event date.
+2,HIGH,Failure History,event,FailureRecords,"[InstrumentId], [FailureDate]",PARTIAL_PREFIX_SUPPORT,NULL,NULL,NULL,NULL,NULL,NULL,NULL,Frequent failure-history retrieval by instrument and failure date.
+3,HIGH,Calibration History,event,CalibrationRecords,"[InstrumentId], [CalibrationDate]",PARTIAL_PREFIX_SUPPORT,NULL,NULL,NULL,NULL,NULL,NULL,NULL,Frequent calibration-history retrieval by instrument and calibration date.
+4,HIGH,Instrument Lifecycle,event,InstrumentLifecycle,"[InstrumentId], [EffectiveFrom]",PARTIAL_PREFIX_SUPPORT,NULL,NULL,NULL,NULL,NULL,NULL,NULL,Historical lifecycle lookup and temporal reconstruction.
+5,HIGH,Operational Status History,event,InstrumentOperationalStatusHistory,"[InstrumentId], [EffectiveFrom]",PARTIAL_PREFIX_SUPPORT,NULL,NULL,NULL,NULL,NULL,NULL,NULL,Temporal operational-status analysis.
+6,HIGH,Instrument Bypass History,event,InstrumentBypassHistory,"[InstrumentId], [BypassStartDateTime]",PARTIAL_PREFIX_SUPPORT,NULL,NULL,NULL,NULL,NULL,NULL,NULL,Bypass-duration and bypass-history analysis.
+7,MEDIUM,Spare Usage by Instrument,event,SparePartUsage,"[InstrumentId], [UsageDateTime]",PARTIAL_PREFIX_SUPPORT,NULL,NULL,NULL,NULL,NULL,NULL,NULL,Spare consumption history for an instrument.
+8,MEDIUM,Spare Usage by Spare Part,event,SparePartUsage,"[SparePartId], [UsageDateTime]",PARTIAL_PREFIX_SUPPORT,NULL,NULL,NULL,NULL,NULL,NULL,NULL,Spare-part consumption history and usage analytics.
+9,MEDIUM,Inventory by Spare Part,inv,InventoryTransactions,"[SparePartId], [TransactionDateTime]",PARTIAL_PREFIX_SUPPORT,NULL,NULL,NULL,NULL,NULL,NULL,NULL,Inventory transaction history by spare part.
+10,MEDIUM,Inventory by Location,inv,InventoryTransactions,"[InventoryLocationId], [TransactionDateTime]",PARTIAL_PREFIX_SUPPORT,NULL,NULL,NULL,NULL,NULL,NULL,NULL,Inventory movement analysis by warehouse/location.
+11,MEDIUM,Trip Lookup by Instrument,rel,TripInstruments,"[InstrumentId], [TripId]",PARTIAL_PREFIX_SUPPORT,NULL,NULL,NULL,NULL,NULL,NULL,NULL,"Instrument-centric lookup of trips/interlocks. Existing PK begins with TripId, not InstrumentId."
+12,MEDIUM,Spare Part Compatibility by Instrument,rel,SparePartInstruments,"[InstrumentId], [SparePartId]",NOT_SUPPORTED,NULL,NULL,NULL,NULL,NULL,NULL,NULL,Instrument-centric compatible-spare-part lookup.
+13,MEDIUM,Spare Part Compatibility by Instrument Type,rel,SparePartInstrumentTypes,"[InstrumentTypeId], [SparePartId]",NOT_SUPPORTED,NULL,NULL,NULL,NULL,NULL,NULL,NULL,Instrument-type-centric compatible-spare-part lookup.
