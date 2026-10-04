@@ -1,0 +1,140 @@
+﻿dbo,Contractors,1,PK_Contractors,CLUSTERED,1,1,0,0,[ContractorId] ASC,NULL,NULL
+dbo,Contractors,2,UQ_Contractors_Name,NONCLUSTERED,1,0,1,0,[ContractorName] ASC,NULL,NULL
+dbo,Contractors,3,UQ_Contractors_Code,NONCLUSTERED,1,0,1,0,[ContractorCode] ASC,NULL,NULL
+dbo,ControlSystems,1,PK_ControlSystems,CLUSTERED,1,1,0,0,[ControlSystemId] ASC,NULL,NULL
+dbo,ControlSystems,2,UQ_ControlSystems_Name,NONCLUSTERED,1,0,1,0,[ControlSystemName] ASC,NULL,NULL
+dbo,ControlSystems,3,UQ_ControlSystems_Code,NONCLUSTERED,1,0,1,0,[ControlSystemCode] ASC,NULL,NULL
+dbo,Instruments,1,PK_Instruments,CLUSTERED,1,1,0,0,[InstrumentId] ASC,NULL,NULL
+dbo,Instruments,2,UQ_Instruments_TagNumber,NONCLUSTERED,1,0,1,0,[TagNumber] ASC,NULL,NULL
+dbo,Instruments,3,IX_FK_Instruments_SubSystemId_UnitId,NONCLUSTERED,0,0,0,0,"[SubSystemId] ASC, [UnitId] ASC",NULL,NULL
+dbo,Instruments,4,IX_FK_Instruments_InstrumentTypeId,NONCLUSTERED,0,0,0,0,[InstrumentTypeId] ASC,NULL,NULL
+dbo,Instruments,5,IX_FK_Instruments_ManufacturerId,NONCLUSTERED,0,0,0,0,[ManufacturerId] ASC,NULL,NULL
+dbo,Instruments,6,IX_FK_Instruments_MeasurementUnitId,NONCLUSTERED,0,0,0,0,[MeasurementUnitId] ASC,NULL,NULL
+dbo,Instruments,7,IX_FK_Instruments_OutputUnitId,NONCLUSTERED,0,0,0,0,[OutputUnitId] ASC,NULL,NULL
+dbo,Instruments,8,IX_FK_Instruments_UnitId,NONCLUSTERED,0,0,0,0,[UnitId] ASC,NULL,NULL
+dbo,InstrumentTypes,1,PK_InstrumentTypes,CLUSTERED,1,1,0,0,[InstrumentTypeId] ASC,NULL,NULL
+dbo,InstrumentTypes,2,UQ_InstrumentTypes_Name,NONCLUSTERED,1,0,1,0,[InstrumentTypeName] ASC,NULL,NULL
+dbo,InstrumentTypes,3,UQ_InstrumentTypes_Code,NONCLUSTERED,1,0,1,0,[InstrumentTypeCode] ASC,NULL,NULL
+dbo,Manufacturers,1,PK_Manufacturers,CLUSTERED,1,1,0,0,[ManufacturerId] ASC,NULL,NULL
+dbo,Manufacturers,2,UQ_Manufacturers_Name,NONCLUSTERED,1,0,1,0,[ManufacturerName] ASC,NULL,NULL
+dbo,Manufacturers,3,UQ_Manufacturers_Code,NONCLUSTERED,1,0,1,0,[ManufacturerCode] ASC,NULL,NULL
+dbo,Personnel,1,PK_Personnel,CLUSTERED,1,1,0,0,[PersonnelId] ASC,NULL,NULL
+dbo,Personnel,2,UQ_Personnel_PersonnelCode,NONCLUSTERED,1,0,1,0,[PersonnelCode] ASC,NULL,NULL
+dbo,ProcessUnits,1,PK_ProcessUnits,CLUSTERED,1,1,0,0,[UnitId] ASC,NULL,NULL
+dbo,ProcessUnits,2,UQ_ProcessUnits_Site_UnitCode,NONCLUSTERED,1,0,1,0,"[SiteId] ASC, [UnitCode] ASC",NULL,NULL
+dbo,ReferenceEquipment,1,PK_ReferenceEquipment,CLUSTERED,1,1,0,0,[ReferenceEquipmentId] ASC,NULL,NULL
+dbo,ReferenceEquipment,2,UQ_ReferenceEquipment_Code,NONCLUSTERED,1,0,1,0,[EquipmentCode] ASC,NULL,NULL
+dbo,Sites,1,PK_Sites,CLUSTERED,1,1,0,0,[SiteId] ASC,NULL,NULL
+dbo,Sites,2,UQ_Sites_SiteName,NONCLUSTERED,1,0,1,0,[SiteName] ASC,NULL,NULL
+dbo,Sites,3,UQ_Sites_SiteCode,NONCLUSTERED,1,0,1,0,[SiteCode] ASC,NULL,NULL
+dbo,SpareParts,1,PK_SpareParts,CLUSTERED,1,1,0,0,[SparePartId] ASC,NULL,NULL
+dbo,SpareParts,2,UQ_SpareParts_PartNumber,NONCLUSTERED,1,0,1,0,[PartNumber] ASC,NULL,NULL
+dbo,SpareParts,3,IX_FK_SpareParts_ManufacturerId,NONCLUSTERED,0,0,0,0,[ManufacturerId] ASC,NULL,NULL
+dbo,SpareParts,4,IX_FK_SpareParts_StockUnitOfMeasureId,NONCLUSTERED,0,0,0,0,[StockUnitOfMeasureId] ASC,NULL,NULL
+dbo,SubSystems,1,PK_SubSystems,CLUSTERED,1,1,0,0,[SubSystemId] ASC,NULL,NULL
+dbo,SubSystems,2,UQ_SubSystems_Unit_Code,NONCLUSTERED,1,0,1,0,"[UnitId] ASC, [SubSystemCode] ASC",NULL,NULL
+dbo,SubSystems,3,UQ_SubSystems_SubSystemId_UnitId,NONCLUSTERED,1,0,1,0,"[SubSystemId] ASC, [UnitId] ASC",NULL,NULL
+dbo,Suppliers,1,PK_Suppliers,CLUSTERED,1,1,0,0,[SupplierId] ASC,NULL,NULL
+dbo,Suppliers,2,UQ_Suppliers_Code,NONCLUSTERED,1,0,1,0,[SupplierCode] ASC,NULL,NULL
+dbo,TripsInterlocks,1,PK_TripsInterlocks,CLUSTERED,1,1,0,0,[TripId] ASC,NULL,NULL
+dbo,TripsInterlocks,2,UQ_TripsInterlocks_TripCode,NONCLUSTERED,1,0,1,0,[TripCode] ASC,NULL,NULL
+dbo,TripsInterlocks,3,IX_FK_TripsInterlocks_ProcessUnitId,NONCLUSTERED,0,0,0,0,[ProcessUnitId] ASC,NULL,NULL
+doc,CalibrationDocuments,1,PK_CalibrationDocuments,CLUSTERED,1,1,0,0,[CalibrationDocumentId] ASC,NULL,NULL
+doc,CalibrationDocuments,2,UQ_CalibrationDocuments_Calibration_Document,NONCLUSTERED,1,0,1,0,"[CalibrationId] ASC, [DocumentId] ASC",NULL,NULL
+doc,DocumentFiles,1,PK_DocumentFiles,CLUSTERED,1,1,0,0,[DocumentFileId] ASC,NULL,NULL
+doc,Documents,1,PK_Documents,CLUSTERED,1,1,0,0,[DocumentId] ASC,NULL,NULL
+doc,Documents,2,UQ_Documents_DocumentNumber,NONCLUSTERED,1,0,1,0,[DocumentNumber] ASC,NULL,NULL
+doc,FailureDocuments,1,PK_FailureDocuments,CLUSTERED,1,1,0,0,[FailureDocumentId] ASC,NULL,NULL
+doc,FailureDocuments,2,UQ_FailureDocuments_Failure_Document,NONCLUSTERED,1,0,1,0,"[FailureId] ASC, [DocumentId] ASC",NULL,NULL
+doc,InstrumentDocuments,1,PK_InstrumentDocuments,CLUSTERED,1,1,0,0,[InstrumentDocumentId] ASC,NULL,NULL
+doc,InstrumentDocuments,2,UQ_InstrumentDocuments_Instrument_Document,NONCLUSTERED,1,0,1,0,"[InstrumentId] ASC, [DocumentId] ASC",NULL,NULL
+doc,MaintenanceDocuments,1,PK_MaintenanceDocuments,CLUSTERED,1,1,0,0,[MaintenanceDocumentId] ASC,NULL,NULL
+doc,MaintenanceDocuments,2,UQ_MaintenanceDocuments_Maintenance_Document,NONCLUSTERED,1,0,1,0,"[MaintenanceId] ASC, [DocumentId] ASC",NULL,NULL
+doc,SparePartDocuments,1,PK_SparePartDocuments,CLUSTERED,1,1,0,0,[SparePartDocumentId] ASC,NULL,NULL
+doc,SparePartDocuments,2,UQ_SparePartDocuments_SparePart_Document,NONCLUSTERED,1,0,1,0,"[SparePartId] ASC, [DocumentId] ASC",NULL,NULL
+event,CalibrationRecords,1,PK_CalibrationRecords,CLUSTERED,1,1,0,0,[CalibrationId] ASC,NULL,NULL
+event,CalibrationRecords,2,IX_FK_CalibrationRecords_ApprovedByPersonnelId,NONCLUSTERED,0,0,0,0,[ApprovedByPersonnelId] ASC,NULL,NULL
+event,CalibrationRecords,3,IX_FK_CalibrationRecords_InstrumentId,NONCLUSTERED,0,0,0,0,[InstrumentId] ASC,NULL,NULL
+event,CalibrationRecords,4,IX_FK_CalibrationRecords_PerformedByPersonnelId,NONCLUSTERED,0,0,0,0,[PerformedByPersonnelId] ASC,NULL,NULL
+event,CalibrationRecords,5,IX_FK_CalibrationRecords_ReferenceEquipmentId,NONCLUSTERED,0,0,0,0,[ReferenceEquipmentId] ASC,NULL,NULL
+event,CalibrationTestPoints,1,PK_CalibrationTestPoints,CLUSTERED,1,1,0,0,[CalibrationTestPointId] ASC,NULL,NULL
+event,CalibrationTestPoints,2,UQ_CalibrationTestPoints_Sequence,NONCLUSTERED,1,0,1,0,"[CalibrationId] ASC, [TestSequence] ASC",NULL,NULL
+event,CalibrationTestPoints,3,IX_FK_CalibrationTestPoints_AcceptanceUnitOfMeasureId,NONCLUSTERED,0,0,0,0,[AcceptanceUnitOfMeasureId] ASC,NULL,NULL
+event,CalibrationTestPoints,4,IX_FK_CalibrationTestPoints_AppliedUnitOfMeasureId,NONCLUSTERED,0,0,0,0,[AppliedUnitOfMeasureId] ASC,NULL,NULL
+event,CalibrationTestPoints,5,IX_FK_CalibrationTestPoints_AsFoundUnitOfMeasureId,NONCLUSTERED,0,0,0,0,[AsFoundUnitOfMeasureId] ASC,NULL,NULL
+event,CalibrationTestPoints,6,IX_FK_CalibrationTestPoints_AsLeftUnitOfMeasureId,NONCLUSTERED,0,0,0,0,[AsLeftUnitOfMeasureId] ASC,NULL,NULL
+event,FailureRecords,1,PK_FailureRecords,CLUSTERED,1,1,0,0,[FailureId] ASC,NULL,NULL
+event,FailureRecords,2,UQ_FailureRecords_FailureId_InstrumentId,NONCLUSTERED,1,0,1,0,"[FailureId] ASC, [InstrumentId] ASC",NULL,NULL
+event,FailureRecords,3,IX_FK_FailureRecords_CurrencyId,NONCLUSTERED,0,0,0,0,[CurrencyId] ASC,NULL,NULL
+event,FailureRecords,4,IX_FK_FailureRecords_InstrumentId,NONCLUSTERED,0,0,0,0,[InstrumentId] ASC,NULL,NULL
+event,FailureRecords,5,IX_FK_FailureRecords_PreviousFailureId_InstrumentId,NONCLUSTERED,0,0,0,0,"[PreviousFailureId] ASC, [InstrumentId] ASC",NULL,NULL
+event,InstrumentBypassHistory,1,PK_InstrumentBypassHistory,CLUSTERED,1,1,0,0,[InstrumentBypassHistoryId] ASC,NULL,NULL
+event,InstrumentBypassHistory,2,IX_FK_InstrumentBypassHistory_AuthorizedByPersonnelId,NONCLUSTERED,0,0,0,0,[AuthorizedByPersonnelId] ASC,NULL,NULL
+event,InstrumentBypassHistory,3,IX_FK_InstrumentBypassHistory_CreatedBy,NONCLUSTERED,0,0,0,0,[CreatedBy] ASC,NULL,NULL
+event,InstrumentBypassHistory,4,IX_FK_InstrumentBypassHistory_InstrumentId,NONCLUSTERED,0,0,0,0,[InstrumentId] ASC,NULL,NULL
+event,InstrumentBypassHistory,5,UX_InstrumentBypassHistory_OpenRecord,NONCLUSTERED,1,0,0,0,[InstrumentId] ASC,NULL,([BypassEndDateTime] IS NULL)
+event,InstrumentLifecycle,1,PK_InstrumentLifecycle,CLUSTERED,1,1,0,0,[InstrumentLifecycleId] ASC,NULL,NULL
+event,InstrumentLifecycle,2,IX_FK_InstrumentLifecycle_CreatedBy,NONCLUSTERED,0,0,0,0,[CreatedBy] ASC,NULL,NULL
+event,InstrumentLifecycle,3,IX_FK_InstrumentLifecycle_InstrumentId,NONCLUSTERED,0,0,0,0,[InstrumentId] ASC,NULL,NULL
+event,InstrumentLifecycle,4,IX_FK_InstrumentLifecycle_LifecycleStatusCode,NONCLUSTERED,0,0,0,0,[LifecycleStatusCode] ASC,NULL,NULL
+event,InstrumentLifecycle,5,UX_InstrumentLifecycle_OpenRecord,NONCLUSTERED,1,0,0,0,[InstrumentId] ASC,NULL,([EffectiveTo] IS NULL)
+event,InstrumentOperationalStatusHistory,1,PK_InstrumentOperationalStatusHistory,CLUSTERED,1,1,0,0,[InstrumentOperationalStatusHistoryId] ASC,NULL,NULL
+event,InstrumentOperationalStatusHistory,2,IX_FK_InstrumentOperationalStatusHistory_FailureId_InstrumentId,NONCLUSTERED,0,0,0,0,"[FailureId] ASC, [InstrumentId] ASC",NULL,NULL
+event,InstrumentOperationalStatusHistory,3,IX_FK_InstrumentOperationalStatusHistory_MaintenanceId_InstrumentId,NONCLUSTERED,0,0,0,0,"[MaintenanceId] ASC, [InstrumentId] ASC",NULL,NULL
+event,InstrumentOperationalStatusHistory,4,IX_FK_InstrumentOperationalStatusHistory_CreatedBy,NONCLUSTERED,0,0,0,0,[CreatedBy] ASC,NULL,NULL
+event,InstrumentOperationalStatusHistory,5,IX_FK_InstrumentOperationalStatusHistory_InstrumentId,NONCLUSTERED,0,0,0,0,[InstrumentId] ASC,NULL,NULL
+event,InstrumentOperationalStatusHistory,6,IX_FK_InstrumentOperationalStatusHistory_StatusCode,NONCLUSTERED,0,0,0,0,[StatusCode] ASC,NULL,NULL
+event,InstrumentOperationalStatusHistory,7,UX_InstrumentOperationalStatusHistory_OpenRecord,NONCLUSTERED,1,0,0,0,[InstrumentId] ASC,NULL,([EffectiveTo] IS NULL)
+event,MaintenanceLabor,1,PK_MaintenanceLabor,CLUSTERED,1,1,0,0,[MaintenanceLaborId] ASC,NULL,NULL
+event,MaintenanceRecords,1,PK_MaintenanceRecords,CLUSTERED,1,1,0,0,[MaintenanceId] ASC,NULL,NULL
+event,MaintenanceRecords,2,UQ_MaintenanceRecords_MaintenanceId_InstrumentId,NONCLUSTERED,1,0,1,0,"[MaintenanceId] ASC, [InstrumentId] ASC",NULL,NULL
+event,MaintenanceRecords,3,IX_FK_MaintenanceRecords_CurrencyId,NONCLUSTERED,0,0,0,0,[CurrencyId] ASC,NULL,NULL
+event,MaintenanceRecords,4,IX_FK_MaintenanceRecords_InstrumentId,NONCLUSTERED,0,0,0,0,[InstrumentId] ASC,NULL,NULL
+event,SparePartUsage,1,PK_SparePartUsage,CLUSTERED,1,1,0,0,[SparePartUsageId] ASC,NULL,NULL
+event,SparePartUsage,2,IX_FK_SparePartUsage_FailureId_InstrumentId,NONCLUSTERED,0,0,0,0,"[FailureId] ASC, [InstrumentId] ASC",NULL,NULL
+event,SparePartUsage,3,IX_FK_SparePartUsage_InventoryTransactionId_SparePartId,NONCLUSTERED,0,0,0,0,"[InventoryTransactionId] ASC, [SparePartId] ASC",NULL,NULL
+event,SparePartUsage,4,IX_FK_SparePartUsage_MaintenanceId_InstrumentId,NONCLUSTERED,0,0,0,0,"[MaintenanceId] ASC, [InstrumentId] ASC",NULL,NULL
+event,SparePartUsage,5,IX_FK_SparePartUsage_CreatedBy,NONCLUSTERED,0,0,0,0,[CreatedBy] ASC,NULL,NULL
+event,SparePartUsage,6,IX_FK_SparePartUsage_CurrencyId,NONCLUSTERED,0,0,0,0,[CurrencyId] ASC,NULL,NULL
+event,SparePartUsage,7,IX_FK_SparePartUsage_InstrumentId,NONCLUSTERED,0,0,0,0,[InstrumentId] ASC,NULL,NULL
+event,SparePartUsage,8,IX_FK_SparePartUsage_PersonnelId,NONCLUSTERED,0,0,0,0,[PersonnelId] ASC,NULL,NULL
+event,SparePartUsage,9,IX_FK_SparePartUsage_SparePartId,NONCLUSTERED,0,0,0,0,[SparePartId] ASC,NULL,NULL
+event,SparePartUsage,10,IX_FK_SparePartUsage_UnitOfMeasureId,NONCLUSTERED,0,0,0,0,[UnitOfMeasureId] ASC,NULL,NULL
+inv,InventoryLocations,1,PK_InventoryLocations,CLUSTERED,1,1,0,0,[InventoryLocationId] ASC,NULL,NULL
+inv,InventoryLocations,2,UQ_InventoryLocations_Code,NONCLUSTERED,1,0,1,0,[LocationCode] ASC,NULL,NULL
+inv,InventoryTransactions,1,PK_InventoryTransactions,CLUSTERED,1,1,0,0,[InventoryTransactionId] ASC,NULL,NULL
+inv,InventoryTransactions,2,UQ_InventoryTransactions_Id_SparePart,NONCLUSTERED,1,0,1,0,"[InventoryTransactionId] ASC, [SparePartId] ASC",NULL,NULL
+inv,InventoryTransactions,3,IX_FK_InventoryTransactions_CreatedBy,NONCLUSTERED,0,0,0,0,[CreatedBy] ASC,NULL,NULL
+inv,InventoryTransactions,4,IX_FK_InventoryTransactions_CurrencyId,NONCLUSTERED,0,0,0,0,[CurrencyId] ASC,NULL,NULL
+inv,InventoryTransactions,5,IX_FK_InventoryTransactions_FailureId,NONCLUSTERED,0,0,0,0,[FailureId] ASC,NULL,NULL
+inv,InventoryTransactions,6,IX_FK_InventoryTransactions_InventoryLocationId,NONCLUSTERED,0,0,0,0,[InventoryLocationId] ASC,NULL,NULL
+inv,InventoryTransactions,7,IX_FK_InventoryTransactions_MaintenanceId,NONCLUSTERED,0,0,0,0,[MaintenanceId] ASC,NULL,NULL
+inv,InventoryTransactions,8,IX_FK_InventoryTransactions_PersonnelId,NONCLUSTERED,0,0,0,0,[PersonnelId] ASC,NULL,NULL
+inv,InventoryTransactions,9,IX_FK_InventoryTransactions_SparePartId,NONCLUSTERED,0,0,0,0,[SparePartId] ASC,NULL,NULL
+inv,InventoryTransactions,10,IX_FK_InventoryTransactions_SupplierId,NONCLUSTERED,0,0,0,0,[SupplierId] ASC,NULL,NULL
+inv,InventoryTransactions,11,IX_FK_InventoryTransactions_UnitOfMeasureId,NONCLUSTERED,0,0,0,0,[UnitOfMeasureId] ASC,NULL,NULL
+inv,SparePartInventoryPolicy,1,PK_SparePartInventoryPolicy,CLUSTERED,1,1,0,0,[SparePartInventoryPolicyId] ASC,NULL,NULL
+inv,SparePartInventoryPolicy,2,UQ_SparePartInventoryPolicy_SparePart_Location,NONCLUSTERED,1,0,1,0,"[SparePartId] ASC, [InventoryLocationId] ASC",NULL,NULL
+inv,SparePartSuppliers,1,PK_SparePartSuppliers,CLUSTERED,1,1,0,0,[SparePartSupplierId] ASC,NULL,NULL
+inv,SparePartSuppliers,2,UQ_SparePartSuppliers,NONCLUSTERED,1,0,1,0,"[SparePartId] ASC, [SupplierId] ASC",NULL,NULL
+ref,Currency,1,PK_Currency,CLUSTERED,1,1,0,0,[CurrencyId] ASC,NULL,NULL
+ref,Currency,2,UQ_Currency_CurrencyCode,NONCLUSTERED,1,0,1,0,[CurrencyCode] ASC,NULL,NULL
+ref,InstrumentStatus,1,PK_InstrumentStatus,CLUSTERED,1,1,0,0,[StatusCode] ASC,NULL,NULL
+ref,InstrumentStatus,2,UQ_InstrumentStatus_Name,NONCLUSTERED,1,0,1,0,[StatusName] ASC,NULL,NULL
+ref,LifecycleStatus,1,PK_LifecycleStatus,CLUSTERED,1,1,0,0,[LifecycleStatusCode] ASC,NULL,NULL
+ref,LifecycleStatus,2,UQ_LifecycleStatus_Name,NONCLUSTERED,1,0,1,0,[LifecycleStatusName] ASC,NULL,NULL
+ref,UnitOfMeasure,1,PK_UnitOfMeasure,CLUSTERED,1,1,0,0,[UnitOfMeasureId] ASC,NULL,NULL
+ref,UnitOfMeasure,2,UQ_UnitOfMeasure_UomCode,NONCLUSTERED,1,0,1,0,[UomCode] ASC,NULL,NULL
+rel,InstrumentControlSystems,1,PK_InstrumentControlSystems,CLUSTERED,1,1,0,0,"[InstrumentId] ASC, [ControlSystemId] ASC",NULL,NULL
+rel,InstrumentRedundancy,1,PK_InstrumentRedundancy,CLUSTERED,1,1,0,0,"[InstrumentId1] ASC, [InstrumentId2] ASC",NULL,NULL
+rel,InstrumentRedundancy,2,IX_FK_InstrumentRedundancy_CreatedBy,NONCLUSTERED,0,0,0,0,[CreatedBy] ASC,NULL,NULL
+rel,InstrumentRedundancy,3,IX_FK_InstrumentRedundancy_InstrumentId2,NONCLUSTERED,0,0,0,0,[InstrumentId2] ASC,NULL,NULL
+rel,ProcessUnitControlSystems,1,PK_ProcessUnitControlSystems,CLUSTERED,1,1,0,0,"[ProcessUnitId] ASC, [ControlSystemId] ASC",NULL,NULL
+rel,SparePartInstruments,1,PK_SparePartInstruments,CLUSTERED,1,1,0,0,"[SparePartId] ASC, [InstrumentId] ASC",NULL,NULL
+rel,SparePartInstrumentTypes,1,PK_SparePartInstrumentTypes,CLUSTERED,1,1,0,0,"[SparePartId] ASC, [InstrumentTypeId] ASC",NULL,NULL
+rel,SparePartInterchangeability,1,PK_SparePartInterchangeability,CLUSTERED,1,1,0,0,"[SparePartId1] ASC, [SparePartId2] ASC",NULL,NULL
+rel,SparePartInterchangeability,2,IX_FK_SparePartInterchangeability_CreatedBy,NONCLUSTERED,0,0,0,0,[CreatedBy] ASC,NULL,NULL
+rel,SparePartInterchangeability,3,IX_FK_SparePartInterchangeability_SparePartId2,NONCLUSTERED,0,0,0,0,[SparePartId2] ASC,NULL,NULL
+rel,TripInstruments,1,PK_TripInstruments,CLUSTERED,1,1,0,0,"[TripId] ASC, [InstrumentId] ASC, [TripRoleCode] ASC",NULL,NULL
+rel,TripInstruments,2,IX_FK_TripInstruments_CreatedBy,NONCLUSTERED,0,0,0,0,[CreatedBy] ASC,NULL,NULL
+rel,TripInstruments,3,IX_FK_TripInstruments_InstrumentId,NONCLUSTERED,0,0,0,0,[InstrumentId] ASC,NULL,NULL
