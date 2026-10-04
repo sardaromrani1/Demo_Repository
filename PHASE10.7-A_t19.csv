@@ -1,0 +1,6 @@
+﻿1,HIGH,Maintenance History,event,MaintenanceRecords,"[InstrumentId], [MaintenanceDate]",PARTIAL_PREFIX_SUPPORT,WHERE InstrumentId = ? ORDER BY MaintenanceDate,Frequent instrument maintenance-history retrieval by instrument and event date.
+2,HIGH,Failure History,event,FailureRecords,"[InstrumentId], [FailureDate]",PARTIAL_PREFIX_SUPPORT,WHERE InstrumentId = ? ORDER BY FailureDate,Frequent failure-history retrieval by instrument and failure date.
+3,HIGH,Calibration History,event,CalibrationRecords,"[InstrumentId], [CalibrationDate]",PARTIAL_PREFIX_SUPPORT,WHERE InstrumentId = ? ORDER BY CalibrationDate,Frequent calibration-history retrieval by instrument and calibration date.
+4,HIGH,Instrument Lifecycle,event,InstrumentLifecycle,"[InstrumentId], [EffectiveFrom]",PARTIAL_PREFIX_SUPPORT,WHERE InstrumentId = ? ORDER BY EffectiveFrom,Historical lifecycle lookup and temporal reconstruction.
+5,HIGH,Operational Status History,event,InstrumentOperationalStatusHistory,"[InstrumentId], [EffectiveFrom]",PARTIAL_PREFIX_SUPPORT,WHERE InstrumentId = ? ORDER BY EffectiveFrom,Temporal operational-status analysis.
+6,HIGH,Instrument Bypass History,event,InstrumentBypassHistory,"[InstrumentId], [BypassStartDateTime]",PARTIAL_PREFIX_SUPPORT,WHERE InstrumentId = ? ORDER BY BypassStartDateTime,Bypass-duration and bypass-history analysis.
