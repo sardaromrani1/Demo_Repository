@@ -1,0 +1,9 @@
+﻿event,InstrumentBypassHistory,InstrumentId,int,0
+event,InstrumentBypassHistory,BypassStartDateTime,datetime2,0
+event,InstrumentBypassHistory,BypassEndDateTime,datetime2,1
+event,InstrumentLifecycle,InstrumentId,int,0
+event,InstrumentLifecycle,EffectiveFrom,datetime2,0
+event,InstrumentLifecycle,EffectiveTo,datetime2,1
+event,InstrumentOperationalStatusHistory,InstrumentId,int,0
+event,InstrumentOperationalStatusHistory,EffectiveFrom,datetime2,0
+event,InstrumentOperationalStatusHistory,EffectiveTo,datetime2,1
