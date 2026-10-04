@@ -1,0 +1,83 @@
+﻿1,Maintenance History,event,MaintenanceRecords,"[InstrumentId], [MaintenanceDate]",FK_MaintenanceRecords_Currency,event,MaintenanceRecords,CurrencyId,ref,Currency
+1,Maintenance History,event,MaintenanceRecords,"[InstrumentId], [MaintenanceDate]",FK_MaintenanceRecords_Instrument,event,MaintenanceRecords,InstrumentId,dbo,Instruments
+2,Failure History,event,FailureRecords,"[InstrumentId], [FailureDate]",FK_FailureRecords_Currency,event,FailureRecords,CurrencyId,ref,Currency
+2,Failure History,event,FailureRecords,"[InstrumentId], [FailureDate]",FK_FailureRecords_Instrument,event,FailureRecords,InstrumentId,dbo,Instruments
+2,Failure History,event,FailureRecords,"[InstrumentId], [FailureDate]",FK_FailureRecords_PreviousFailure,event,FailureRecords,PreviousFailureId,event,FailureRecords
+2,Failure History,event,FailureRecords,"[InstrumentId], [FailureDate]",FK_FailureRecords_PreviousFailure_Instrument,event,FailureRecords,PreviousFailureId,event,FailureRecords
+2,Failure History,event,FailureRecords,"[InstrumentId], [FailureDate]",FK_FailureRecords_PreviousFailure_Instrument,event,FailureRecords,InstrumentId,event,FailureRecords
+3,Calibration History,event,CalibrationRecords,"[InstrumentId], [CalibrationDate]",FK_CalibrationRecords_ApprovedBy,event,CalibrationRecords,ApprovedByPersonnelId,dbo,Personnel
+3,Calibration History,event,CalibrationRecords,"[InstrumentId], [CalibrationDate]",FK_CalibrationRecords_Instrument,event,CalibrationRecords,InstrumentId,dbo,Instruments
+3,Calibration History,event,CalibrationRecords,"[InstrumentId], [CalibrationDate]",FK_CalibrationRecords_PerformedBy,event,CalibrationRecords,PerformedByPersonnelId,dbo,Personnel
+3,Calibration History,event,CalibrationRecords,"[InstrumentId], [CalibrationDate]",FK_CalibrationRecords_ReferenceEquipment,event,CalibrationRecords,ReferenceEquipmentId,dbo,ReferenceEquipment
+4,Instrument Lifecycle,event,InstrumentLifecycle,"[InstrumentId], [EffectiveFrom]",FK_InstrumentLifecycle_CreatedBy,event,InstrumentLifecycle,CreatedBy,dbo,Personnel
+4,Instrument Lifecycle,event,InstrumentLifecycle,"[InstrumentId], [EffectiveFrom]",FK_InstrumentLifecycle_Instrument,event,InstrumentLifecycle,InstrumentId,dbo,Instruments
+4,Instrument Lifecycle,event,InstrumentLifecycle,"[InstrumentId], [EffectiveFrom]",FK_InstrumentLifecycle_Status,event,InstrumentLifecycle,LifecycleStatusCode,ref,LifecycleStatus
+5,Operational Status History,event,InstrumentOperationalStatusHistory,"[InstrumentId], [EffectiveFrom]",FK_InstrumentOperationalStatusHistory_CreatedBy,event,InstrumentOperationalStatusHistory,CreatedBy,dbo,Personnel
+5,Operational Status History,event,InstrumentOperationalStatusHistory,"[InstrumentId], [EffectiveFrom]",FK_InstrumentOperationalStatusHistory_Failure,event,InstrumentOperationalStatusHistory,FailureId,event,FailureRecords
+5,Operational Status History,event,InstrumentOperationalStatusHistory,"[InstrumentId], [EffectiveFrom]",FK_InstrumentOperationalStatusHistory_Instrument,event,InstrumentOperationalStatusHistory,InstrumentId,dbo,Instruments
+5,Operational Status History,event,InstrumentOperationalStatusHistory,"[InstrumentId], [EffectiveFrom]",FK_InstrumentOperationalStatusHistory_Maintenance,event,InstrumentOperationalStatusHistory,MaintenanceId,event,MaintenanceRecords
+5,Operational Status History,event,InstrumentOperationalStatusHistory,"[InstrumentId], [EffectiveFrom]",FK_InstrumentOperationalStatusHistory_Status,event,InstrumentOperationalStatusHistory,StatusCode,ref,InstrumentStatus
+5,Operational Status History,event,InstrumentOperationalStatusHistory,"[InstrumentId], [EffectiveFrom]",FK_StatusHistory_Failure_Instrument,event,InstrumentOperationalStatusHistory,FailureId,event,FailureRecords
+5,Operational Status History,event,InstrumentOperationalStatusHistory,"[InstrumentId], [EffectiveFrom]",FK_StatusHistory_Failure_Instrument,event,InstrumentOperationalStatusHistory,InstrumentId,event,FailureRecords
+5,Operational Status History,event,InstrumentOperationalStatusHistory,"[InstrumentId], [EffectiveFrom]",FK_StatusHistory_Maintenance_Instrument,event,InstrumentOperationalStatusHistory,MaintenanceId,event,MaintenanceRecords
+5,Operational Status History,event,InstrumentOperationalStatusHistory,"[InstrumentId], [EffectiveFrom]",FK_StatusHistory_Maintenance_Instrument,event,InstrumentOperationalStatusHistory,InstrumentId,event,MaintenanceRecords
+6,Instrument Bypass History,event,InstrumentBypassHistory,"[InstrumentId], [BypassStartDateTime]",FK_InstrumentBypassHistory_AuthorizedBy,event,InstrumentBypassHistory,AuthorizedByPersonnelId,dbo,Personnel
+6,Instrument Bypass History,event,InstrumentBypassHistory,"[InstrumentId], [BypassStartDateTime]",FK_InstrumentBypassHistory_CreatedBy,event,InstrumentBypassHistory,CreatedBy,dbo,Personnel
+6,Instrument Bypass History,event,InstrumentBypassHistory,"[InstrumentId], [BypassStartDateTime]",FK_InstrumentBypassHistory_Instrument,event,InstrumentBypassHistory,InstrumentId,dbo,Instruments
+7,Spare Usage by Instrument,event,SparePartUsage,"[InstrumentId], [UsageDateTime]",FK_SparePartUsage_CreatedBy,event,SparePartUsage,CreatedBy,dbo,Personnel
+7,Spare Usage by Instrument,event,SparePartUsage,"[InstrumentId], [UsageDateTime]",FK_SparePartUsage_Currency,event,SparePartUsage,CurrencyId,ref,Currency
+7,Spare Usage by Instrument,event,SparePartUsage,"[InstrumentId], [UsageDateTime]",FK_SparePartUsage_Failure,event,SparePartUsage,FailureId,event,FailureRecords
+7,Spare Usage by Instrument,event,SparePartUsage,"[InstrumentId], [UsageDateTime]",FK_SparePartUsage_Failure_Instrument,event,SparePartUsage,FailureId,event,FailureRecords
+7,Spare Usage by Instrument,event,SparePartUsage,"[InstrumentId], [UsageDateTime]",FK_SparePartUsage_Failure_Instrument,event,SparePartUsage,InstrumentId,event,FailureRecords
+7,Spare Usage by Instrument,event,SparePartUsage,"[InstrumentId], [UsageDateTime]",FK_SparePartUsage_Instrument,event,SparePartUsage,InstrumentId,dbo,Instruments
+7,Spare Usage by Instrument,event,SparePartUsage,"[InstrumentId], [UsageDateTime]",FK_SparePartUsage_InventoryTransaction,event,SparePartUsage,InventoryTransactionId,inv,InventoryTransactions
+7,Spare Usage by Instrument,event,SparePartUsage,"[InstrumentId], [UsageDateTime]",FK_SparePartUsage_InventoryTransaction_SparePart,event,SparePartUsage,InventoryTransactionId,inv,InventoryTransactions
+7,Spare Usage by Instrument,event,SparePartUsage,"[InstrumentId], [UsageDateTime]",FK_SparePartUsage_InventoryTransaction_SparePart,event,SparePartUsage,SparePartId,inv,InventoryTransactions
+7,Spare Usage by Instrument,event,SparePartUsage,"[InstrumentId], [UsageDateTime]",FK_SparePartUsage_Maintenance,event,SparePartUsage,MaintenanceId,event,MaintenanceRecords
+7,Spare Usage by Instrument,event,SparePartUsage,"[InstrumentId], [UsageDateTime]",FK_SparePartUsage_Maintenance_Instrument,event,SparePartUsage,MaintenanceId,event,MaintenanceRecords
+7,Spare Usage by Instrument,event,SparePartUsage,"[InstrumentId], [UsageDateTime]",FK_SparePartUsage_Maintenance_Instrument,event,SparePartUsage,InstrumentId,event,MaintenanceRecords
+7,Spare Usage by Instrument,event,SparePartUsage,"[InstrumentId], [UsageDateTime]",FK_SparePartUsage_Personnel,event,SparePartUsage,PersonnelId,dbo,Personnel
+7,Spare Usage by Instrument,event,SparePartUsage,"[InstrumentId], [UsageDateTime]",FK_SparePartUsage_SparePart,event,SparePartUsage,SparePartId,dbo,SpareParts
+7,Spare Usage by Instrument,event,SparePartUsage,"[InstrumentId], [UsageDateTime]",FK_SparePartUsage_UOM,event,SparePartUsage,UnitOfMeasureId,ref,UnitOfMeasure
+8,Spare Usage by Spare Part,event,SparePartUsage,"[SparePartId], [UsageDateTime]",FK_SparePartUsage_CreatedBy,event,SparePartUsage,CreatedBy,dbo,Personnel
+8,Spare Usage by Spare Part,event,SparePartUsage,"[SparePartId], [UsageDateTime]",FK_SparePartUsage_Currency,event,SparePartUsage,CurrencyId,ref,Currency
+8,Spare Usage by Spare Part,event,SparePartUsage,"[SparePartId], [UsageDateTime]",FK_SparePartUsage_Failure,event,SparePartUsage,FailureId,event,FailureRecords
+8,Spare Usage by Spare Part,event,SparePartUsage,"[SparePartId], [UsageDateTime]",FK_SparePartUsage_Failure_Instrument,event,SparePartUsage,FailureId,event,FailureRecords
+8,Spare Usage by Spare Part,event,SparePartUsage,"[SparePartId], [UsageDateTime]",FK_SparePartUsage_Failure_Instrument,event,SparePartUsage,InstrumentId,event,FailureRecords
+8,Spare Usage by Spare Part,event,SparePartUsage,"[SparePartId], [UsageDateTime]",FK_SparePartUsage_Instrument,event,SparePartUsage,InstrumentId,dbo,Instruments
+8,Spare Usage by Spare Part,event,SparePartUsage,"[SparePartId], [UsageDateTime]",FK_SparePartUsage_InventoryTransaction,event,SparePartUsage,InventoryTransactionId,inv,InventoryTransactions
+8,Spare Usage by Spare Part,event,SparePartUsage,"[SparePartId], [UsageDateTime]",FK_SparePartUsage_InventoryTransaction_SparePart,event,SparePartUsage,InventoryTransactionId,inv,InventoryTransactions
+8,Spare Usage by Spare Part,event,SparePartUsage,"[SparePartId], [UsageDateTime]",FK_SparePartUsage_InventoryTransaction_SparePart,event,SparePartUsage,SparePartId,inv,InventoryTransactions
+8,Spare Usage by Spare Part,event,SparePartUsage,"[SparePartId], [UsageDateTime]",FK_SparePartUsage_Maintenance,event,SparePartUsage,MaintenanceId,event,MaintenanceRecords
+8,Spare Usage by Spare Part,event,SparePartUsage,"[SparePartId], [UsageDateTime]",FK_SparePartUsage_Maintenance_Instrument,event,SparePartUsage,MaintenanceId,event,MaintenanceRecords
+8,Spare Usage by Spare Part,event,SparePartUsage,"[SparePartId], [UsageDateTime]",FK_SparePartUsage_Maintenance_Instrument,event,SparePartUsage,InstrumentId,event,MaintenanceRecords
+8,Spare Usage by Spare Part,event,SparePartUsage,"[SparePartId], [UsageDateTime]",FK_SparePartUsage_Personnel,event,SparePartUsage,PersonnelId,dbo,Personnel
+8,Spare Usage by Spare Part,event,SparePartUsage,"[SparePartId], [UsageDateTime]",FK_SparePartUsage_SparePart,event,SparePartUsage,SparePartId,dbo,SpareParts
+8,Spare Usage by Spare Part,event,SparePartUsage,"[SparePartId], [UsageDateTime]",FK_SparePartUsage_UOM,event,SparePartUsage,UnitOfMeasureId,ref,UnitOfMeasure
+9,Inventory by Spare Part,inv,InventoryTransactions,"[SparePartId], [TransactionDateTime]",FK_InventoryTransactions_CreatedBy,inv,InventoryTransactions,CreatedBy,dbo,Personnel
+9,Inventory by Spare Part,inv,InventoryTransactions,"[SparePartId], [TransactionDateTime]",FK_InventoryTransactions_Currency,inv,InventoryTransactions,CurrencyId,ref,Currency
+9,Inventory by Spare Part,inv,InventoryTransactions,"[SparePartId], [TransactionDateTime]",FK_InventoryTransactions_Failure,inv,InventoryTransactions,FailureId,event,FailureRecords
+9,Inventory by Spare Part,inv,InventoryTransactions,"[SparePartId], [TransactionDateTime]",FK_InventoryTransactions_Location,inv,InventoryTransactions,InventoryLocationId,inv,InventoryLocations
+9,Inventory by Spare Part,inv,InventoryTransactions,"[SparePartId], [TransactionDateTime]",FK_InventoryTransactions_Maintenance,inv,InventoryTransactions,MaintenanceId,event,MaintenanceRecords
+9,Inventory by Spare Part,inv,InventoryTransactions,"[SparePartId], [TransactionDateTime]",FK_InventoryTransactions_Personnel,inv,InventoryTransactions,PersonnelId,dbo,Personnel
+9,Inventory by Spare Part,inv,InventoryTransactions,"[SparePartId], [TransactionDateTime]",FK_InventoryTransactions_SparePart,inv,InventoryTransactions,SparePartId,dbo,SpareParts
+9,Inventory by Spare Part,inv,InventoryTransactions,"[SparePartId], [TransactionDateTime]",FK_InventoryTransactions_Supplier,inv,InventoryTransactions,SupplierId,dbo,Suppliers
+9,Inventory by Spare Part,inv,InventoryTransactions,"[SparePartId], [TransactionDateTime]",FK_InventoryTransactions_UOM,inv,InventoryTransactions,UnitOfMeasureId,ref,UnitOfMeasure
+10,Inventory by Location,inv,InventoryTransactions,"[InventoryLocationId], [TransactionDateTime]",FK_InventoryTransactions_CreatedBy,inv,InventoryTransactions,CreatedBy,dbo,Personnel
+10,Inventory by Location,inv,InventoryTransactions,"[InventoryLocationId], [TransactionDateTime]",FK_InventoryTransactions_Currency,inv,InventoryTransactions,CurrencyId,ref,Currency
+10,Inventory by Location,inv,InventoryTransactions,"[InventoryLocationId], [TransactionDateTime]",FK_InventoryTransactions_Failure,inv,InventoryTransactions,FailureId,event,FailureRecords
+10,Inventory by Location,inv,InventoryTransactions,"[InventoryLocationId], [TransactionDateTime]",FK_InventoryTransactions_Location,inv,InventoryTransactions,InventoryLocationId,inv,InventoryLocations
+10,Inventory by Location,inv,InventoryTransactions,"[InventoryLocationId], [TransactionDateTime]",FK_InventoryTransactions_Maintenance,inv,InventoryTransactions,MaintenanceId,event,MaintenanceRecords
+10,Inventory by Location,inv,InventoryTransactions,"[InventoryLocationId], [TransactionDateTime]",FK_InventoryTransactions_Personnel,inv,InventoryTransactions,PersonnelId,dbo,Personnel
+10,Inventory by Location,inv,InventoryTransactions,"[InventoryLocationId], [TransactionDateTime]",FK_InventoryTransactions_SparePart,inv,InventoryTransactions,SparePartId,dbo,SpareParts
+10,Inventory by Location,inv,InventoryTransactions,"[InventoryLocationId], [TransactionDateTime]",FK_InventoryTransactions_Supplier,inv,InventoryTransactions,SupplierId,dbo,Suppliers
+10,Inventory by Location,inv,InventoryTransactions,"[InventoryLocationId], [TransactionDateTime]",FK_InventoryTransactions_UOM,inv,InventoryTransactions,UnitOfMeasureId,ref,UnitOfMeasure
+11,Trip Lookup by Instrument,rel,TripInstruments,"[InstrumentId], [TripId]",FK_TripInstruments_CreatedBy,rel,TripInstruments,CreatedBy,dbo,Personnel
+11,Trip Lookup by Instrument,rel,TripInstruments,"[InstrumentId], [TripId]",FK_TripInstruments_Instrument,rel,TripInstruments,InstrumentId,dbo,Instruments
+11,Trip Lookup by Instrument,rel,TripInstruments,"[InstrumentId], [TripId]",FK_TripInstruments_Trip,rel,TripInstruments,TripId,dbo,TripsInterlocks
+12,Spare Part Compatibility by Instrument,rel,SparePartInstruments,"[InstrumentId], [SparePartId]",FK_SparePartInstruments_CreatedBy,rel,SparePartInstruments,CreatedBy,dbo,Personnel
+12,Spare Part Compatibility by Instrument,rel,SparePartInstruments,"[InstrumentId], [SparePartId]",FK_SparePartInstruments_Instrument,rel,SparePartInstruments,InstrumentId,dbo,Instruments
+12,Spare Part Compatibility by Instrument,rel,SparePartInstruments,"[InstrumentId], [SparePartId]",FK_SparePartInstruments_SparePart,rel,SparePartInstruments,SparePartId,dbo,SpareParts
+13,Spare Part Compatibility by Instrument Type,rel,SparePartInstrumentTypes,"[InstrumentTypeId], [SparePartId]",FK_SparePartInstrumentTypes_CreatedBy,rel,SparePartInstrumentTypes,CreatedBy,dbo,Personnel
+13,Spare Part Compatibility by Instrument Type,rel,SparePartInstrumentTypes,"[InstrumentTypeId], [SparePartId]",FK_SparePartInstrumentTypes_InstrumentType,rel,SparePartInstrumentTypes,InstrumentTypeId,dbo,InstrumentTypes
+13,Spare Part Compatibility by Instrument Type,rel,SparePartInstrumentTypes,"[InstrumentTypeId], [SparePartId]",FK_SparePartInstrumentTypes_SparePart,rel,SparePartInstrumentTypes,SparePartId,dbo,SpareParts
