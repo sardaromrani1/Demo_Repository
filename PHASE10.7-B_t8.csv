@@ -1,0 +1,13 @@
+﻿1,IX_FK_MaintenanceRecords_InstrumentId,4,1,PARTIAL_PREFIX
+2,IX_FK_FailureRecords_InstrumentId,4,1,PARTIAL_PREFIX
+3,IX_FK_CalibrationRecords_InstrumentId,3,1,PARTIAL_PREFIX
+4,IX_FK_InstrumentLifecycle_InstrumentId,3,1,PARTIAL_PREFIX
+5,IX_FK_InstrumentOperationalStatusHistory_InstrumentId,5,1,PARTIAL_PREFIX
+6,IX_FK_InstrumentBypassHistory_InstrumentId,4,1,PARTIAL_PREFIX
+7,IX_FK_SparePartUsage_InstrumentId,7,1,PARTIAL_PREFIX
+8,IX_FK_SparePartUsage_SparePartId,9,1,PARTIAL_PREFIX
+9,IX_FK_InventoryTransactions_SparePartId,9,1,PARTIAL_PREFIX
+10,IX_FK_InventoryTransactions_InventoryLocationId,6,1,PARTIAL_PREFIX
+11,IX_FK_TripInstruments_InstrumentId,3,1,PARTIAL_PREFIX
+12,PK_SparePartInstruments,1,0,NO_PREFIX
+13,PK_SparePartInstrumentTypes,1,0,NO_PREFIX
