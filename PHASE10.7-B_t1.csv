@@ -1,0 +1,13 @@
+﻿1,event,MaintenanceRecords,IX_MaintenanceRecords_InstrumentId_MaintenanceDate,"InstrumentId,MaintenanceDate",NULL,NULL,HIGH,10.7-A,Instrument maintenance history lookup by InstrumentId ordered by MaintenanceDate
+2,event,FailureRecords,IX_FailureRecords_InstrumentId_FailureDate,"InstrumentId,FailureDate",NULL,NULL,HIGH,10.7-A,Instrument failure history lookup by InstrumentId ordered by FailureDate
+3,event,CalibrationRecords,IX_CalibrationRecords_InstrumentId_CalibrationDate,"InstrumentId,CalibrationDate",NULL,NULL,HIGH,10.7-A,Instrument calibration history lookup by InstrumentId ordered by CalibrationDate
+4,event,InstrumentLifecycle,IX_InstrumentLifecycle_InstrumentId_EffectiveFrom,"InstrumentId,EffectiveFrom",NULL,NULL,HIGH,10.7-A,Instrument lifecycle history lookup by InstrumentId ordered by EffectiveFrom
+5,event,InstrumentOperationalStatusHistory,IX_InstrumentOperationalStatusHistory_InstrumentId_EffectiveFrom,"InstrumentId,EffectiveFrom",NULL,NULL,HIGH,10.7-A,Operational status history lookup by InstrumentId ordered by EffectiveFrom
+6,event,InstrumentBypassHistory,IX_InstrumentBypassHistory_InstrumentId_BypassStartDateTime,"InstrumentId,BypassStartDateTime",NULL,NULL,HIGH,10.7-A,Bypass history lookup by InstrumentId ordered by BypassStartDateTime
+7,event,SparePartUsage,IX_SparePartUsage_InstrumentId_UsageDateTime,"InstrumentId,UsageDateTime",NULL,NULL,MEDIUM,10.7-A,Spare part usage history lookup by InstrumentId ordered by UsageDateTime
+8,event,SparePartUsage,IX_SparePartUsage_SparePartId_UsageDateTime,"SparePartId,UsageDateTime",NULL,NULL,MEDIUM,10.7-A,Spare part usage history lookup by SparePartId ordered by UsageDateTime
+9,inv,InventoryTransactions,IX_InventoryTransactions_SparePartId_TransactionDateTime,"SparePartId,TransactionDateTime",NULL,NULL,MEDIUM,10.7-A,Inventory transaction history lookup by SparePartId ordered by TransactionDateTime
+10,inv,InventoryTransactions,IX_InventoryTransactions_InventoryLocationId_TransactionDateTime,"InventoryLocationId,TransactionDateTime",NULL,NULL,MEDIUM,10.7-A,Inventory transaction history lookup by InventoryLocationId ordered by TransactionDateTime
+11,rel,TripInstruments,IX_TripInstruments_InstrumentId_TripId,"InstrumentId,TripId",NULL,NULL,MEDIUM,10.7-A,Trip lookup by InstrumentId with TripId access
+12,rel,SparePartInstruments,IX_SparePartInstruments_InstrumentId_SparePartId,"InstrumentId,SparePartId",NULL,NULL,MEDIUM,10.7-A,Spare part compatibility lookup by InstrumentId
+13,rel,SparePartInstrumentTypes,IX_SparePartInstrumentTypes_InstrumentTypeId_SparePartId,"InstrumentTypeId,SparePartId",NULL,NULL,MEDIUM,10.7-A,Spare part compatibility lookup by InstrumentTypeId
