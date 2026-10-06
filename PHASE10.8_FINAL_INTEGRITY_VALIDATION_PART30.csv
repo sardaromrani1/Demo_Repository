@@ -1,0 +1,3 @@
+﻿dbo,Instruments,TR_Instruments_TripProcessUnitIntegrity,ENABLED
+dbo,TripsInterlocks,TR_TripsInterlocks_ProcessUnitIntegrity,ENABLED
+rel,TripInstruments,TR_TripInstruments_ProcessUnitIntegrity,ENABLED
