@@ -1,0 +1,8 @@
+﻿1,event,MaintenanceRecords,InstrumentId,PRESENT,MaintenanceDate,PRESENT
+2,event,FailureRecords,InstrumentId,PRESENT,FailureDate,PRESENT
+3,event,CalibrationRecords,InstrumentId,PRESENT,CalibrationDate,PRESENT
+4,event,InstrumentLifecycle,InstrumentId,PRESENT,EffectiveFrom,PRESENT
+5,event,InstrumentOperationalStatusHistory,InstrumentId,PRESENT,EffectiveFrom,PRESENT
+6,event,InstrumentBypassHistory,InstrumentId,PRESENT,BypassStartDateTime,PRESENT
+7,rel,SparePartInstruments,InstrumentId,PRESENT,SparePartId,PRESENT
+8,rel,SparePartInstrumentTypes,InstrumentTypeId,PRESENT,SparePartId,PRESENT
